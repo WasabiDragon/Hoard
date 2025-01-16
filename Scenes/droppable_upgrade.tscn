@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://wpytq45ur3b3"]
+
+[ext_resource type="Script" path="res://Scripts/droppable_upgrade.gd" id="1_lg7ql"]
+
+[sub_resource type="Gradient" id="Gradient_0v4b2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7l8sp"]
+gradient = SubResource("Gradient_0v4b2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jaxt"]
+size = Vector2(64, 64)
+
+[node name="DroppableUpgrade" type="Node2D"]
+script = ExtResource("1_lg7ql")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
+texture = SubResource("GradientTexture2D_7l8sp")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_1jaxt")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

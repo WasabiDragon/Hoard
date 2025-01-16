@@ -1,0 +1,150 @@
+[gd_scene load_steps=12 format=3 uid="uid://htrdr826wqmu"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="1_cbngh"]
+[ext_resource type="Resource" uid="uid://blboqypb102el" path="res://Resources/Cards/card_images.tres" id="2_ocvfr"]
+[ext_resource type="PackedScene" uid="uid://ddssefox1vfwx" path="res://Scenes/drop_area.tscn" id="3_h2y10"]
+[ext_resource type="Script" path="res://timing_controller.gd" id="3_uk270"]
+[ext_resource type="Script" path="res://Scripts/dice_spawner.gd" id="6_ab52g"]
+[ext_resource type="Script" path="res://Scenes/level_list.gd" id="7_l1oo3"]
+[ext_resource type="Script" path="res://Scripts/enemy_info_list.gd" id="8_3io8c"]
+[ext_resource type="Script" path="res://Scripts/start_game.gd" id="9_1kml8"]
+[ext_resource type="Resource" uid="uid://d4ikborktd20g" path="res://Resources/level_1.tres" id="9_d3ci2"]
+[ext_resource type="Script" path="res://Scripts/end_turn.gd" id="10_cc70h"]
+[ext_resource type="PackedScene" uid="uid://wpytq45ur3b3" path="res://Scenes/droppable_upgrade.tscn" id="11_a15qv"]
+
+[node name="Main" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Control" type="HBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 192.01)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="Control/Control"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="Control/Control/Control" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
+
+[node name="Control2" type="Control" parent="Control/Control"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="Control/Control/Control2" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
+
+[node name="Control3" type="Control" parent="Control/Control"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="Control/Control/Control3" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
+
+[node name="Control4" type="Control" parent="Control/Control"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="Control/Control/Control4" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
+
+[node name="Control5" type="Control" parent="Control/Control"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="Control/Control/Control5" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
+
+[node name="enemy_spawner" type="Node" parent="Control" node_paths=PackedStringArray("_spawn_parent", "_spawn_area")]
+unique_name_in_owner = true
+script = ExtResource("1_cbngh")
+_spawn_parent = NodePath("spawn_parent")
+_spawn_area = NodePath("spawn_width")
+card_list = ExtResource("2_ocvfr")
+
+[node name="spawn_width" type="Control" parent="Control/enemy_spawner"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="spawn_parent" type="Node" parent="Control/enemy_spawner"]
+
+[node name="UI" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Button" type="Button" parent="Control/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "start"
+script = ExtResource("9_1kml8")
+
+[node name="EndTurn" type="Button" parent="Control/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -482.0
+offset_top = 62.0
+offset_right = -454.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "End Turn"
+script = ExtResource("10_cc70h")
+
+[node name="DroppableUpgrade" parent="Control" instance=ExtResource("11_a15qv")]
+position = Vector2(721, 674)
+
+[node name="dice_spawner" type="Node" parent="Control"]
+script = ExtResource("6_ab52g")
+
+[node name="timing_controller" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_uk270")
+diceSpeed = 3.0
+enemySpeed = 3.0
+
+[node name="level_list" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_l1oo3")
+level_list = Array[ExtResource("8_3io8c")]([ExtResource("9_d3ci2")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

@@ -1,0 +1,372 @@
+[gd_resource type="Resource" script_class="card_images" load_steps=107 format=3 uid="uid://blboqypb102el"]
+
+[ext_resource type="Script" path="res://Scripts/card_type_res.gd" id="1_82m7g"]
+[ext_resource type="Script" path="res://Scripts/card_image_dict.gd" id="2_vcfwi"]
+[ext_resource type="Texture2D" uid="uid://k8q3q84681ng" path="res://Assets/cards/deck-of-cards/2.2.png" id="2_wql0f"]
+[ext_resource type="Texture2D" uid="uid://b0esq63fdviuj" path="res://Assets/cards/deck-of-cards/2.4.png" id="3_q1wce"]
+[ext_resource type="Texture2D" uid="uid://ds7u4bijf8luc" path="res://Assets/cards/deck-of-cards/2.5.png" id="4_lpqqm"]
+[ext_resource type="Texture2D" uid="uid://c0kcgpgc6p1lv" path="res://Assets/cards/deck-of-cards/2.7.png" id="5_u421l"]
+[ext_resource type="Texture2D" uid="uid://b2hg1cdacwmgv" path="res://Assets/cards/deck-of-cards/3.2.png" id="6_d28xs"]
+[ext_resource type="Texture2D" uid="uid://dboww213ejwkl" path="res://Assets/cards/deck-of-cards/3.4.png" id="7_mll3u"]
+[ext_resource type="Texture2D" uid="uid://dpn8crw3qk0k2" path="res://Assets/cards/deck-of-cards/3.5.png" id="8_57imx"]
+[ext_resource type="Texture2D" uid="uid://7khuv1cn86h5" path="res://Assets/cards/deck-of-cards/3.7.png" id="9_sbtwg"]
+[ext_resource type="Texture2D" uid="uid://cfigxa5yjdr64" path="res://Assets/cards/deck-of-cards/4.2.png" id="10_tqbkn"]
+[ext_resource type="Texture2D" uid="uid://cp51j8oh6fkdc" path="res://Assets/cards/deck-of-cards/4.4.png" id="11_7grkw"]
+[ext_resource type="Texture2D" uid="uid://bhwoak2621ua6" path="res://Assets/cards/deck-of-cards/4.5.png" id="12_uppej"]
+[ext_resource type="Texture2D" uid="uid://du7evhvgurr0n" path="res://Assets/cards/deck-of-cards/4.7.png" id="13_tbdl4"]
+[ext_resource type="Texture2D" uid="uid://bvqvjk3jbko82" path="res://Assets/cards/deck-of-cards/5.2.png" id="14_1avna"]
+[ext_resource type="Texture2D" uid="uid://ch43r6rheimuv" path="res://Assets/cards/deck-of-cards/5.4.png" id="15_8ph4o"]
+[ext_resource type="Texture2D" uid="uid://duo88plabxviw" path="res://Assets/cards/deck-of-cards/5.5.png" id="16_jm3rb"]
+[ext_resource type="Texture2D" uid="uid://c8ugarlh2qxxr" path="res://Assets/cards/deck-of-cards/5.7.png" id="17_3n1n0"]
+[ext_resource type="Texture2D" uid="uid://dh28d21qtxtto" path="res://Assets/cards/deck-of-cards/6.2.png" id="18_syutn"]
+[ext_resource type="Texture2D" uid="uid://42mpeithbeo7" path="res://Assets/cards/deck-of-cards/6.4.png" id="19_mu5b2"]
+[ext_resource type="Texture2D" uid="uid://dat48ujny0saj" path="res://Assets/cards/deck-of-cards/6.5.png" id="20_50iut"]
+[ext_resource type="Texture2D" uid="uid://ba44y6686aqr5" path="res://Assets/cards/deck-of-cards/6.7.png" id="21_lrd0o"]
+[ext_resource type="Texture2D" uid="uid://cn4qyqnbbq8k5" path="res://Assets/cards/deck-of-cards/7.2.png" id="22_f2scw"]
+[ext_resource type="Texture2D" uid="uid://i0qqggo8mcf6" path="res://Assets/cards/deck-of-cards/7.4.png" id="23_2wqkk"]
+[ext_resource type="Texture2D" uid="uid://ctmnccj3fxbne" path="res://Assets/cards/deck-of-cards/7.5.png" id="24_fpdld"]
+[ext_resource type="Texture2D" uid="uid://dee13dhxe6wnw" path="res://Assets/cards/deck-of-cards/7.7.png" id="25_da8vl"]
+[ext_resource type="Texture2D" uid="uid://dwkhwf65o4fc6" path="res://Assets/cards/deck-of-cards/8.2.png" id="26_odpx7"]
+[ext_resource type="Texture2D" uid="uid://bkadmcl4c1cg8" path="res://Assets/cards/deck-of-cards/8.4.png" id="27_h278s"]
+[ext_resource type="Texture2D" uid="uid://b2ptci8fvpklh" path="res://Assets/cards/deck-of-cards/8.5.png" id="28_0tmmh"]
+[ext_resource type="Texture2D" uid="uid://c6gxeyfdg8h4" path="res://Assets/cards/deck-of-cards/8.7.png" id="29_6wicc"]
+[ext_resource type="Texture2D" uid="uid://cm76p280quiaf" path="res://Assets/cards/deck-of-cards/9.2.png" id="30_huktr"]
+[ext_resource type="Texture2D" uid="uid://802tvf50bn65" path="res://Assets/cards/deck-of-cards/9.4.png" id="31_r78bt"]
+[ext_resource type="Texture2D" uid="uid://6w3loca0do28" path="res://Assets/cards/deck-of-cards/9.5.png" id="32_7f3vy"]
+[ext_resource type="Texture2D" uid="uid://bfsdlek7hpses" path="res://Assets/cards/deck-of-cards/9.7.png" id="33_h22i6"]
+[ext_resource type="Texture2D" uid="uid://dpncsiy4f4chm" path="res://Assets/cards/deck-of-cards/10.2.png" id="34_8c7qy"]
+[ext_resource type="Texture2D" uid="uid://cu00o67dx5wqh" path="res://Assets/cards/deck-of-cards/10.4.png" id="35_4xfj5"]
+[ext_resource type="Texture2D" uid="uid://3qjb1jdnqpfd" path="res://Assets/cards/deck-of-cards/10.5.png" id="36_oe40c"]
+[ext_resource type="Texture2D" uid="uid://cn70n68ewr24y" path="res://Assets/cards/deck-of-cards/10.7.png" id="37_ynx4w"]
+[ext_resource type="Texture2D" uid="uid://c545dknijyose" path="res://Assets/cards/deck-of-cards/A.2.png" id="38_61wxf"]
+[ext_resource type="Texture2D" uid="uid://dlx28t84n50fd" path="res://Assets/cards/deck-of-cards/A.4.png" id="39_1y5pw"]
+[ext_resource type="Texture2D" uid="uid://bfwaft2kj18ub" path="res://Assets/cards/deck-of-cards/A.5.png" id="40_obqa3"]
+[ext_resource type="Texture2D" uid="uid://bk6c4ielwws1c" path="res://Assets/cards/deck-of-cards/A.7.png" id="41_mlp23"]
+[ext_resource type="Texture2D" uid="uid://coxnye8o1i8wb" path="res://Assets/cards/deck-of-cards/J2.png" id="42_x4ofj"]
+[ext_resource type="Texture2D" uid="uid://dgbspv8d1b06x" path="res://Assets/cards/deck-of-cards/J4.png" id="43_0k8kc"]
+[ext_resource type="Texture2D" uid="uid://d2m7yogjd40bi" path="res://Assets/cards/deck-of-cards/J5.png" id="44_rn7rd"]
+[ext_resource type="Texture2D" uid="uid://di2tyrsr432a2" path="res://Assets/cards/deck-of-cards/J7.png" id="45_aw35i"]
+[ext_resource type="Texture2D" uid="uid://blpf0ganvgei7" path="res://Assets/cards/deck-of-cards/Q2.png" id="46_3b310"]
+[ext_resource type="Texture2D" uid="uid://brvg1n5f8uxrw" path="res://Assets/cards/deck-of-cards/Q4.png" id="47_f0e0y"]
+[ext_resource type="Texture2D" uid="uid://c50dhm46glevl" path="res://Assets/cards/deck-of-cards/Q5.png" id="48_badoj"]
+[ext_resource type="Texture2D" uid="uid://dw70jdo4qesvd" path="res://Assets/cards/deck-of-cards/Q7.png" id="49_r4evm"]
+[ext_resource type="Texture2D" uid="uid://clalvho3ybrpc" path="res://Assets/cards/deck-of-cards/K2.png" id="50_gjpc3"]
+[ext_resource type="Texture2D" uid="uid://coa5h2apkel7d" path="res://Assets/cards/deck-of-cards/K4.png" id="51_f34lq"]
+[ext_resource type="Texture2D" uid="uid://55j724qd14sd" path="res://Assets/cards/deck-of-cards/K5.png" id="52_bxwtc"]
+[ext_resource type="Texture2D" uid="uid://dxorhp2l6f8m6" path="res://Assets/cards/deck-of-cards/K7.png" id="53_2fb67"]
+
+[sub_resource type="Resource" id="Resource_cf1hl"]
+script = ExtResource("1_82m7g")
+card_number = 2
+card_suit = 1
+card_texture = ExtResource("2_wql0f")
+
+[sub_resource type="Resource" id="Resource_ys01x"]
+script = ExtResource("1_82m7g")
+card_number = 2
+card_suit = 0
+card_texture = ExtResource("3_q1wce")
+
+[sub_resource type="Resource" id="Resource_eax0i"]
+script = ExtResource("1_82m7g")
+card_number = 2
+card_suit = 3
+card_texture = ExtResource("4_lpqqm")
+
+[sub_resource type="Resource" id="Resource_q0ekc"]
+script = ExtResource("1_82m7g")
+card_number = 2
+card_suit = 2
+card_texture = ExtResource("5_u421l")
+
+[sub_resource type="Resource" id="Resource_8ftuv"]
+script = ExtResource("1_82m7g")
+card_number = 3
+card_suit = 1
+card_texture = ExtResource("6_d28xs")
+
+[sub_resource type="Resource" id="Resource_ef7sv"]
+script = ExtResource("1_82m7g")
+card_number = 3
+card_suit = 0
+card_texture = ExtResource("7_mll3u")
+
+[sub_resource type="Resource" id="Resource_3snwv"]
+script = ExtResource("1_82m7g")
+card_number = 3
+card_suit = 3
+card_texture = ExtResource("8_57imx")
+
+[sub_resource type="Resource" id="Resource_v23ni"]
+script = ExtResource("1_82m7g")
+card_number = 3
+card_suit = 2
+card_texture = ExtResource("9_sbtwg")
+
+[sub_resource type="Resource" id="Resource_fpapq"]
+script = ExtResource("1_82m7g")
+card_number = 4
+card_suit = 1
+card_texture = ExtResource("10_tqbkn")
+
+[sub_resource type="Resource" id="Resource_ndijc"]
+script = ExtResource("1_82m7g")
+card_number = 4
+card_suit = 0
+card_texture = ExtResource("11_7grkw")
+
+[sub_resource type="Resource" id="Resource_0w5nw"]
+script = ExtResource("1_82m7g")
+card_number = 4
+card_suit = 3
+card_texture = ExtResource("12_uppej")
+
+[sub_resource type="Resource" id="Resource_owbp6"]
+script = ExtResource("1_82m7g")
+card_number = 4
+card_suit = 2
+card_texture = ExtResource("13_tbdl4")
+
+[sub_resource type="Resource" id="Resource_uj58m"]
+script = ExtResource("1_82m7g")
+card_number = 5
+card_suit = 1
+card_texture = ExtResource("14_1avna")
+
+[sub_resource type="Resource" id="Resource_mw55k"]
+script = ExtResource("1_82m7g")
+card_number = 5
+card_suit = 0
+card_texture = ExtResource("15_8ph4o")
+
+[sub_resource type="Resource" id="Resource_skgfb"]
+script = ExtResource("1_82m7g")
+card_number = 5
+card_suit = 3
+card_texture = ExtResource("16_jm3rb")
+
+[sub_resource type="Resource" id="Resource_ajdw0"]
+script = ExtResource("1_82m7g")
+card_number = 5
+card_suit = 2
+card_texture = ExtResource("17_3n1n0")
+
+[sub_resource type="Resource" id="Resource_64bi5"]
+script = ExtResource("1_82m7g")
+card_number = 6
+card_suit = 1
+card_texture = ExtResource("18_syutn")
+
+[sub_resource type="Resource" id="Resource_fqs06"]
+script = ExtResource("1_82m7g")
+card_number = 6
+card_suit = 0
+card_texture = ExtResource("19_mu5b2")
+
+[sub_resource type="Resource" id="Resource_sid23"]
+script = ExtResource("1_82m7g")
+card_number = 6
+card_suit = 3
+card_texture = ExtResource("20_50iut")
+
+[sub_resource type="Resource" id="Resource_x62e6"]
+script = ExtResource("1_82m7g")
+card_number = 6
+card_suit = 2
+card_texture = ExtResource("21_lrd0o")
+
+[sub_resource type="Resource" id="Resource_px8j5"]
+script = ExtResource("1_82m7g")
+card_number = 7
+card_suit = 1
+card_texture = ExtResource("22_f2scw")
+
+[sub_resource type="Resource" id="Resource_h0qh5"]
+script = ExtResource("1_82m7g")
+card_number = 7
+card_suit = 0
+card_texture = ExtResource("23_2wqkk")
+
+[sub_resource type="Resource" id="Resource_wmrhc"]
+script = ExtResource("1_82m7g")
+card_number = 7
+card_suit = 3
+card_texture = ExtResource("24_fpdld")
+
+[sub_resource type="Resource" id="Resource_fqnyk"]
+script = ExtResource("1_82m7g")
+card_number = 7
+card_suit = 2
+card_texture = ExtResource("25_da8vl")
+
+[sub_resource type="Resource" id="Resource_wc7t0"]
+script = ExtResource("1_82m7g")
+card_number = 8
+card_suit = 1
+card_texture = ExtResource("26_odpx7")
+
+[sub_resource type="Resource" id="Resource_1o3c3"]
+script = ExtResource("1_82m7g")
+card_number = 8
+card_suit = 0
+card_texture = ExtResource("27_h278s")
+
+[sub_resource type="Resource" id="Resource_mmjfk"]
+script = ExtResource("1_82m7g")
+card_number = 8
+card_suit = 3
+card_texture = ExtResource("28_0tmmh")
+
+[sub_resource type="Resource" id="Resource_yxd5n"]
+script = ExtResource("1_82m7g")
+card_number = 8
+card_suit = 2
+card_texture = ExtResource("29_6wicc")
+
+[sub_resource type="Resource" id="Resource_3nwjf"]
+script = ExtResource("1_82m7g")
+card_number = 9
+card_suit = 1
+card_texture = ExtResource("30_huktr")
+
+[sub_resource type="Resource" id="Resource_i0uoc"]
+script = ExtResource("1_82m7g")
+card_number = 9
+card_suit = 0
+card_texture = ExtResource("31_r78bt")
+
+[sub_resource type="Resource" id="Resource_a5kdb"]
+script = ExtResource("1_82m7g")
+card_number = 9
+card_suit = 3
+card_texture = ExtResource("32_7f3vy")
+
+[sub_resource type="Resource" id="Resource_f1b7q"]
+script = ExtResource("1_82m7g")
+card_number = 9
+card_suit = 2
+card_texture = ExtResource("33_h22i6")
+
+[sub_resource type="Resource" id="Resource_3nu50"]
+script = ExtResource("1_82m7g")
+card_number = 10
+card_suit = 1
+card_texture = ExtResource("34_8c7qy")
+
+[sub_resource type="Resource" id="Resource_7ody1"]
+script = ExtResource("1_82m7g")
+card_number = 10
+card_suit = 0
+card_texture = ExtResource("35_4xfj5")
+
+[sub_resource type="Resource" id="Resource_wi15i"]
+script = ExtResource("1_82m7g")
+card_number = 10
+card_suit = 3
+card_texture = ExtResource("36_oe40c")
+
+[sub_resource type="Resource" id="Resource_b2b61"]
+script = ExtResource("1_82m7g")
+card_number = 10
+card_suit = 2
+card_texture = ExtResource("37_ynx4w")
+
+[sub_resource type="Resource" id="Resource_621dm"]
+script = ExtResource("1_82m7g")
+card_number = 1
+card_suit = 1
+card_texture = ExtResource("38_61wxf")
+
+[sub_resource type="Resource" id="Resource_fh1xy"]
+script = ExtResource("1_82m7g")
+card_number = 1
+card_suit = 0
+card_texture = ExtResource("39_1y5pw")
+
+[sub_resource type="Resource" id="Resource_wgmlg"]
+script = ExtResource("1_82m7g")
+card_number = 1
+card_suit = 3
+card_texture = ExtResource("40_obqa3")
+
+[sub_resource type="Resource" id="Resource_ma68p"]
+script = ExtResource("1_82m7g")
+card_number = 1
+card_suit = 2
+card_texture = ExtResource("41_mlp23")
+
+[sub_resource type="Resource" id="Resource_fluc6"]
+script = ExtResource("1_82m7g")
+card_number = 11
+card_suit = 1
+card_texture = ExtResource("42_x4ofj")
+
+[sub_resource type="Resource" id="Resource_342qa"]
+script = ExtResource("1_82m7g")
+card_number = 11
+card_suit = 0
+card_texture = ExtResource("43_0k8kc")
+
+[sub_resource type="Resource" id="Resource_uwsra"]
+script = ExtResource("1_82m7g")
+card_number = 11
+card_suit = 3
+card_texture = ExtResource("44_rn7rd")
+
+[sub_resource type="Resource" id="Resource_rbecn"]
+script = ExtResource("1_82m7g")
+card_number = 11
+card_suit = 2
+card_texture = ExtResource("45_aw35i")
+
+[sub_resource type="Resource" id="Resource_jxbct"]
+script = ExtResource("1_82m7g")
+card_number = 12
+card_suit = 1
+card_texture = ExtResource("46_3b310")
+
+[sub_resource type="Resource" id="Resource_cqjbw"]
+script = ExtResource("1_82m7g")
+card_number = 12
+card_suit = 0
+card_texture = ExtResource("47_f0e0y")
+
+[sub_resource type="Resource" id="Resource_vwqin"]
+script = ExtResource("1_82m7g")
+card_number = 12
+card_suit = 3
+card_texture = ExtResource("48_badoj")
+
+[sub_resource type="Resource" id="Resource_7ifc5"]
+script = ExtResource("1_82m7g")
+card_number = 12
+card_suit = 2
+card_texture = ExtResource("49_r4evm")
+
+[sub_resource type="Resource" id="Resource_u8g6d"]
+script = ExtResource("1_82m7g")
+card_number = 13
+card_suit = 1
+card_texture = ExtResource("50_gjpc3")
+
+[sub_resource type="Resource" id="Resource_sjtsb"]
+script = ExtResource("1_82m7g")
+card_number = 13
+card_suit = 0
+card_texture = ExtResource("51_f34lq")
+
+[sub_resource type="Resource" id="Resource_roicf"]
+script = ExtResource("1_82m7g")
+card_number = 13
+card_suit = 3
+card_texture = ExtResource("52_bxwtc")
+
+[sub_resource type="Resource" id="Resource_5agxd"]
+script = ExtResource("1_82m7g")
+card_number = 13
+card_suit = 2
+card_texture = ExtResource("53_2fb67")
+
+[resource]
+script = ExtResource("2_vcfwi")
+deck = Array[ExtResource("1_82m7g")]([SubResource("Resource_cf1hl"), SubResource("Resource_ys01x"), SubResource("Resource_eax0i"), SubResource("Resource_q0ekc"), SubResource("Resource_8ftuv"), SubResource("Resource_ef7sv"), SubResource("Resource_3snwv"), SubResource("Resource_v23ni"), SubResource("Resource_fpapq"), SubResource("Resource_ndijc"), SubResource("Resource_0w5nw"), SubResource("Resource_owbp6"), SubResource("Resource_uj58m"), SubResource("Resource_mw55k"), SubResource("Resource_skgfb"), SubResource("Resource_ajdw0"), SubResource("Resource_64bi5"), SubResource("Resource_fqs06"), SubResource("Resource_sid23"), SubResource("Resource_x62e6"), SubResource("Resource_px8j5"), SubResource("Resource_h0qh5"), SubResource("Resource_wmrhc"), SubResource("Resource_fqnyk"), SubResource("Resource_wc7t0"), SubResource("Resource_1o3c3"), SubResource("Resource_mmjfk"), SubResource("Resource_yxd5n"), SubResource("Resource_3nwjf"), SubResource("Resource_i0uoc"), SubResource("Resource_a5kdb"), SubResource("Resource_f1b7q"), SubResource("Resource_3nu50"), SubResource("Resource_7ody1"), SubResource("Resource_wi15i"), SubResource("Resource_b2b61"), SubResource("Resource_621dm"), SubResource("Resource_fh1xy"), SubResource("Resource_wgmlg"), SubResource("Resource_ma68p"), SubResource("Resource_fluc6"), SubResource("Resource_342qa"), SubResource("Resource_uwsra"), SubResource("Resource_rbecn"), SubResource("Resource_jxbct"), SubResource("Resource_cqjbw"), SubResource("Resource_vwqin"), SubResource("Resource_7ifc5"), SubResource("Resource_u8g6d"), SubResource("Resource_sjtsb"), SubResource("Resource_roicf"), SubResource("Resource_5agxd")])
