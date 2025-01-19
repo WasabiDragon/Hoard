@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="enemy_info_list" load_steps=4 format=3 uid="uid://d2twgmjyjxrbs"]
+[gd_resource type="Resource" script_class="enemy_info_list" load_steps=6 format=3 uid="uid://d2twgmjyjxrbs"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_info.gd" id="1_sbkb3"]
 [ext_resource type="Script" path="res://Scripts/enemy_info_list.gd" id="2_yi7vn"]
@@ -7,8 +7,20 @@
 script = ExtResource("1_sbkb3")
 enemies = 4
 bosses = 0
+timeToWait = 2.0
+
+[sub_resource type="Resource" id="Resource_xtmp5"]
+script = ExtResource("1_sbkb3")
+enemies = 2
+bosses = 0
+timeToWait = 4.0
+
+[sub_resource type="Resource" id="Resource_3bqcr"]
+script = ExtResource("1_sbkb3")
+enemies = 4
+bosses = 0
 timeToWait = 0.0
 
 [resource]
 script = ExtResource("2_yi7vn")
-info_list = Array[ExtResource("1_sbkb3")]([SubResource("Resource_pnyb6"), null])
+info_list = Array[ExtResource("1_sbkb3")]([SubResource("Resource_pnyb6"), SubResource("Resource_xtmp5"), SubResource("Resource_3bqcr")])

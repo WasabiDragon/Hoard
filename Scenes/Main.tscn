@@ -222,7 +222,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="start_game" type="TextureButton" parent="UI" node_paths=PackedStringArray("overlay")]
+[node name="start_game" type="TextureButton" parent="UI" node_paths=PackedStringArray("overlay", "endTurnButton")]
 clip_children = 2
 texture_filter = 1
 layout_mode = 1
@@ -242,6 +242,7 @@ script = ExtResource("9_1kml8")
 start_image = ExtResource("14_w56xd")
 next_level_image = ExtResource("16_fp5oc")
 overlay = NodePath("ColorRect")
+endTurnButton = NodePath("../end_turn")
 
 [node name="ColorRect" type="ColorRect" parent="UI/start_game"]
 visible = false
@@ -255,6 +256,7 @@ mouse_filter = 1
 color = Color(0, 0, 0, 0.294118)
 
 [node name="end_turn" type="TextureButton" parent="UI" node_paths=PackedStringArray("overlay")]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -279,7 +281,7 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0, 0, 0, 0.294118)
 
-[node name="upgrade_choice" type="MarginContainer" parent="UI" node_paths=PackedStringArray("upgrade_panel", "role_panel", "extra_die_panel", "drops")]
+[node name="upgrade_choice" type="MarginContainer" parent="UI" node_paths=PackedStringArray("upgrade_panel", "role_panel", "extra_die_panel", "drops", "endTurnButton")]
 visible = false
 custom_minimum_size = Vector2(0, 600)
 layout_mode = 1
@@ -301,6 +303,7 @@ role_panel = NodePath("HBoxContainer/new_role")
 extra_die_panel = NodePath("HBoxContainer/extra_dice")
 all_images = ExtResource("7_ws3ny")
 drops = NodePath("../../Control/upgrade_drop_controller")
+endTurnButton = NodePath("../end_turn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/upgrade_choice"]
 layout_mode = 2

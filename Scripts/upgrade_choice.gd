@@ -6,6 +6,7 @@ class_name upgrades_panel
 @export var extra_die_panel: Button
 @export var all_images: upgrade_images
 @export var drops: upgrade_drop
+@export var endTurnButton: TextureButton
 var _current_role: dice_stats.diceClass
 @onready var _audio = $upgradeSound as audio_bank
 
@@ -15,6 +16,7 @@ func _ready():
 	extra_die_panel.pressed.connect(select_extra_dice)
 
 func set_choices():
+	endTurnButton.hide()
 	set_dice_panel()
 	set_role_panel()
 	set_upgrade_panel()
