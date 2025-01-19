@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://t4udq5nu3jbk"]
+[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://t4udq5nu3jbk"]
 
 [ext_resource type="Texture2D" uid="uid://ber84xtrocg8v" path="res://Assets/card_anims.png" id="1_1vlg1"]
 
@@ -34,6 +34,38 @@ region = Rect2(768, 160, 128, 160)
 atlas = ExtResource("1_1vlg1")
 region = Rect2(896, 160, 128, 160)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_phfcj"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(0, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27y1e"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(128, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucye5"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(256, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owprw"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(384, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o6p3"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(512, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgjvg"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(640, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hkxk"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(768, 0, 128, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddwfe"]
+atlas = ExtResource("1_1vlg1")
+region = Rect2(896, 0, 128, 160)
+
 [resource]
 animations = [{
 "frames": [{
@@ -63,5 +95,34 @@ animations = [{
 }],
 "loop": true,
 "name": &"basic_idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phfcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27y1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucye5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owprw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o6p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgjvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hkxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddwfe")
+}],
+"loop": true,
+"name": &"boss_idle",
 "speed": 8.0
 }]

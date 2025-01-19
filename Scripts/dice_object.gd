@@ -1,12 +1,20 @@
 extends Node2D
 class_name dice_object
 
-@export var dice: DiceRes
+@export var dice: dice_stats
 @export var label: Label
 @export var target_check_range: int = 30
 @export var slot_check_range: int = 10
+@export var sprite: Sprite2D
 # @export var overlay: ColorRect
 @export var lockoutBar: TextureProgressBar
+@export var images: dice_images
+@export var dice_class_image: Sprite2D
+
+@onready var _attackSound = $AttackSound as audio_bank
+@onready var _lockedSound = $LockedSound as audio_bank
+@onready var _rollSound = $RollSound as audio_bank
+
 var _lockoutBarMax: int
 var _selected = false
 var _rest_point: Vector2
@@ -18,27 +26,40 @@ var _current_roll: int
 var _used = false
 var _lockoutTime: float = 0
 var _reducingClock: bool = false
+@onready var _dam_calc: damage_calc = get_node("/root/Main/damage_calculator")
+var _doubleRoll: bool = false
 
 var initialized: bool = false
+
+var locked_out: bool:
+	get:
+		return _lockoutTime > 0
 
 func _ready():
 	_rest_nodes = get_tree().get_nodes_in_group("zones")
 
-func rollDice():
+func roll_dice_check():
 	if _used:
 		_lockoutTime -=1
 		_reducingClock = true
 	if _lockoutTime <= 0:
-		_current_roll = dice.rollDice()
-		label.text = str(dice.rollDice())
+		roll_dice()
+		if _warrior_check():
+			_doubleRoll = true
 		_used = false
-		# overlay.color = Color(0,0,0,0)
+
+func roll_dice():
+	_rollSound.play_from_list()
+	_current_roll = dice.rollDice()
+	label.text = str(dice.current_roll)
 
 func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	#implement pickup behaviour
 	if Input.is_action_just_pressed("click") && !_used:
 		_check_closest(false).currentNode = null
 		_selected = true
+	elif Input.is_action_just_pressed("click") && _used:
+		_lockedSound.play_from_list()
 
 
 func _lockout(_lockoutLength):
@@ -52,14 +73,21 @@ func _lockout(_lockoutLength):
 
 func _input(event):
 	#implement dropping behaviour
+	if _dam_calc == null:
+		_dam_calc = get_node("/root/Main/damage_calculator")
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and not _used:
 			if _closest_target != null:
-				_closest_target.damage(dice.current_roll)
+				_dam_calc.attack(dice, _closest_target)
+				_attackSound.play_from_list()
 				_closest_target = null
 				for child in _target_nodes:
 					child.deselect()
-				_lockout(2)
+				if !_warrior_check() || (_warrior_check() && !_doubleRoll):
+					_lockout(dice.lockout_time())
+				else:
+					_doubleRoll = false
+					roll_dice()
 			if _selected:
 				_check_closest().place(self)
 			_selected = false
@@ -130,12 +158,42 @@ func _check_target():
 		closest_target_check = closest_target_check.get_parent()
 	return closest_target_check
 
-func upgrade():
-	var _upgrade_to = dice.upgrade
-	if _upgrade_to == null or _upgrade_to == dice.type:
+func upgrade() -> bool:
+	var _upgradable: bool = dice.upgrade()
+	if _upgradable:
+		set_image()
+		return true
+	else:
 		print("Cannot upgrade further")
 		return false
+
+func changeClass(diceRole: dice_stats.diceClass, roleImage: Texture2D) -> bool:
+	print('Updating class')
+	if dice.role == diceRole:
+		print("failed")
+		return false
 	else:
-		dice.type = _upgrade_to
-		print("dice upgraded!")
+		dice.role = diceRole
+		dice_class_image.texture = roleImage
+		set_image()
+		print("success")
 		return true
+
+func set_image():
+	for output in images.diceSet:
+		if output.type == dice.type && output.role == dice.role:
+			$Sprite2D.texture = output.default_image
+
+func _warrior_check() -> bool:
+	if dice.role == dice_stats.diceClass.Warrior:
+		return true
+	else:
+		return false
+
+func reduce_lockout() -> void:
+	_lockoutTime -= 100
+	if _lockoutTime == 0:
+		_lockoutTime = 0
+
+func refresh_lockout() -> void:
+	_lockoutTime = 0

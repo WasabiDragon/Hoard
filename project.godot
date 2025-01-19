@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="GodotWild77"
+config/name="Hoard"
+config/description="Transform your dice to hold out against the unstoppable deck of cards!"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,6 +25,7 @@ window/size/viewport_height=1080
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://Audio/": "purple",
 "res://Scenes/": "red",
 "res://Scripts/": "blue"
 }

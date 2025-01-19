@@ -12,10 +12,10 @@ func select():
 	for child in get_tree().get_nodes_in_group("zones"):
 		if child.available:
 			child.deselect()
-	colorRect.color = Color(0.823, 0.322, 0.422, 0.145)
+	colorRect.color = Color(1, 1, 1, 0.3)
 	
 func deselect():
-	colorRect.color = Color(0.518, 0.518, 0.518, 0.145)
+	colorRect.color = Color(0.518, 0.518, 0.518, 0)
 
 func place(dropped_node):
 	currentNode = dropped_node

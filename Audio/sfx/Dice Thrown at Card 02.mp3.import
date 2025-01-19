@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0hpsq6qcjg3n"
+path="res://.godot/imported/Dice Thrown at Card 02.mp3-00c016697cfd5ee29aa71b520f36d648.mp3str"
+
+[deps]
+
+source_file="res://Audio/sfx/Dice Thrown at Card 02.mp3"
+dest_files=["res://.godot/imported/Dice Thrown at Card 02.mp3-00c016697cfd5ee29aa71b520f36d648.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

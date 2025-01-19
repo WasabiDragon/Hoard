@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="dice_class" load_steps=2 format=3 uid="uid://kwd773nf7d41"]
+
+[ext_resource type="Script" path="res://Scripts/dice_class.gd" id="1_47vtj"]
+
+[resource]
+script = ExtResource("1_47vtj")
+role = 0
+D4Faces = Array[int]([1, 2, 3, 4])
+D6Faces = Array[int]([0, 0, 0, 6, 12, 18])
+D8Faces = Array[int]([])
+D10Faces = Array[int]([])
+D12Faces = Array[int]([])
+D20Faces = Array[int]([])
+D100Faces = Array[int]([])

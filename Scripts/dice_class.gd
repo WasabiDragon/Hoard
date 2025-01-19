@@ -1,26 +1,27 @@
 extends Resource
-class_name DiceClass
+class_name dice_class
 
-@export var role: DiceRes.diceClass
+@export var role: dice_stats.diceClass
 
 func get_faces():
-	match DiceRes.diceType:
-		DiceRes.diceType.D4: 
+	match dice_stats.diceType:
+		dice_stats.diceType.D4: 
 			return D4Faces
-		DiceRes.diceType.D6: 
+		dice_stats.diceType.D6: 
 			return D6Faces
-		DiceRes.diceType.D8: 
+		dice_stats.diceType.D8: 
 			return D8Faces
-		DiceRes.diceType.D10: 
+		dice_stats.diceType.D10: 
 			return D10Faces
-		DiceRes.diceType.D12: 
+		dice_stats.diceType.D12: 
 			return D12Faces
-		DiceRes.diceType.D20: 
+		dice_stats.diceType.D20: 
 			return D20Faces
-		DiceRes.diceType.D100: 
+		dice_stats.diceType.D100: 
 			return D100Faces
 		_:
 			return null
+
 
 @export var D4Faces: Array[int]
 @export var D6Faces: Array[int]

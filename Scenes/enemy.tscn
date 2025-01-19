@@ -1,16 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dapnl8yk8hmlh"]
+[gd_scene load_steps=12 format=3 uid="uid://dapnl8yk8hmlh"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_fgf3y"]
 [ext_resource type="Script" path="res://Scripts/target_point.gd" id="2_gouca"]
 [ext_resource type="Script" path="res://Scripts/destroy_on_exit.gd" id="3_3at4t"]
 [ext_resource type="Texture2D" uid="uid://k8q3q84681ng" path="res://Assets/cards/deck-of-cards/2.2.png" id="3_wuvae"]
 [ext_resource type="SpriteFrames" uid="uid://t4udq5nu3jbk" path="res://Assets/card_animations.tres" id="5_5yqdx"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x2kl"]
-bg_color = Color(0.482353, 0.482353, 0.482353, 0.419608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgsfv"]
-bg_color = Color(0.81697, 0, 0.21379, 1)
 
 [sub_resource type="Animation" id="Animation_a8vxu"]
 length = 0.001
@@ -49,6 +43,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.741176, 0.121569, 0.145098, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wq8lo"]
@@ -92,18 +98,48 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 
+[sub_resource type="Animation" id="Animation_uxavs"]
+resource_name = "danger"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.262745, 0.235294, 1, 0), Color(0.886275, 0.0705882, 0, 0.729412), Color(0.262745, 0.235294, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_doqbx"]
 _data = {
 "RESET": SubResource("Animation_a8vxu"),
+"danger": SubResource("Animation_uxavs"),
 "idle": SubResource("Animation_wq8lo")
 }
 
-[node name="Enemy" type="Node2D" node_paths=PackedStringArray("healthBar", "sprite", "_animPlayer")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x2kl"]
+bg_color = Color(0.482353, 0.482353, 0.482353, 0.419608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgsfv"]
+bg_color = Color(0.81697, 0, 0.21379, 1)
+
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("healthBar", "sprite", "animatedSprite", "animPlayer", "dangerAnimator")]
 scale = Vector2(2, 2)
 script = ExtResource("1_fgf3y")
 healthBar = NodePath("HealthBar/ProgressBar")
 sprite = NodePath("Sprite2D")
-_animPlayer = NodePath("AnimationPlayer")
+animatedSprite = NodePath("AnimatedSprite2D")
+animPlayer = NodePath("AnimationPlayer")
+dangerAnimator = NodePath("Sprite2D/colorAnim")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(3.2, 4.8)
+script = ExtResource("3_3at4t")
 
 [node name="Marker2D" type="Marker2D" parent="." node_paths=PackedStringArray("color_rect") groups=["targets"]]
 script = ExtResource("2_gouca")
@@ -113,6 +149,12 @@ color_rect = NodePath("../Sprite2D/ColorRect")
 clip_children = 2
 texture_filter = 1
 texture = ExtResource("3_wuvae")
+
+[node name="colorAnim" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_doqbx")
+}
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 anchors_preset = 15
@@ -126,12 +168,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.741176, 0.121569, 0.145098, 0)
-metadata/_edit_use_anchors_ = true
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(1.90735e-06, -1.90735e-06)
-scale = Vector2(3.2, 4.8)
-script = ExtResource("3_3at4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

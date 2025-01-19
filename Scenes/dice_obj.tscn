@@ -1,49 +1,59 @@
-[gd_scene load_steps=11 format=3 uid="uid://nkm488udvi6i"]
+[gd_scene load_steps=21 format=3 uid="uid://nkm488udvi6i"]
 
 [ext_resource type="Script" path="res://Scripts/dice_object.gd" id="1_jji67"]
-[ext_resource type="Script" path="res://Scripts/diceRes.gd" id="2_20nkb"]
-
-[sub_resource type="Resource" id="Resource_7h8ni"]
-script = ExtResource("2_20nkb")
-type = 3
-role = 0
-current_roll = 0
+[ext_resource type="Script" path="res://Scripts/sprite_set.gd" id="2_kbsuk"]
+[ext_resource type="Resource" uid="uid://xdyvlbpxew2t" path="res://Resources/dice_images.tres" id="2_rhagv"]
+[ext_resource type="Script" path="res://Scripts/audio_bank_player.gd" id="4_7nh5j"]
+[ext_resource type="AudioStream" uid="uid://dska5322wa2dg" path="res://Audio/sfx/Dice Thrown at Card 01.mp3" id="5_gtnbb"]
+[ext_resource type="AudioStream" uid="uid://b0hpsq6qcjg3n" path="res://Audio/sfx/Dice Thrown at Card 02.mp3" id="6_8prmk"]
+[ext_resource type="AudioStream" uid="uid://chsoqgn4lvkw6" path="res://Audio/sfx/Dice Thrown at Card 03.mp3" id="7_5uw05"]
+[ext_resource type="AudioStream" uid="uid://cihkwlxdkrx8j" path="res://Audio/sfx/Household Glass Set Down On Table knock-01.wav" id="8_5fhvg"]
+[ext_resource type="AudioStream" uid="uid://cyk31k7v0lkdm" path="res://Audio/sfx/dice_being_rolled_on_table 01.mp3" id="8_o44w5"]
+[ext_resource type="AudioStream" uid="uid://dj8x0m8ihs0qi" path="res://Audio/sfx/Household Glass Set Down On Table knock-02.wav" id="9_m80mh"]
+[ext_resource type="AudioStream" uid="uid://c0dkkommyeuov" path="res://Audio/sfx/dice_being_rolled_on_table 02.mp3" id="9_qcxnk"]
+[ext_resource type="AudioStream" uid="uid://yr6utb51n1bl" path="res://Audio/sfx/dice_being_rolled_on_table 03.mp3" id="10_m7ixq"]
+[ext_resource type="AudioStream" uid="uid://b0ykwq0x3rddh" path="res://Audio/sfx/dice_being_rolled_on_table 04.mp3" id="11_yi5x7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q2gkr"]
 
-[sub_resource type="Gradient" id="Gradient_galyy"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2xqw4"]
-gradient = SubResource("Gradient_galyy")
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iobmd"]
+size = Vector2(96, 96)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfe2l"]
 font_size = 46
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaqn7"]
-size = Vector2(64, 64)
+size = Vector2(96, 96)
 
 [sub_resource type="Gradient" id="Gradient_x8fuk"]
 colors = PackedColorArray(0, 0, 0, 0.533333, 0, 0, 0, 0.533333)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_w80lq"]
 gradient = SubResource("Gradient_x8fuk")
+width = 96
+height = 96
 
-[node name="Dice" type="Node2D" node_paths=PackedStringArray("label", "lockoutBar") groups=["dice"]]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfajn"]
+region = Rect2(0, 0, 96, 96)
+
+[node name="Dice" type="Node2D" node_paths=PackedStringArray("label", "sprite", "lockoutBar", "dice_class_image") groups=["dice"]]
 script = ExtResource("1_jji67")
-dice = SubResource("Resource_7h8ni")
 label = NodePath("Sprite2D/Label")
-target_check_range = 50
+target_check_range = 90
 slot_check_range = 150
+sprite = NodePath("Sprite2D")
 lockoutBar = NodePath("Sprite2D/TextureProgressBar")
+images = ExtResource("2_rhagv")
+dice_class_image = NodePath("class_image")
 
 [node name="DiceAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q2gkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2
-texture = SubResource("GradientTexture2D_2xqw4")
+texture = SubResource("PlaceholderTexture2D_iobmd")
+script = ExtResource("2_kbsuk")
 
 [node name="Label" type="Label" parent="Sprite2D"]
 anchors_preset = 8
@@ -51,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -43.5
-offset_right = -12.0
-offset_bottom = -20.5
+offset_left = -61.0
+offset_top = -80.0
+offset_right = -35.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -66,32 +76,38 @@ vertical_alignment = 1
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_kaqn7")
-
-[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -32.0
-offset_right = -32.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(1, 1, 1, 0)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Sprite2D"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -32.0
-offset_right = -32.0
-offset_bottom = -32.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -48.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 fill_mode = 5
 texture_progress = SubResource("GradientTexture2D_w80lq")
+
+[node name="AttackSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_7nh5j")
+sounds = Array[AudioStream]([ExtResource("5_gtnbb"), ExtResource("6_8prmk"), ExtResource("7_5uw05")])
+
+[node name="LockedSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_7nh5j")
+sounds = Array[AudioStream]([ExtResource("8_5fhvg"), ExtResource("9_m80mh")])
+
+[node name="RollSound" type="AudioStreamPlayer" parent="."]
+script = ExtResource("4_7nh5j")
+sounds = Array[AudioStream]([ExtResource("8_o44w5"), ExtResource("9_qcxnk"), ExtResource("10_m7ixq"), ExtResource("11_yi5x7")])
+
+[node name="class_image" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_sfajn")
+offset = Vector2(0, -96.59)
 
 [connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

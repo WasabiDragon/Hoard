@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="upgrade_images" load_steps=20 format=3 uid="uid://dti4c1xlf20ae"]
+
+[ext_resource type="Script" path="res://Scripts/upgradeImages.gd" id="1_feol6"]
+[ext_resource type="Script" path="res://Scripts/upgrade_image.gd" id="1_lytcu"]
+[ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/upgrade_icons.png" id="2_i7tng"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2mxs"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="Resource" id="Resource_e6vgy"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_x2mxs")
+type = 2
+role = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0vds"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="Resource" id="Resource_5c2gr"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_x0vds")
+type = 0
+role = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4pla"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="Resource" id="Resource_tt8b4"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_g4pla")
+type = 1
+role = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivw5g"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="Resource" id="Resource_l3rja"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_ivw5g")
+type = 1
+role = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lubex"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="Resource" id="Resource_vitho"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_lubex")
+type = 1
+role = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hymho"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 480, 96, 96)
+
+[sub_resource type="Resource" id="Resource_pgjcy"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_hymho")
+type = 1
+role = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34rmf"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 576, 96, 96)
+
+[sub_resource type="Resource" id="Resource_e7h70"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_34rmf")
+type = 1
+role = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6awd"]
+atlas = ExtResource("2_i7tng")
+region = Rect2(0, 672, 96, 96)
+
+[sub_resource type="Resource" id="Resource_6qu1i"]
+script = ExtResource("1_lytcu")
+image = SubResource("AtlasTexture_f6awd")
+type = 1
+role = 5
+
+[resource]
+script = ExtResource("1_feol6")
+images = Array[ExtResource("1_lytcu")]([SubResource("Resource_e6vgy"), SubResource("Resource_5c2gr"), SubResource("Resource_tt8b4"), SubResource("Resource_l3rja"), SubResource("Resource_vitho"), SubResource("Resource_pgjcy"), SubResource("Resource_e7h70"), SubResource("Resource_6qu1i")])

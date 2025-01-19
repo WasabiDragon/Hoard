@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://o8jsthnudy6o"
+path="res://.godot/imported/arcade_game_level_up 03.mp3-f118b4e053d47d261d95f116b7b94233.mp3str"
+
+[deps]
+
+source_file="res://Audio/sfx/arcade_game_level_up 03.mp3"
+dest_files=["res://.godot/imported/arcade_game_level_up 03.mp3-f118b4e053d47d261d95f116b7b94233.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

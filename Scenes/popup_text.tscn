@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ksa6udc11pt5"]
+
+[ext_resource type="Script" path="res://Scripts/popup_text.gd" id="1_4t2ed"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3qt6"]
+font_size = 40
+font_color = Color(0.816697, 0.104196, 0.108141, 1)
+
+[node name="popup_text" type="Label"]
+texture_filter = 1
+offset_right = 78.0
+offset_bottom = 23.0
+text = "TEST TEXT"
+label_settings = SubResource("LabelSettings_o3qt6")
+script = ExtResource("1_4t2ed")

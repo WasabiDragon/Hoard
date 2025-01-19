@@ -1,7 +1,20 @@
 extends Node2D
+class_name droppable_upgrade
 
 var _selected: bool = false
 @export var upgrade_distance = 100
+@export var type: upgradeType
+@export var role: dice_stats.diceClass
+@onready var _audio_bank = $success_sound as audio_bank
+
+enum upgradeType	
+{
+	upgrade,
+	diceClass,
+	extraDie
+}
+
+
 
 func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	#implement pickup behaviour
@@ -25,13 +38,23 @@ func _physics_process(delta):
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 
 func _upgrade_dice():
-	var _target = _check_for_dice(upgrade_distance)
+	var _target = _check_for_slot(upgrade_distance) if type == upgradeType.extraDie else _check_for_dice(upgrade_distance)
 	if _target != null:
-		if _target.upgrade():
-			queue_free()
+		if get_parent().upgrade(_target, type, role):
+			_audio_bank.finished.connect(_destroy_self)
+			_audio_bank.play_from_list()
+
+func _destroy_self():
+	queue_free()
 
 func _check_for_dice(distance):
 	for dice in get_tree().get_nodes_in_group("dice"):
 		if global_position.distance_to(dice.global_position) <= distance:
 			return dice
+	return null
+
+func _check_for_slot(distance):
+	for slot in get_tree().get_nodes_in_group("rolling_slot"):
+		if global_position.distance_to(slot.global_position) <= distance && slot.available:
+			return slot
 	return null

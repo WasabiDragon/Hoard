@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://wpytq45ur3b3"]
+[gd_scene load_steps=7 format=3 uid="uid://wpytq45ur3b3"]
 
 [ext_resource type="Script" path="res://Scripts/droppable_upgrade.gd" id="1_lg7ql"]
+[ext_resource type="Script" path="res://Scripts/audio_bank_player.gd" id="2_x4h7h"]
+[ext_resource type="AudioStream" uid="uid://engbunmnw2d4" path="res://Audio/sfx/game-level-complete by Universfield.mp3" id="3_5yius"]
 
 [sub_resource type="Gradient" id="Gradient_0v4b2"]
 
@@ -10,16 +12,20 @@ gradient = SubResource("Gradient_0v4b2")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jaxt"]
 size = Vector2(64, 64)
 
-[node name="DroppableUpgrade" type="Node2D"]
+[node name="droppable_upgrade" type="Node2D"]
 script = ExtResource("1_lg7ql")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="sprite" type="Sprite2D" parent="."]
 clip_children = 2
 texture = SubResource("GradientTexture2D_7l8sp")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
+[node name="Area2D" type="Area2D" parent="sprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
 shape = SubResource("RectangleShape2D_1jaxt")
 
-[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
+[node name="success_sound" type="AudioStreamPlayer" parent="."]
+script = ExtResource("2_x4h7h")
+sounds = Array[AudioStream]([ExtResource("3_5yius")])
+
+[connection signal="input_event" from="sprite/Area2D" to="." method="_on_area_2d_input_event"]

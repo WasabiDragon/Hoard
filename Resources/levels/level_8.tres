@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="enemy_info_list" load_steps=6 format=3 uid="uid://cu6wo0a2tf5jh"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_info.gd" id="1_tgnnk"]
+[ext_resource type="Script" path="res://Scripts/enemy_info_list.gd" id="2_ul2gv"]
+
+[sub_resource type="Resource" id="Resource_pnyb6"]
+script = ExtResource("1_tgnnk")
+enemies = 2
+bosses = 0
+timeToWait = 1.0
+
+[sub_resource type="Resource" id="Resource_4do3j"]
+script = ExtResource("1_tgnnk")
+enemies = 2
+bosses = 0
+timeToWait = 1.0
+
+[sub_resource type="Resource" id="Resource_whaaa"]
+script = ExtResource("1_tgnnk")
+enemies = 2
+bosses = 0
+timeToWait = 0.0
+
+[resource]
+script = ExtResource("2_ul2gv")
+info_list = Array[ExtResource("1_tgnnk")]([SubResource("Resource_pnyb6"), SubResource("Resource_4do3j"), SubResource("Resource_whaaa")])
