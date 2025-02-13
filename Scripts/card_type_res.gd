@@ -3,10 +3,10 @@ class_name card_type
 
 enum suit
 {
-	Diamond,
-	Heart,
+	Spade,	
 	Club,
-	Spade	
+	Diamond,
+	Heart
 }
 
 @export_range(0,13) var card_number: int

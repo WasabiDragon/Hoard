@@ -1,10 +1,17 @@
 extends Node
 class_name dice_spawner
 
-@export var starting_spawn = 2
+@export var tray: dice_tray
+@export var role_mgr: role_manager
 @onready var _dice_obj = preload("res://Scenes/dice_obj.tscn")
 var _initialized = false
 var _spawnedDice = 1
+
+func _ready():
+	connect_signals()
+
+func connect_signals():
+	signals.restarting.connect(restart)
 
 func _process(_delta):
 	if !_initialized:
@@ -13,7 +20,7 @@ func _process(_delta):
 
 
 func _initialize():
-	for n in starting_spawn:
+	for n in stats.starting_dice:
 		spawn_die()
 	_initialized = true
 
@@ -24,14 +31,9 @@ func spawn_die():
 	instance.dice.Initialize()
 	instance.dice.name = "diceRes_"+str(_spawnedDice)
 	instance.name = "Dice_"+str(_spawnedDice)
-	instance.set_image()
 	_spawnedDice +=1
-	for slot in get_tree().get_nodes_in_group("zones"):
-		if slot.available:
-			instance.global_position = slot.global_position
-			slot.place(instance)
-			print("placed die at: "+str(slot.global_position))
-			break
+	var slot = tray.new_die()
+	instance.global_position = slot.global_position
 	
 func restart():
 	for dice in get_tree().get_nodes_in_group("dice"):
@@ -43,3 +45,7 @@ func restart():
 func refresh_dice():
 	for dice in get_tree().get_nodes_in_group("dice"):
 		dice.refresh_lockout()
+
+func reset_positions():
+	for dice in get_tree().get_nodes_in_group("dice"):
+		dice.reset_position()

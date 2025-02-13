@@ -6,7 +6,6 @@ func _ready():
 	screen_exited.connect(destroy_obj)
 
 func destroy_obj():
-	print("deleting "+name)
 	get_parent().queue_free()
 
 func _process(delta):

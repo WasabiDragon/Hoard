@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="round_info" load_steps=3 format=3 uid="uid://hqb2s3pmtidv"]
+
+[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="1_45ldb"]
+[ext_resource type="Script" path="res://Scripts/round_info.gd" id="2_ylaeb"]
+
+[resource]
+script = ExtResource("2_ylaeb")
+challenge_rating = Array[int]([])
+cards = Array[ExtResource("1_45ldb")]([])

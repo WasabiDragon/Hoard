@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b82j2ccf76fha"]
+
+[ext_resource type="PackedScene" uid="uid://ddssefox1vfwx" path="res://Scenes/drop_area.tscn" id="1_hu1oa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 6
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="drop_area" parent="." groups=["rolling_slot"] instance=ExtResource("1_hu1oa")]

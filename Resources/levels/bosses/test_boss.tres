@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="boss_round" load_steps=6 format=3 uid="uid://bdgi2tw1aa6om"]
+
+[ext_resource type="Script" path="res://Scripts/boss_wave.gd" id="1_oclds"]
+[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="2_dhymi"]
+[ext_resource type="Script" path="res://Scripts/boss_round.gd" id="3_o7qbp"]
+
+[sub_resource type="Resource" id="Resource_fr85v"]
+script = ExtResource("2_dhymi")
+wave = Array[int]([0, 0, 0, 0, 0, 0, 0, 1])
+
+[sub_resource type="Resource" id="Resource_c8srs"]
+script = ExtResource("1_oclds")
+pregenerated = true
+pregen_wave = SubResource("Resource_fr85v")
+challenge_rating = 0
+
+[resource]
+script = ExtResource("3_o7qbp")
+boss_round_name = "Test bosS"
+boss_round_info = Array[ExtResource("1_oclds")]([SubResource("Resource_c8srs")])
+challenge_rating = Array[int]([])
+card_numbers = Array[ExtResource("2_dhymi")]([])
+has_boss = false

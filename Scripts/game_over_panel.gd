@@ -1,15 +1,16 @@
 extends Control
 class_name game_over_panel
 
-@export var timing_panel: timing_controller
+@export var timing_panel: game_controller
 @export var restartButton: Button
 @export var bigWriting: Label
 
 func _ready():
 	restartButton.pressed.connect(replay)
+	signals.game_over.connect(show)
 
 func replay():
-	timing_panel.restart()
+	signals.emit_restarting()
 	hide()
 	bigWriting.text = "GAME OVER"
 	bigWriting.label_settings.font_color = Color.WHITE

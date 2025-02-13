@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dmgihr70jjbsp"]
+
+[ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="1_ipt12"]
+
+[resource]
+default_font = ExtResource("1_ipt12")

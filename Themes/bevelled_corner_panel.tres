@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=3 format=3 uid="uid://d01f1mloufelu"]
+
+[ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="1_fpbbm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys5cn"]
+atlas = ExtResource("1_fpbbm")
+region = Rect2(0, 768, 96, 96)
+
+[resource]
+texture = SubResource("AtlasTexture_ys5cn")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0

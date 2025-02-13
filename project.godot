@@ -13,8 +13,14 @@ config_version=5
 config/name="Hoard"
 config/description="Transform your dice to hold out against the unstoppable deck of cards!"
 run/main_scene="res://Scenes/Main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+stats="*res://Scripts/stats.gd"
+signals="*res://Scripts/signal_bus.gd"
+wave_gen="*res://Scripts/wave_generator.gd"
 
 [display]
 
@@ -36,6 +42,10 @@ zones="all drop areas for the dice"
 rolling_slot=""
 targets=""
 dice=""
+
+[gui]
+
+timers/tooltip_delay_sec=0.3
 
 [input]
 

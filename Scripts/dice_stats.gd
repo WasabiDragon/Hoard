@@ -10,23 +10,23 @@ enum diceType {
 	D20,
 	D100
 }
-enum diceClass{
-	Rogue,
-	Wizard,
-	Warrior,
-	Alchemist,
-	Medic,
-	Holy,
-	Basic
+enum diceRole{
+	Bartend,
+	Cowboy,
+	Deadeye,
+	Demolisher,
+	Deputy,
+	Madam,
+	Quickshot
 }
 
 @export var type: diceType
-@export var role: diceClass
+@export var role: diceRole
 @export var current_roll: int
 
 func Initialize():
 	type = diceType.D4
-	role = diceClass.Basic
+	role = diceRole.Cowboy
 	current_roll = 1
 
 
@@ -80,22 +80,3 @@ func rollDice():
 	var dice_result = (randi() % DiceNumber) +1
 	current_roll = dice_result
 	return dice_result
-
-func lockout_time() -> int:
-	match role:
-		diceClass.Rogue:
-			return 2
-		diceClass.Wizard:
-			return 3
-		diceClass.Warrior:
-			return 3
-		diceClass.Alchemist:
-			return 2
-		diceClass.Medic:
-			return 2
-		diceClass.Holy:
-			return 1
-		diceClass.Basic:
-			return 2
-		_:
-			return 0

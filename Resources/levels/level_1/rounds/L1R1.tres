@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="round_info" load_steps=6 format=3 uid="uid://ca13whkv18w5r"]
+
+[ext_resource type="Resource" uid="uid://bdgi2tw1aa6om" path="res://Resources/levels/bosses/test_boss.tres" id="1_51rna"]
+[ext_resource type="Resource" uid="uid://drgy8paatayjo" path="res://Resources/levels/bosses/Even Pairs.tres" id="1_h56xj"]
+[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="1_my7eg"]
+[ext_resource type="Script" path="res://Scripts/boss_round.gd" id="1_pfpx7"]
+[ext_resource type="Script" path="res://Scripts/round_info.gd" id="2_kecog"]
+
+[resource]
+script = ExtResource("2_kecog")
+challenge_rating = Array[int]([1, 0, 1, 0, 1])
+card_numbers = Array[ExtResource("1_my7eg")]([])
+has_boss = true
+boss = Array[ExtResource("1_pfpx7")]([ExtResource("1_h56xj"), ExtResource("1_51rna")])

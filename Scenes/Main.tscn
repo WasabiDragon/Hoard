@@ -1,57 +1,88 @@
-[gd_scene load_steps=45 format=3 uid="uid://htrdr826wqmu"]
+[gd_scene load_steps=60 format=3 uid="uid://htrdr826wqmu"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_spawner.gd" id="1_cbngh"]
-[ext_resource type="Resource" uid="uid://blboqypb102el" path="res://Resources/Cards/card_images.tres" id="2_ocvfr"]
-[ext_resource type="PackedScene" uid="uid://ddssefox1vfwx" path="res://Scenes/drop_area.tscn" id="3_h2y10"]
-[ext_resource type="Script" path="res://timing_controller.gd" id="3_uk270"]
+[ext_resource type="Texture2D" uid="uid://ks013go2ghyq" path="res://Assets/background.png" id="1_p3t1x"]
+[ext_resource type="Script" path="res://Scripts/dice_tray.gd" id="2_ktqp2"]
+[ext_resource type="Script" path="res://Scripts/game_controller.gd" id="3_uk270"]
+[ext_resource type="Texture2D" uid="uid://bfrqld2mytlgo" path="res://Assets/cards/new_cards/carddeck.png" id="4_h1ave"]
 [ext_resource type="Script" path="res://Scripts/dice_spawner.gd" id="6_ab52g"]
 [ext_resource type="Script" path="res://Scripts/upgrade_choice.gd" id="6_bfvkc"]
-[ext_resource type="Texture2D" uid="uid://ks013go2ghyq" path="res://Assets/background.png" id="6_q28h7"]
+[ext_resource type="Script" path="res://Scripts/game_flow.gd" id="6_muis8"]
 [ext_resource type="Script" path="res://Scenes/level_list.gd" id="7_l1oo3"]
 [ext_resource type="Script" path="res://Scripts/game_over_panel.gd" id="7_mm0j3"]
-[ext_resource type="Resource" uid="uid://dti4c1xlf20ae" path="res://Resources/upgrade_images.tres" id="7_ws3ny"]
+[ext_resource type="Script" path="res://Scripts/enemy_manager.gd" id="7_wg8mf"]
 [ext_resource type="Script" path="res://Scripts/upgrade_drop_controller.gd" id="8_0qttn"]
-[ext_resource type="Script" path="res://Scripts/enemy_info_list.gd" id="8_3io8c"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="8_3io8c"]
 [ext_resource type="Script" path="res://Scripts/upgrade_box.gd" id="8_kewyg"]
-[ext_resource type="Script" path="res://Scripts/start_game.gd" id="9_1kml8"]
-[ext_resource type="Resource" uid="uid://d4ikborktd20g" path="res://Resources/levels/level_1.tres" id="9_d3ci2"]
-[ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/upgrade_icons.png" id="9_s1n0l"]
-[ext_resource type="Script" path="res://Scripts/end_turn.gd" id="10_cc70h"]
-[ext_resource type="Resource" uid="uid://r0g01nsv6fo5" path="res://Resources/levels/level_2.tres" id="10_cvnde"]
-[ext_resource type="Resource" uid="uid://cv7uagdti51or" path="res://Resources/levels/level_3.tres" id="11_6ybjn"]
-[ext_resource type="Resource" uid="uid://d2twgmjyjxrbs" path="res://Resources/levels/level_4.tres" id="13_5tg7h"]
+[ext_resource type="Script" path="res://Scripts/gameplay_nav.gd" id="9_1kml8"]
+[ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="9_s1n0l"]
+[ext_resource type="Resource" uid="uid://b2ornlsl2ffn7" path="res://Resources/levels/level_1/level_1_full.tres" id="13_o0rem"]
 [ext_resource type="Script" path="res://Scripts/damage_calculator.gd" id="13_p3s4g"]
-[ext_resource type="Resource" uid="uid://dimikkxpxfgbo" path="res://Resources/levels/level_5.tres" id="14_1ofho"]
 [ext_resource type="Script" path="res://Scripts/floating_text_controller.gd" id="14_fdjyy"]
-[ext_resource type="Texture2D" uid="uid://brgccbr11jly" path="res://Assets/startGame.png" id="14_w56xd"]
-[ext_resource type="Resource" uid="uid://dv3f3k2itpicf" path="res://Resources/levels/level_6.tres" id="15_2nh4e"]
-[ext_resource type="Texture2D" uid="uid://blsibpb5ir073" path="res://Assets/NextLevel.png" id="16_fp5oc"]
-[ext_resource type="Resource" uid="uid://dn8k3uaok20i4" path="res://Resources/levels/level_7.tres" id="16_ocbel"]
-[ext_resource type="Texture2D" uid="uid://c63su4anq4cqy" path="res://Assets/endTurn.png" id="17_5khjs"]
-[ext_resource type="Resource" uid="uid://cu6wo0a2tf5jh" path="res://Resources/levels/level_8.tres" id="17_q66r4"]
 [ext_resource type="Script" path="res://Scripts/audio_bank_player.gd" id="17_u2ga6"]
-[ext_resource type="Resource" uid="uid://cva7fc0gqrjpk" path="res://Resources/levels/level_9.tres" id="18_1os46"]
 [ext_resource type="AudioStream" uid="uid://dirll1f8fef7s" path="res://Audio/sfx/arcade_game_level_up 01.mp3" id="18_cfut3"]
-[ext_resource type="Resource" uid="uid://cnjkfyfu62bxv" path="res://Resources/levels/level_10.tres" id="19_jqkc4"]
 [ext_resource type="Script" path="res://Scripts/music_player.gd" id="21_a87av"]
 [ext_resource type="AudioStream" uid="uid://ccobb0mq8k0f0" path="res://Audio/music/neon-gaming-by dopestuff.mp3" id="22_hb52p"]
 [ext_resource type="AudioStream" uid="uid://b2ewqwbr6inys" path="res://Audio/music/8-bit by AGS Project pixabay.mp3" id="23_tw0vf"]
+[ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="24_amopx"]
 [ext_resource type="AudioStream" uid="uid://ckv6n4ltgx87a" path="res://Audio/music/elevator-music-calm-smooth-background-chill-hip-hop-funk by SoundGalleryByDmitryTaras.mp3" id="24_y2nnv"]
+[ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="25_o4qd2"]
 [ext_resource type="AudioStream" uid="uid://b562aue14gfy2" path="res://Audio/music/kl-peach-game-over-ii by Lightyeartraxx.mp3" id="25_wlbgg"]
+[ext_resource type="Script" path="res://Scripts/role_manager.gd" id="28_gxivi"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/cowboy.gd" id="29_4eewf"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/bartend.gd" id="29_c0j8d"]
+[ext_resource type="Texture2D" uid="uid://bn86v80avvegk" path="res://Assets/Dice/AlchemistSet.png" id="31_h6pw0"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/Madam.gd" id="33_btrct"]
+[ext_resource type="Texture2D" uid="uid://d07qctp1c0mig" path="res://Assets/Dice/DiceSet.png" id="33_fg2al"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/deputy.gd" id="34_8vbgj"]
+[ext_resource type="Texture2D" uid="uid://g5n0jnaocydm" path="res://Assets/Dice/RogueSet.png" id="35_2hbly"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/gunslinger.gd" id="35_pqrr1"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/deadeye.gd" id="36_kosyg"]
+[ext_resource type="Script" path="res://Scripts/role_information_collection/demolisher.gd" id="37_hdulm"]
+[ext_resource type="Texture2D" uid="uid://ck1sro0k4h3kv" path="res://Assets/Dice/WizardSet.png" id="37_rewp0"]
+[ext_resource type="Texture2D" uid="uid://bipgp77lle8x8" path="res://Assets/Dice/WarriorSet.png" id="39_8yo0w"]
+[ext_resource type="Texture2D" uid="uid://d3m7u6ct0415g" path="res://Assets/Dice/HealerSet.png" id="41_m3ar2"]
+[ext_resource type="Script" path="res://Scripts/stats.gd" id="41_x47is"]
+[ext_resource type="Texture2D" uid="uid://ctbwdrdpqm8uo" path="res://Assets/Dice/PriestSet.png" id="43_f4r71"]
+[ext_resource type="Script" path="res://Scripts/boss_text.gd" id="44_wi0dd"]
+[ext_resource type="Script" path="res://Scripts/auto_size_label.gd" id="45_utwtp"]
+[ext_resource type="Theme" uid="uid://bm1im51gfx7nj" path="res://Themes/upgrade_button_theme.tres" id="48_r4rjq"]
 
-[sub_resource type="Gradient" id="Gradient_4x4eg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8wn5"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 480, 96, 96)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_u1m25"]
-gradient = SubResource("Gradient_4x4eg")
-width = 1080
-height = 2
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rsrb"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s675"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux7y6"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y6jj"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 576, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shorl"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 672, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li617"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1iia"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8f5x8"]
 atlas = ExtResource("9_s1n0l")
 region = Rect2(0, 0, 96, 96)
-
-[sub_resource type="LabelSettings" id="LabelSettings_e73bb"]
-font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bs5s"]
 bg_color = Color(0.0361009, 0.0361009, 0.0361009, 1)
@@ -59,113 +90,53 @@ bg_color = Color(0.0361009, 0.0361009, 0.0361009, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_m5ubk"]
 font_size = 200
 
+[sub_resource type="Theme" id="Theme_mff33"]
+default_font = ExtResource("25_o4qd2")
+
 [node name="Main" type="Node"]
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
+[node name="Table" type="Node" parent="."]
+
+[node name="spawn_parent" type="Node" parent="Table"]
+
+[node name="backdrop" type="NinePatchRect" parent="Table"]
+z_index = -150
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_q28h7")
+texture = ExtResource("1_p3t1x")
 region_rect = Rect2(0, 1, 768, 767)
-patch_margin_left = 50
+patch_margin_left = 200
 patch_margin_top = 50
-patch_margin_right = 50
+patch_margin_right = 200
 patch_margin_bottom = 50
 
-[node name="Control" type="HBoxContainer" parent="Control"]
+[node name="dice_tray" type="HBoxContainer" parent="Table"]
 custom_minimum_size = Vector2(0, 192.01)
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("2_ktqp2")
 
-[node name="Control" type="Control" parent="Control/Control"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_filter = 1
-
-[node name="drop_area" parent="Control/Control/Control" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
-
-[node name="Control2" type="Control" parent="Control/Control"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_filter = 1
-
-[node name="drop_area" parent="Control/Control/Control2" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
-
-[node name="Control3" type="Control" parent="Control/Control"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_filter = 1
-
-[node name="drop_area" parent="Control/Control/Control3" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
-
-[node name="Control4" type="Control" parent="Control/Control"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_filter = 1
-
-[node name="drop_area" parent="Control/Control/Control4" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
-
-[node name="Control5" type="Control" parent="Control/Control"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-mouse_filter = 1
-
-[node name="drop_area" parent="Control/Control/Control5" groups=["rolling_slot"] instance=ExtResource("3_h2y10")]
-
-[node name="enemy_spawner" type="Node" parent="Control" node_paths=PackedStringArray("spawn_parent", "tim_con", "_spawn_area", "dead_line")]
-unique_name_in_owner = true
-script = ExtResource("1_cbngh")
-spawn_parent = NodePath("spawn_parent")
-tim_con = NodePath("../../timing_controller")
-_spawn_area = NodePath("spawn_width")
-card_list = ExtResource("2_ocvfr")
-dead_line = NodePath("dead_line")
-
-[node name="spawn_width" type="Control" parent="Control/enemy_spawner"]
-layout_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-grow_horizontal = 2
-
-[node name="spawn_parent" type="Node" parent="Control/enemy_spawner"]
-
-[node name="dead_line" type="Sprite2D" parent="Control/enemy_spawner"]
-visible = false
-texture = SubResource("GradientTexture2D_u1m25")
-centered = false
-
-[node name="dice_spawner" type="Node" parent="Control"]
+[node name="dice_spawner" type="Node" parent="Table" node_paths=PackedStringArray("tray", "role_mgr")]
 unique_name_in_owner = true
 script = ExtResource("6_ab52g")
+tray = NodePath("../dice_tray")
+role_mgr = NodePath("../../game_controller/role_manager")
 
-[node name="upgrade_drop_controller" type="Node" parent="Control" node_paths=PackedStringArray("spawn_pos", "start_button")]
+[node name="upgrade_drop_controller" type="Node" parent="Table" node_paths=PackedStringArray("spawn_pos", "next_round_button")]
 script = ExtResource("8_0qttn")
 spawn_pos = NodePath("Control/Control/Marker2D")
-start_button = NodePath("../../UI/start_game")
+next_round_button = NodePath("../../UI/Buttons/next_round_container")
 
-[node name="Control" type="Control" parent="Control/upgrade_drop_controller"]
+[node name="Control" type="Control" parent="Table/upgrade_drop_controller"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -174,41 +145,227 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="Control/upgrade_drop_controller/Control"]
+[node name="Control" type="Control" parent="Table/upgrade_drop_controller/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -869.0
+offset_top = 7.0
+offset_right = -869.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Marker2D" type="Marker2D" parent="Control/upgrade_drop_controller/Control/Control"]
+[node name="Marker2D" type="Marker2D" parent="Table/upgrade_drop_controller/Control/Control"]
+position = Vector2(16, 13)
 
-[node name="timing_controller" type="Node" parent="." node_paths=PackedStringArray("upgrades", "game_over_screen", "_dice_spawner", "musicPlayer")]
+[node name="spawn_markers" type="Control" parent="Table"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="perspective_zones" type="Control" parent="Table/spawn_markers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="end_zone_container_perspective" type="MarginContainer" parent="Table/spawn_markers/perspective_zones"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 350
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 190
+
+[node name="end_zone" type="Control" parent="Table/spawn_markers/perspective_zones/end_zone_container_perspective"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="spawn_zone_container_perspective" type="MarginContainer" parent="Table/spawn_markers/perspective_zones"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 800
+theme_override_constants/margin_top = 350
+theme_override_constants/margin_right = 800
+theme_override_constants/margin_bottom = 190
+
+[node name="spawn_zone" type="Control" parent="Table/spawn_markers/perspective_zones/spawn_zone_container_perspective"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="flat_zones" type="Control" parent="Table/spawn_markers"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="both_zone_container_flat" type="MarginContainer" parent="Table/spawn_markers/flat_zones"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 190
+
+[node name="enemy_zone" type="Control" parent="Table/spawn_markers/flat_zones/both_zone_container_flat"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="game_controller" type="Node" parent="." node_paths=PackedStringArray("flow")]
 unique_name_in_owner = true
 script = ExtResource("3_uk270")
-diceSpeed = 3.0
-enemySpeed = 3.0
-upgrades = NodePath("../UI/upgrade_choice")
-game_over_screen = NodePath("../UI/game_over_panel")
-_dice_spawner = NodePath("../Control/dice_spawner")
-musicPlayer = NodePath("../musicPlayer")
+flow = NodePath("game_flow")
 
-[node name="level_list" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("7_l1oo3")
-level_list = Array[ExtResource("8_3io8c")]([ExtResource("9_d3ci2"), ExtResource("10_cvnde"), ExtResource("11_6ybjn"), ExtResource("13_5tg7h"), ExtResource("14_1ofho"), ExtResource("15_2nh4e"), ExtResource("16_ocbel"), ExtResource("17_q66r4"), ExtResource("18_1os46"), ExtResource("19_jqkc4")])
-
-[node name="damage_calculator" type="Node" parent="." node_paths=PackedStringArray("_dice_spawner", "float_text", "timings")]
+[node name="damage_calculator" type="Node" parent="game_controller" node_paths=PackedStringArray("float_text", "timings", "role_mgr")]
 unique_name_in_owner = true
 script = ExtResource("13_p3s4g")
-_dice_spawner = NodePath("../Control/dice_spawner")
 crit_chance = 30.0
-float_text = NodePath("../floating_text")
-timings = NodePath("../timing_controller")
+float_text = NodePath("../../floating_text")
+timings = NodePath("..")
+role_mgr = NodePath("../role_manager")
+
+[node name="game_flow" type="Node" parent="game_controller" node_paths=PackedStringArray("upgrades", "game_over_screen", "musicPlayer", "enemy_mgr")]
+script = ExtResource("6_muis8")
+upgrades = NodePath("../../UI/upgrade_choice")
+game_over_screen = NodePath("../../UI/game_over_panel")
+musicPlayer = NodePath("../musicPlayer")
+enemy_mgr = NodePath("../enemy_manager")
+
+[node name="enemy_manager" type="Node" parent="game_controller" node_paths=PackedStringArray("_spawner")]
+script = ExtResource("7_wg8mf")
+_spawner = NodePath("../enemy_spawner")
+
+[node name="enemy_spawner" type="Node" parent="game_controller" node_paths=PackedStringArray("spawn_parent", "tim_con", "_spawn_area", "_end_area")]
+unique_name_in_owner = true
+script = ExtResource("1_cbngh")
+spawn_parent = NodePath("../../Table/spawn_parent")
+tim_con = NodePath("..")
+_spawn_area = NodePath("../../Table/spawn_markers/flat_zones/both_zone_container_flat/enemy_zone")
+_end_area = NodePath("../../Table/spawn_markers/flat_zones/both_zone_container_flat/enemy_zone")
+card_sprite_sheet = ExtResource("4_h1ave")
+default_scale = 1.8
+
+[node name="level_list" type="Node" parent="game_controller"]
+unique_name_in_owner = true
+script = ExtResource("7_l1oo3")
+levels = Array[ExtResource("8_3io8c")]([ExtResource("13_o0rem")])
+
+[node name="musicPlayer" type="AudioStreamPlayer" parent="game_controller"]
+script = ExtResource("21_a87av")
+debug_mute_all = true
+gameMusicList = Array[AudioStream]([ExtResource("22_hb52p"), ExtResource("23_tw0vf")])
+menuMusicList = Array[AudioStream]([ExtResource("24_y2nnv")])
+gameOverMusicList = Array[AudioStream]([ExtResource("25_wlbgg")])
+
+[node name="role_manager" type="Node" parent="game_controller" node_paths=PackedStringArray("damageCalculator")]
+script = ExtResource("28_gxivi")
+damageCalculator = NodePath("../damage_calculator")
+
+[node name="Bartend" type="Node" parent="game_controller/role_manager"]
+script = ExtResource("29_c0j8d")
+_defaultBurnDuration = 2
+role_text = "ROLE: Burns the target for 2 turns, repeating your current damage."
+upgrade_text = "Burns for additional turns. Current total is 2 + LVL."
+role_color = Color(0, 0.506079, 0.868159, 1)
+role_image = SubResource("AtlasTexture_u8wn5")
+dice_sprites = ExtResource("31_h6pw0")
+sprite_size = 96
+
+[node name="Cowboy (basic)" type="Node" parent="game_controller/role_manager"]
+script = ExtResource("29_4eewf")
+role = 1
+upgrade_text = "Does LVL extra damage."
+role_color = Color(0, 0.505882, 0.866667, 1)
+dice_sprites = ExtResource("33_fg2al")
+sprite_size = 96
+
+[node name="Deadeye" type="Node" parent="game_controller/role_manager"]
+script = ExtResource("36_kosyg")
+role = 2
+damage_mult = 2.0
+role_text = "ROLE: Deals double damage, but you are unable to see the die's value."
+upgrade_text = "Increase damage multiplier to LVLx."
+role_color = Color(0, 0.505882, 0.866667, 1)
+role_image = SubResource("AtlasTexture_0rsrb")
+dice_sprites = ExtResource("35_2hbly")
+sprite_size = 96
+
+[node name="Demolisher" type="Node" parent="game_controller/role_manager" node_paths=PackedStringArray("enemy_spawner")]
+script = ExtResource("37_hdulm")
+enemy_spawner = NodePath("../../enemy_spawner")
+role = 3
+dice_cooldown = 3
+role_text = "ROLE: Deals damage to all adjacent enemies in addition to your target."
+upgrade_text = "Range is increased to LVL."
+role_color = Color(0, 0.505882, 0.866667, 1)
+role_image = SubResource("AtlasTexture_6s675")
+dice_sprites = ExtResource("37_rewp0")
+sprite_size = 96
+
+[node name="Deputy" type="Node" parent="game_controller/role_manager"]
+script = ExtResource("34_8vbgj")
+role = 4
+dice_cooldown = 3
+role_text = "ROLE: Fires multiple times on the same turn before being locked out."
+upgrade_text = "Allows for LVL additional hits after the first strike."
+role_color = Color(0, 0.505882, 0.866667, 1)
+role_image = SubResource("AtlasTexture_ux7y6")
+dice_sprites = ExtResource("39_8yo0w")
+sprite_size = 96
+
+[node name="Madam" type="Node" parent="game_controller/role_manager" node_paths=PackedStringArray("_dice_spawner")]
+script = ExtResource("33_btrct")
+_dice_spawner = NodePath("../../../Table/dice_spawner")
+role = 5
+role_text = "ROLE: Reduces the lockout period for another die."
+upgrade_text = "Reduces LVL other lockout(s) per use."
+role_color = Color(0, 0.505882, 0.866667, 1)
+role_image = SubResource("AtlasTexture_6y6jj")
+dice_sprites = ExtResource("41_m3ar2")
+sprite_size = 96
+
+[node name="Quickshot" type="Node" parent="game_controller/role_manager"]
+script = ExtResource("35_pqrr1")
+role = 6
+dice_cooldown = 1
+role_text = "ROLE: Can be fired every turn, but unable to target enemies far away."
+role_color = Color(0, 0.505882, 0.866667, 1)
+role_image = SubResource("AtlasTexture_shorl")
+dice_sprites = ExtResource("43_f4r71")
+sprite_size = 96
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -220,68 +377,141 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
-[node name="start_game" type="TextureButton" parent="UI" node_paths=PackedStringArray("overlay", "endTurnButton")]
+[node name="Buttons" type="Control" parent="UI" node_paths=PackedStringArray("startButton", "nextRoundButton", "endTurnButton")]
 clip_children = 2
 texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("9_1kml8")
+startButton = NodePath("start_game_container/StartGame")
+nextRoundButton = NodePath("next_round_container/NextRound")
+endTurnButton = NodePath("end_turn_container/end_turn")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.294118)
+
+[node name="start_game_container" type="PanelContainer" parent="UI/Buttons"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -307.0
-offset_top = -198.0
-offset_right = 307.0
-offset_bottom = -89.0
+offset_left = -400.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("14_w56xd")
-script = ExtResource("9_1kml8")
-start_image = ExtResource("14_w56xd")
-next_level_image = ExtResource("16_fp5oc")
-overlay = NodePath("ColorRect")
-endTurnButton = NodePath("../end_turn")
+mouse_filter = 2
+theme = ExtResource("24_amopx")
 
-[node name="ColorRect" type="ColorRect" parent="UI/start_game"]
-visible = false
+[node name="StartGame" type="Button" parent="UI/Buttons/start_game_container"]
+layout_mode = 2
+theme = ExtResource("24_amopx")
+theme_override_constants/h_separation = 370
+theme_override_fonts/font = ExtResource("25_o4qd2")
+theme_override_font_sizes/font_size = 50
+
+[node name="StartGameTxt" type="Label" parent="UI/Buttons/start_game_container/StartGame"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-color = Color(0, 0, 0, 0.294118)
+theme_override_constants/shadow_offset_x = 0
+theme_override_font_sizes/font_size = 201
+text = "Start gamE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="end_turn" type="TextureButton" parent="UI" node_paths=PackedStringArray("overlay")]
+[node name="next_round_container" type="PanelContainer" parent="UI/Buttons"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("24_amopx")
+
+[node name="NextRound" type="Button" parent="UI/Buttons/next_round_container"]
+layout_mode = 2
+theme = ExtResource("24_amopx")
+theme_override_constants/h_separation = 370
+theme_override_fonts/font = ExtResource("25_o4qd2")
+theme_override_font_sizes/font_size = 50
+
+[node name="NextRoundTxt" type="Label" parent="UI/Buttons/next_round_container/NextRound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 201
+text = "Next rounD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="end_turn_container" type="PanelContainer" parent="UI/Buttons"]
 visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 90.0
-offset_top = -295.0
-offset_right = 531.0
-offset_bottom = -186.0
+offset_left = 61.97
+offset_top = -468.45
+offset_right = 233.61
+offset_bottom = -263.41
 grow_vertical = 0
-texture_normal = ExtResource("17_5khjs")
-script = ExtResource("10_cc70h")
-overlay = NodePath("ColorRect")
+mouse_filter = 2
+theme = ExtResource("24_amopx")
 
-[node name="ColorRect" type="ColorRect" parent="UI/end_turn"]
-visible = false
+[node name="end_turn" type="Button" parent="UI/Buttons/end_turn_container"]
+layout_mode = 2
+theme = ExtResource("24_amopx")
+theme_override_constants/h_separation = 370
+theme_override_fonts/font = ExtResource("25_o4qd2")
+theme_override_font_sizes/font_size = 50
+
+[node name="end_turnTxt" type="Label" parent="UI/Buttons/end_turn_container/end_turn"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
-color = Color(0, 0, 0, 0.294118)
+theme_override_font_sizes/font_size = 81
+text = "EnD 
+TurN"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="upgrade_choice" type="MarginContainer" parent="UI" node_paths=PackedStringArray("upgrade_panel", "role_panel", "extra_die_panel", "drops", "endTurnButton")]
+[node name="upgrade_choice" type="MarginContainer" parent="UI" node_paths=PackedStringArray("panels", "drops", "endTurnButton", "role_mgr")]
 visible = false
 custom_minimum_size = Vector2(0, 600)
 layout_mode = 1
@@ -293,27 +523,89 @@ offset_top = -84.0
 offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 80
 script = ExtResource("6_bfvkc")
-upgrade_panel = NodePath("HBoxContainer/upgrade")
-role_panel = NodePath("HBoxContainer/new_role")
-extra_die_panel = NodePath("HBoxContainer/extra_dice")
-all_images = ExtResource("7_ws3ny")
-drops = NodePath("../../Control/upgrade_drop_controller")
-endTurnButton = NodePath("../end_turn")
+panels = [NodePath("HBoxContainer/upgrade"), NodePath("HBoxContainer/new_role"), NodePath("HBoxContainer/extra_dice")]
+dice_upgrade_image = SubResource("AtlasTexture_li617")
+extra_die_image = SubResource("AtlasTexture_p1iia")
+drops = NodePath("../../Table/upgrade_drop_controller")
+endTurnButton = NodePath("../Buttons/end_turn_container")
+role_mgr = NodePath("../../game_controller/role_manager")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/upgrade_choice"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
+
+[node name="new_role" type="Button" parent="UI/upgrade_choice/HBoxContainer" node_paths=PackedStringArray("text_box", "image_box")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("48_r4rjq")
+script = ExtResource("8_kewyg")
+text_box = NodePath("MarginContainer/VBoxContainer/Container/Label")
+image_box = NodePath("MarginContainer/VBoxContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/upgrade_choice/HBoxContainer/new_role"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(196, 196)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8f5x8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Container" type="Control" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Label" type="RichTextLabel" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer/VBoxContainer/Container"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]test text
+this is if i type[\\n]more too
+hello hello hello
+it should expand both ways
+that's magical
+i love it"
+fit_content = true
 
 [node name="upgrade" type="Button" parent="UI/upgrade_choice/HBoxContainer" node_paths=PackedStringArray("text_box", "image_box")]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("48_r4rjq")
 script = ExtResource("8_kewyg")
-text_box = NodePath("MarginContainer/VBoxContainer/Label")
+text_box = NodePath("MarginContainer/VBoxContainer/Container/Label")
 image_box = NodePath("MarginContainer/VBoxContainer/TextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/upgrade_choice/HBoxContainer/upgrade"]
@@ -340,20 +632,38 @@ texture = SubResource("AtlasTexture_8f5x8")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="UI/upgrade_choice/HBoxContainer/upgrade/MarginContainer/VBoxContainer"]
+[node name="Container" type="Control" parent="UI/upgrade_choice/HBoxContainer/upgrade/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
-text = "Upgrade a dice to the next tier"
-label_settings = SubResource("LabelSettings_e73bb")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Label" type="RichTextLabel" parent="UI/upgrade_choice/HBoxContainer/upgrade/MarginContainer/VBoxContainer/Container"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]test text
+this is if i type more too
+it should expand both ways
+that's magical
+i love it"
+fit_content = true
 
 [node name="extra_dice" type="Button" parent="UI/upgrade_choice/HBoxContainer" node_paths=PackedStringArray("text_box", "image_box")]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("48_r4rjq")
 script = ExtResource("8_kewyg")
-text_box = NodePath("MarginContainer/VBoxContainer/Label")
+text_box = NodePath("MarginContainer/VBoxContainer/Container/Label")
 image_box = NodePath("MarginContainer/VBoxContainer/TextureRect")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/upgrade_choice/HBoxContainer/extra_dice"]
@@ -380,54 +690,31 @@ texture = SubResource("AtlasTexture_8f5x8")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="UI/upgrade_choice/HBoxContainer/extra_dice/MarginContainer/VBoxContainer"]
+[node name="Container" type="Control" parent="UI/upgrade_choice/HBoxContainer/extra_dice/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 6
-text = "Upgrade a dice to the next tier"
-label_settings = SubResource("LabelSettings_e73bb")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
 
-[node name="new_role" type="Button" parent="UI/upgrade_choice/HBoxContainer" node_paths=PackedStringArray("text_box", "image_box")]
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("8_kewyg")
-text_box = NodePath("MarginContainer/VBoxContainer/Label")
-image_box = NodePath("MarginContainer/VBoxContainer/TextureRect")
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/upgrade_choice/HBoxContainer/new_role"]
+[node name="Label" type="RichTextLabel" parent="UI/upgrade_choice/HBoxContainer/extra_dice/MarginContainer/VBoxContainer/Container"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(192, 96)
-layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 3
-texture = SubResource("AtlasTexture_8f5x8")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Label" type="Label" parent="UI/upgrade_choice/HBoxContainer/new_role/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Upgrade a dice to the next tier"
-label_settings = SubResource("LabelSettings_e73bb")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]test text
+this is if i type more too
+it should expand both ways
+that's magical
+i love it"
+fit_content = true
 
 [node name="upgradeSound" type="AudioStreamPlayer" parent="UI/upgrade_choice"]
 script = ExtResource("17_u2ga6")
@@ -441,9 +728,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("7_mm0j3")
-timing_panel = NodePath("../../timing_controller")
+timing_panel = NodePath("../../game_controller")
 restartButton = NodePath("Panel/VBoxContainer/try again")
 bigWriting = NodePath("Panel/VBoxContainer/game over")
 
@@ -454,6 +741,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7bs5s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/game_over_panel/Panel"]
@@ -463,6 +751,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="game over" type="Label" parent="UI/game_over_panel/Panel/VBoxContainer"]
@@ -478,12 +767,63 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 80
 text = " play again? "
 
+[node name="BossText" type="Control" parent="UI" node_paths=PackedStringArray("text_spot")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("44_wi0dd")
+text_spot = NodePath("MarginContainer/AutoSizeLabel")
+title_card_time = 3.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/BossText"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="AutoSizeLabel" type="Label" parent="UI/BossText/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_mff33")
+theme_override_font_sizes/font_size = 478
+text = "Hello there"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("45_utwtp")
+max_font_size = 500
+
 [node name="floating_text" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("14_fdjyy")
 
-[node name="musicPlayer" type="AudioStreamPlayer" parent="."]
-script = ExtResource("21_a87av")
-gameMusicList = Array[AudioStream]([ExtResource("22_hb52p"), ExtResource("23_tw0vf")])
-menuMusicList = Array[AudioStream]([ExtResource("24_y2nnv")])
-gameOverMusicList = Array[AudioStream]([ExtResource("25_wlbgg")])
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("41_x47is")
+
+[node name="TO DO" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "- FX of different dice dmg
+- FX of different class dice (background anims)
+- Maybe better enemeis/art
+- balance dice
+- more upgrades
+- lite-tree (purchase more starting slots, better starting dice etc)
+- more enemy types
+- level generation
+- bosses!"

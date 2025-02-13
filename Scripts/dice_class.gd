@@ -1,7 +1,7 @@
 extends Resource
 class_name dice_class
 
-@export var role: dice_stats.diceClass
+@export var role: dice_stats.diceRole
 
 func get_faces():
 	match dice_stats.diceType:
