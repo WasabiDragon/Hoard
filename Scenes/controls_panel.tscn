@@ -1,0 +1,276 @@
+[gd_scene load_steps=17 format=3 uid="uid://bmpoey2ux3x21"]
+
+[ext_resource type="Script" uid="uid://bcwy4ku4a0mvl" path="res://Scripts/controls_panel.gd" id="1_tngty"]
+[ext_resource type="Texture2D" uid="uid://cucbj0qctsit6" path="res://Assets/UI/Button_icons/space.png" id="2_vh77i"]
+[ext_resource type="Theme" uid="uid://bbsr1ex65hgta" path="res://Themes/UI_Simple.tres" id="3_tbpnw"]
+[ext_resource type="Texture2D" uid="uid://bq3wje25a54nw" path="res://Assets/UI/Button_icons/1.png" id="4_oxekn"]
+[ext_resource type="Texture2D" uid="uid://u7m6cxgddc3h" path="res://Assets/UI/Button_icons/2.png" id="5_4i2ev"]
+[ext_resource type="Texture2D" uid="uid://cewgmmnjw0i40" path="res://Assets/UI/Button_icons/3.png" id="6_1a1hu"]
+[ext_resource type="Texture2D" uid="uid://clt71c4xymytg" path="res://Assets/UI/Button_icons/4.png" id="7_a6r6j"]
+[ext_resource type="Texture2D" uid="uid://dpau7cp6r2db4" path="res://Assets/UI/Button_icons/5.png" id="8_8pr46"]
+[ext_resource type="Texture2D" uid="uid://8pe5hpbr0uxk" path="res://Assets/UI/Button_icons/6.png" id="9_4id8m"]
+[ext_resource type="Texture2D" uid="uid://ctvi2p74convh" path="res://Assets/UI/Button_icons/7.png" id="10_40p5r"]
+[ext_resource type="Texture2D" uid="uid://pv2whauoc6ir" path="res://Assets/UI/Button_icons/8.png" id="11_bgbak"]
+[ext_resource type="Texture2D" uid="uid://d1bl6xc24n1ia" path="res://Assets/UI/Button_icons/9.png" id="12_ccuee"]
+[ext_resource type="Texture2D" uid="uid://bxxohw5177jwd" path="res://Assets/UI/Button_icons/mouse sheet.png" id="13_6sdl2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tngty"]
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr2cg"]
+atlas = ExtResource("13_6sdl2")
+region = Rect2(230, 12, 140, 201)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqy0v"]
+atlas = ExtResource("13_6sdl2")
+region = Rect2(830, 12, 140, 201)
+
+[node name="ControlsPanel" type="PanelContainer"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -436.0
+offset_bottom = 436.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tngty")
+script = ExtResource("1_tngty")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ControlsTip1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ControlsTip1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ControlsTip1/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip1/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_vh77i")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ControlsTip1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tbpnw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "- Confirm / End Turn"
+vertical_alignment = 1
+
+[node name="ControlsTip2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ControlsTip2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_oxekn")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_4i2ev")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_1a1hu")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("7_a6r6j")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_8pr46")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect6" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("9_4id8m")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect7" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("10_40p5r")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect8" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_bgbak")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="TextureRect9" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_ccuee")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ControlsTip2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tbpnw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "- Select/Deselect dice"
+vertical_alignment = 1
+
+[node name="ControlsTip3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ControlsTip3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ControlsTip3/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip3/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kr2cg")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ControlsTip3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tbpnw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "- Use selected die / menu navigation"
+vertical_alignment = 1
+
+[node name="ControlsTip4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ControlsTip4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ControlsTip4/HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip4/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_kr2cg")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/ControlsTip4/HBoxContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_qqy0v")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ControlsTip4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tbpnw")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "- Grab and drag to also use dice"
+vertical_alignment = 1

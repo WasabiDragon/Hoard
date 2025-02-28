@@ -1,0 +1,79 @@
+[gd_resource type="Resource" script_class="level" load_steps=19 format=3 uid="uid://b5ynp2jrui87y"]
+
+[ext_resource type="Script" uid="uid://d0klbo0wbciun" path="res://Scripts/resources/level.gd" id="1_rv0r5"]
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="2_12p5a"]
+[ext_resource type="Resource" uid="uid://r8kp4egntgpc" path="res://Resources/levels/testing/test_round.tres" id="3_qp1w4"]
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="4_mqjb5"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="5_ohb8q"]
+[ext_resource type="Resource" uid="uid://bdgi2tw1aa6om" path="res://Resources/levels/bosses/test_boss.tres" id="5_u1gp0"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="6_ohb8q"]
+
+[sub_resource type="Resource" id="Resource_bwxsh"]
+script = ExtResource("5_ohb8q")
+type = 1
+identifier = 1
+
+[sub_resource type="Resource" id="Resource_mofkt"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_vcxtx"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_cjsv7"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_4y4c1"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_mrm8o"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_oje3a"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_grhbd"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_h736b"]
+script = ExtResource("6_ohb8q")
+wave = Array[ExtResource("5_ohb8q")]([SubResource("Resource_bwxsh"), SubResource("Resource_mofkt"), SubResource("Resource_vcxtx"), SubResource("Resource_cjsv7"), SubResource("Resource_4y4c1"), SubResource("Resource_mrm8o"), SubResource("Resource_oje3a"), SubResource("Resource_grhbd")])
+metadata/_custom_type_script = ExtResource("6_ohb8q")
+
+[sub_resource type="Resource" id="Resource_qjch4"]
+script = ExtResource("2_12p5a")
+has_rewards = false
+round_type = 1
+challenge_rating = Array[int]([])
+card_numbers = Array[ExtResource("6_ohb8q")]([SubResource("Resource_h736b")])
+has_boss = false
+boss = Array[ExtResource("4_mqjb5")]([])
+metadata/_custom_type_script = ExtResource("2_12p5a")
+
+[sub_resource type="Resource" id="Resource_abcy7"]
+script = ExtResource("2_12p5a")
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([1])
+card_numbers = Array[ExtResource("6_ohb8q")]([])
+has_boss = true
+boss = Array[ExtResource("4_mqjb5")]([ExtResource("5_u1gp0")])
+metadata/_custom_type_script = ExtResource("2_12p5a")
+
+[resource]
+script = ExtResource("1_rv0r5")
+rounds = Array[ExtResource("2_12p5a")]([SubResource("Resource_qjch4"), ExtResource("3_qp1w4"), SubResource("Resource_abcy7")])
+metadata/_custom_type_script = ExtResource("1_rv0r5")

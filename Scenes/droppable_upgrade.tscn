@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://wpytq45ur3b3"]
+[gd_scene load_steps=13 format=3 uid="uid://wpytq45ur3b3"]
 
-[ext_resource type="Script" path="res://Scripts/droppable_upgrade.gd" id="1_lg7ql"]
+[ext_resource type="Script" uid="uid://bq3egnii2e6ys" path="res://Scripts/droppable_upgrade.gd" id="1_lg7ql"]
 [ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="2_34ut0"]
-[ext_resource type="Script" path="res://Scripts/audio_bank_player.gd" id="2_x4h7h"]
+[ext_resource type="Script" uid="uid://b4spnu3gjp87l" path="res://Scripts/audio_bank_player.gd" id="2_x4h7h"]
 [ext_resource type="AudioStream" uid="uid://engbunmnw2d4" path="res://Audio/sfx/game-level-complete by Universfield.mp3" id="3_5yius"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2scmt"]
@@ -31,6 +31,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.796078, 0.752941, 0.345098, 0.415686)]
+}
 
 [sub_resource type="Animation" id="Animation_ix0mf"]
 resource_name = "drop"
@@ -48,13 +60,31 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -80), Vector2(0, 50)]
 }
 
+[sub_resource type="Animation" id="Animation_hpxg5"]
+resource_name = "flashing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.796078, 0.752941, 0.345098, 0.415686), Color(0.796078, 0.752941, 0.345098, 0), Color(0.796078, 0.752941, 0.345098, 0.415686)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xxt1l"]
 _data = {
-"RESET": SubResource("Animation_scr23"),
-"drop": SubResource("Animation_ix0mf")
+&"RESET": SubResource("Animation_scr23"),
+&"drop": SubResource("Animation_ix0mf"),
+&"flashing": SubResource("Animation_hpxg5")
 }
 
 [node name="droppable_upgrade" type="Node2D"]
+z_index = 110
 script = ExtResource("1_lg7ql")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -71,13 +101,33 @@ texture = SubResource("GradientTexture2D_7l8sp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
 shape = SubResource("RectangleShape2D_1jaxt")
 
+[node name="ColorRect" type="ColorRect" parent="sprite"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.796078, 0.752941, 0.345098, 0.415686)
+
 [node name="success_sound" type="AudioStreamPlayer" parent="."]
 script = ExtResource("2_x4h7h")
 sounds = Array[AudioStream]([ExtResource("3_5yius")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xxt1l")
+&"": SubResource("AnimationLibrary_xxt1l")
 }
+autoplay = "flashing"
+
+[node name="flashing_anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xxt1l")
+}
+autoplay = "flashing"
 
 [connection signal="input_event" from="sprite/Area2D" to="." method="_on_area_2d_input_event"]

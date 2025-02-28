@@ -1,8 +1,7 @@
-[gd_resource type="Resource" script_class="card_images" load_steps=108 format=3 uid="uid://blboqypb102el"]
+[gd_resource type="Resource" script_class="card_images" load_steps=107 format=3 uid="uid://blboqypb102el"]
 
-[ext_resource type="Script" path="res://Scripts/card_type_res.gd" id="1_82m7g"]
-[ext_resource type="Texture2D" uid="uid://bfrqld2mytlgo" path="res://Assets/cards/new_cards/carddeck.png" id="1_bt1ma"]
-[ext_resource type="Script" path="res://Scripts/card_image_dict.gd" id="2_vcfwi"]
+[ext_resource type="Script" uid="uid://cjybhb7n1r1vh" path="res://Scripts/resources/card_type_res.gd" id="1_82m7g"]
+[ext_resource type="Script" uid="uid://5nj1mavbrxbl" path="res://Scripts/resources/card_image_dict.gd" id="2_vcfwi"]
 [ext_resource type="Texture2D" uid="uid://k8q3q84681ng" path="res://Assets/cards/deck-of-cards/2.2.png" id="2_wql0f"]
 [ext_resource type="Texture2D" uid="uid://b0esq63fdviuj" path="res://Assets/cards/deck-of-cards/2.4.png" id="3_q1wce"]
 [ext_resource type="Texture2D" uid="uid://ds7u4bijf8luc" path="res://Assets/cards/deck-of-cards/2.5.png" id="4_lpqqm"]
@@ -371,4 +370,3 @@ card_texture = ExtResource("52_bxwtc")
 [resource]
 script = ExtResource("2_vcfwi")
 deck = Array[ExtResource("1_82m7g")]([SubResource("Resource_f4sch"), SubResource("Resource_dmxut"), SubResource("Resource_i1b67"), SubResource("Resource_u377v"), SubResource("Resource_te255"), SubResource("Resource_lkkqr"), SubResource("Resource_hv4lf"), SubResource("Resource_lylpg"), SubResource("Resource_fbkcj"), SubResource("Resource_hjeom"), SubResource("Resource_0rufd"), SubResource("Resource_dl64u"), SubResource("Resource_wg1cs"), SubResource("Resource_2r65m"), SubResource("Resource_5mdqy"), SubResource("Resource_elvs8"), SubResource("Resource_oswwg"), SubResource("Resource_mlng0"), SubResource("Resource_j1uan"), SubResource("Resource_wuguk"), SubResource("Resource_sy366"), SubResource("Resource_jclnw"), SubResource("Resource_4jpam"), SubResource("Resource_eijdk"), SubResource("Resource_27dir"), SubResource("Resource_ejtx3"), SubResource("Resource_17v1t"), SubResource("Resource_gsxos"), SubResource("Resource_xgm0y"), SubResource("Resource_y453n"), SubResource("Resource_jrn0e"), SubResource("Resource_6tfss"), SubResource("Resource_fhwqc"), SubResource("Resource_gqtev"), SubResource("Resource_trdrl"), SubResource("Resource_p5mxb"), SubResource("Resource_s5kbl"), SubResource("Resource_r8ubc"), SubResource("Resource_tbrqe"), SubResource("Resource_oc0c8"), SubResource("Resource_3sgxy"), SubResource("Resource_1pa00"), SubResource("Resource_cb7s8"), SubResource("Resource_2hpd6"), SubResource("Resource_4xmpw"), SubResource("Resource_kmntc"), SubResource("Resource_v005t"), SubResource("Resource_h3nnb"), SubResource("Resource_4lkjj"), SubResource("Resource_70kw4"), SubResource("Resource_5htqd"), SubResource("Resource_p2ph7")])
-card_texture_spritesheet = ExtResource("1_bt1ma")

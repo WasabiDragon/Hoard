@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ciqrav2gctdsi"]
 
-[ext_resource type="Script" path="res://Scripts/custom_tooltip.gd" id="1_t3cwd"]
+[ext_resource type="Script" uid="uid://p4876hpmlky4" path="res://Scripts/UI/custom_tooltip.gd" id="1_t3cwd"]
 
 [node name="custom_tooltip" type="Control"]
 layout_mode = 3

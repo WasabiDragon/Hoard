@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="round_info" load_steps=6 format=3 uid="uid://b3va86huccyf1"]
+
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_xgpvi"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="2_0glba"]
+[ext_resource type="Resource" uid="uid://ckjc3iowmna45" path="res://Resources/levels/bosses/straight 1-10.tres" id="2_h1n1m"]
+[ext_resource type="Resource" uid="uid://mfn3boufcbhn" path="res://Resources/levels/bosses/full_house(low).tres" id="3_babs0"]
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="3_h1n1m"]
+
+[resource]
+script = ExtResource("3_h1n1m")
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([10, 0, 0, 6, 6, 7, 7])
+card_numbers = Array[ExtResource("2_0glba")]([])
+has_boss = true
+boss = Array[ExtResource("1_xgpvi")]([ExtResource("2_h1n1m"), ExtResource("3_babs0")])

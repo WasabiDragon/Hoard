@@ -19,7 +19,7 @@ enum upgradeType
 }
 
 func spawn():
-	var x_randomised = -50 + (randi()%51)
+	var x_randomised:float = -50 + (randi()%51)
 	var _anim = $AnimationPlayer as AnimationPlayer
 	var _current_anim = _anim.get_animation("drop")
 	_current_anim.track_set_key_value(0,0,Vector2(global_position.x,global_position.y))

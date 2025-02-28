@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="round_info" load_steps=6 format=3 uid="uid://ca13whkv18w5r"]
+[gd_resource type="Resource" script_class="round_info" load_steps=4 format=3 uid="uid://ca13whkv18w5r"]
 
-[ext_resource type="Resource" uid="uid://bdgi2tw1aa6om" path="res://Resources/levels/bosses/test_boss.tres" id="1_51rna"]
-[ext_resource type="Resource" uid="uid://drgy8paatayjo" path="res://Resources/levels/bosses/Even Pairs.tres" id="1_h56xj"]
-[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="1_my7eg"]
-[ext_resource type="Script" path="res://Scripts/boss_round.gd" id="1_pfpx7"]
-[ext_resource type="Script" path="res://Scripts/round_info.gd" id="2_kecog"]
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_gb5bt"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="1_my7eg"]
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="2_kecog"]
 
 [resource]
+resource_name = "L1R1"
 script = ExtResource("2_kecog")
-challenge_rating = Array[int]([1, 0, 1, 0, 1])
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([1, 1, 1])
 card_numbers = Array[ExtResource("1_my7eg")]([])
-has_boss = true
-boss = Array[ExtResource("1_pfpx7")]([ExtResource("1_h56xj"), ExtResource("1_51rna")])
+has_boss = false
+boss = Array[ExtResource("1_gb5bt")]([])

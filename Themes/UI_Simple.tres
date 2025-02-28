@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bbsr1ex65hgta"]
+
+[ext_resource type="FontFile" uid="uid://c1bas67f2ai0v" path="res://Assets/Fonts/Jackwrite/Jackwrite.ttf" id="1_cy22u"]
+
+[resource]
+default_font = ExtResource("1_cy22u")
+default_font_size = 20

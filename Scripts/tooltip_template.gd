@@ -1,5 +1,5 @@
-extends Node
+extends Control
 class_name tooltip_template
 
-func update(value) -> void:
+func update(_value) -> void:
 	pass

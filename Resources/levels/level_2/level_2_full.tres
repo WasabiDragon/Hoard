@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="level" load_steps=12 format=3 uid="uid://bfbhptqn4bf88"]
+
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="1_68t0t"]
+[ext_resource type="Resource" uid="uid://cj15l44baxfqk" path="res://Resources/levels/level_2/rounds/L2R1.tres" id="2_5ybeu"]
+[ext_resource type="Resource" uid="uid://cedeh0h1prm0o" path="res://Resources/levels/level_2/rounds/L2R2.tres" id="3_ny0bf"]
+[ext_resource type="Resource" uid="uid://cafp664dnad1y" path="res://Resources/levels/level_2/rounds/L2R3.tres" id="4_22vs6"]
+[ext_resource type="Resource" uid="uid://c06n1oqvpwnkq" path="res://Resources/levels/level_2/rounds/L2R4.tres" id="5_qrnri"]
+[ext_resource type="Resource" uid="uid://bq07h6xsotd42" path="res://Resources/levels/level_2/rounds/L2R5.tres" id="6_5bvrl"]
+[ext_resource type="Resource" uid="uid://bpn4tx7ceqdp3" path="res://Resources/levels/level_2/rounds/L2R6.tres" id="7_x5gal"]
+[ext_resource type="Resource" uid="uid://dh2053tnho2y3" path="res://Resources/levels/level_2/rounds/L2R7.tres" id="8_8utut"]
+[ext_resource type="Resource" uid="uid://22wq8x76klo8" path="res://Resources/levels/level_2/rounds/L2R8.tres" id="9_ps3a3"]
+[ext_resource type="Resource" uid="uid://b3va86huccyf1" path="res://Resources/levels/level_2/rounds/L2R9.tres" id="10_0sbk4"]
+[ext_resource type="Script" uid="uid://d0klbo0wbciun" path="res://Scripts/resources/level.gd" id="11_12s7k"]
+
+[resource]
+script = ExtResource("11_12s7k")
+rounds = Array[ExtResource("1_68t0t")]([ExtResource("2_5ybeu"), ExtResource("3_ny0bf"), ExtResource("4_22vs6"), ExtResource("5_qrnri"), ExtResource("6_5bvrl"), ExtResource("7_x5gal"), ExtResource("8_8utut"), ExtResource("9_ps3a3"), ExtResource("10_0sbk4")])

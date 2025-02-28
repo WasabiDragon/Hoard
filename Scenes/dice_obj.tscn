@@ -1,11 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://nkm488udvi6i"]
 
-[ext_resource type="Script" path="res://Scripts/dice_object.gd" id="1_jji67"]
-[ext_resource type="Script" path="res://Scripts/dice_audio_mgr.gd" id="2_2xvvb"]
-[ext_resource type="Script" path="res://Scripts/dice_lockout_mgr.gd" id="2_5gh1b"]
-[ext_resource type="Script" path="res://Scripts/sprite_set.gd" id="2_kbsuk"]
-[ext_resource type="Script" path="res://Scripts/audio_bank_player.gd" id="4_7nh5j"]
-[ext_resource type="PackedScene" uid="uid://ciqrav2gctdsi" path="res://Scenes/custom_tooltip.tscn" id="4_8vv2k"]
+[ext_resource type="Script" uid="uid://diptl2lludc8j" path="res://Scripts/dice/dice_object.gd" id="1_jji67"]
+[ext_resource type="Script" uid="uid://dfqhb6ktv0w1x" path="res://Scripts/dice/dice_audio_mgr.gd" id="2_2xvvb"]
+[ext_resource type="Script" uid="uid://cwh7n2pm5t5t8" path="res://Scripts/dice/dice_lockout_mgr.gd" id="2_5gh1b"]
+[ext_resource type="Script" uid="uid://bnb7yq5feh471" path="res://Scripts/sprite_set.gd" id="2_kbsuk"]
+[ext_resource type="Script" uid="uid://b4spnu3gjp87l" path="res://Scripts/audio_bank_player.gd" id="4_7nh5j"]
 [ext_resource type="AudioStream" uid="uid://dska5322wa2dg" path="res://Audio/sfx/Dice Thrown at Card 01.mp3" id="5_gtnbb"]
 [ext_resource type="AudioStream" uid="uid://b0hpsq6qcjg3n" path="res://Audio/sfx/Dice Thrown at Card 02.mp3" id="6_8prmk"]
 [ext_resource type="AudioStream" uid="uid://chsoqgn4lvkw6" path="res://Audio/sfx/Dice Thrown at Card 03.mp3" id="7_5uw05"]
@@ -15,18 +14,17 @@
 [ext_resource type="AudioStream" uid="uid://c0dkkommyeuov" path="res://Audio/sfx/dice_being_rolled_on_table 02.mp3" id="9_qcxnk"]
 [ext_resource type="AudioStream" uid="uid://yr6utb51n1bl" path="res://Audio/sfx/dice_being_rolled_on_table 03.mp3" id="10_m7ixq"]
 [ext_resource type="AudioStream" uid="uid://b0ykwq0x3rddh" path="res://Audio/sfx/dice_being_rolled_on_table 04.mp3" id="11_yi5x7"]
-[ext_resource type="Script" path="res://Scripts/dice_visual_mgr.gd" id="14_fxlcv"]
+[ext_resource type="Script" uid="uid://ds5gwpjwh2oal" path="res://Scripts/dice/dice_visual_mgr.gd" id="14_fxlcv"]
 [ext_resource type="Theme" uid="uid://dmgihr70jjbsp" path="res://Themes/dice_tooltips.tres" id="15_dv0rl"]
-[ext_resource type="Script" path="res://Scripts/dice_tooltip.gd" id="16_fnyc1"]
+[ext_resource type="Script" uid="uid://dm27aoyggunxd" path="res://Scripts/dice/dice_tooltip.gd" id="16_fnyc1"]
+[ext_resource type="Theme" uid="uid://davpo8yol13n5" path="res://Themes/diceText.tres" id="16_fv6p0"]
+[ext_resource type="Script" uid="uid://p4876hpmlky4" path="res://Scripts/UI/custom_tooltip.gd" id="16_vbyd8"]
+[ext_resource type="FontFile" uid="uid://c1bas67f2ai0v" path="res://Assets/Fonts/Jackwrite/Jackwrite.ttf" id="19_vbyd8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q2gkr"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_iobmd"]
 size = Vector2(96, 96)
-
-[sub_resource type="LabelSettings" id="LabelSettings_jfe2l"]
-font_size = 46
-font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaqn7"]
 size = Vector2(96, 96)
@@ -38,9 +36,6 @@ colors = PackedColorArray(0, 0, 0, 0.533333, 0, 0, 0, 0.533333)
 gradient = SubResource("Gradient_x8fuk")
 width = 96
 height = 96
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sfajn"]
-region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdo7h"]
 bg_color = Color(0, 0, 0, 0.345098)
@@ -55,6 +50,8 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Dice" type="Node2D" node_paths=PackedStringArray("lockout_mgr", "visual_mgr", "audio_mgr") groups=["dice"]]
+visibility_layer = 2
+z_index = 100
 script = ExtResource("1_jji67")
 target_check_range = 90
 slot_check_range = 150
@@ -81,17 +78,17 @@ sounds = Array[AudioStream]([ExtResource("8_o44w5"), ExtResource("9_qcxnk"), Ext
 script = ExtResource("2_5gh1b")
 lockoutBar = NodePath("../die_sprite/TextureProgressBar")
 
-[node name="visual_mgr" type="Node" parent="." node_paths=PackedStringArray("label", "dice_sprite", "dice_class_image")]
+[node name="visual_mgr" type="Node" parent="." node_paths=PackedStringArray("label", "dice_sprite")]
 script = ExtResource("14_fxlcv")
 label = NodePath("../die_sprite/die_face")
 dice_sprite = NodePath("../die_sprite")
-dice_class_image = NodePath("../class_image")
 
 [node name="DiceAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q2gkr")
 
 [node name="die_sprite" type="Sprite2D" parent="."]
 clip_children = 2
+texture_filter = 1
 texture = SubResource("PlaceholderTexture2D_iobmd")
 script = ExtResource("2_kbsuk")
 
@@ -108,8 +105,8 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("16_fv6p0")
 text = "1"
-label_settings = SubResource("LabelSettings_jfe2l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -134,30 +131,26 @@ size_flags_vertical = 3
 fill_mode = 5
 texture_progress = SubResource("GradientTexture2D_w80lq")
 
-[node name="class_image" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_sfajn")
-offset = Vector2(0, -96.59)
-
-[node name="custom_tooltip" parent="." instance=ExtResource("4_8vv2k")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="custom_tooltip" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_left = -48.0
 offset_top = -48.0
 offset_right = 48.0
 offset_bottom = 48.0
+mouse_filter = 1
+script = ExtResource("16_vbyd8")
 
 [node name="dice_tooltip" type="PanelContainer" parent="custom_tooltip" node_paths=PackedStringArray("dice_class_label", "dice_type_label", "info_label")]
-visible = false
+visibility_layer = 2
+z_index = 105
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 112.0
+offset_left = 120.0
 offset_top = -63.5
-offset_right = 233.0
+offset_right = 299.0
 offset_bottom = 63.5
 grow_vertical = 2
 pivot_offset = Vector2(48, 48)
@@ -170,27 +163,33 @@ info_label = NodePath("MarginContainer/VBoxContainer/info_text")
 
 [node name="MarginContainer" type="MarginContainer" parent="custom_tooltip/dice_tooltip"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="custom_tooltip/dice_tooltip/MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="dice_class" type="Label" parent="custom_tooltip/dice_tooltip/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("19_vbyd8")
 theme_override_font_sizes/font_size = 30
 text = "Dice typE"
 
 [node name="dice_type" type="Label" parent="custom_tooltip/dice_tooltip/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("19_vbyd8")
 theme_override_font_sizes/font_size = 30
 text = "Class info:"
 
 [node name="info_text" type="Label" parent="custom_tooltip/dice_tooltip/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("19_vbyd8")
 theme_override_font_sizes/font_size = 25
 text = "Class info:"
 
 [connection signal="input_event" from="die_sprite/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="custom_tooltip" to="custom_tooltip" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="custom_tooltip" to="custom_tooltip" method="_on_mouse_exited"]

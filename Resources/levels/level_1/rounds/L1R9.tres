@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="round_info" load_steps=6 format=3 uid="uid://fdpj1a6kruad"]
+
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_jfrmb"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="2_hwxmv"]
+[ext_resource type="Resource" uid="uid://pglq8h1afmej" path="res://Resources/levels/bosses/Low pairs (easy).tres" id="2_lkomb"]
+[ext_resource type="Resource" uid="uid://bjbwktfut8gi4" path="res://Resources/levels/bosses/Threes of a kind (easy).tres" id="3_e0iev"]
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="3_lkomb"]
+
+[resource]
+script = ExtResource("3_lkomb")
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([7, 0, 7, 0, 6, 7])
+card_numbers = Array[ExtResource("2_hwxmv")]([])
+has_boss = true
+boss = Array[ExtResource("1_jfrmb")]([ExtResource("2_lkomb"), ExtResource("3_e0iev")])

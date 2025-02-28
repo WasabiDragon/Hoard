@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="boss_round" load_steps=25 format=3 uid="uid://pglq8h1afmej"]
+
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_xu31j"]
+[ext_resource type="Script" uid="uid://dh8usy4n8v8sf" path="res://Scripts/resources/boss_wave.gd" id="2_8yeqw"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="3_00kbk"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="4_6li85"]
+
+[sub_resource type="Resource" id="Resource_omm1d"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 1
+
+[sub_resource type="Resource" id="Resource_5tbdl"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 2
+
+[sub_resource type="Resource" id="Resource_ddhib"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_u5nat"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_kpw5y"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_fgsvh"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_0g3v2"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 2
+
+[sub_resource type="Resource" id="Resource_wm01l"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 1
+
+[sub_resource type="Resource" id="Resource_vasy4"]
+script = ExtResource("3_00kbk")
+wave = Array[ExtResource("4_6li85")]([SubResource("Resource_omm1d"), SubResource("Resource_5tbdl"), SubResource("Resource_ddhib"), SubResource("Resource_u5nat"), SubResource("Resource_kpw5y"), SubResource("Resource_fgsvh"), SubResource("Resource_0g3v2"), SubResource("Resource_wm01l")])
+metadata/_custom_type_script = ExtResource("3_00kbk")
+
+[sub_resource type="Resource" id="Resource_blv5r"]
+script = ExtResource("2_8yeqw")
+pregenerated = true
+pregen_wave = SubResource("Resource_vasy4")
+challenge_rating = 0
+
+[sub_resource type="Resource" id="Resource_xu31j"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_8yeqw"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_00kbk"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 3
+
+[sub_resource type="Resource" id="Resource_6li85"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 4
+
+[sub_resource type="Resource" id="Resource_0o6wo"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 4
+
+[sub_resource type="Resource" id="Resource_lksmx"]
+script = ExtResource("4_6li85")
+type = 1
+identifier = 3
+
+[sub_resource type="Resource" id="Resource_0mxyr"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_4r053"]
+script = ExtResource("4_6li85")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_pxioq"]
+script = ExtResource("3_00kbk")
+wave = Array[ExtResource("4_6li85")]([SubResource("Resource_xu31j"), SubResource("Resource_8yeqw"), SubResource("Resource_00kbk"), SubResource("Resource_6li85"), SubResource("Resource_0o6wo"), SubResource("Resource_lksmx"), SubResource("Resource_0mxyr"), SubResource("Resource_4r053")])
+metadata/_custom_type_script = ExtResource("3_00kbk")
+
+[sub_resource type="Resource" id="Resource_q8qad"]
+script = ExtResource("2_8yeqw")
+pregenerated = true
+pregen_wave = SubResource("Resource_pxioq")
+challenge_rating = 0
+metadata/_custom_type_script = ExtResource("2_8yeqw")
+
+[resource]
+script = ExtResource("1_xu31j")
+boss_round_name = "Low pairS"
+boss_round_info = Array[ExtResource("2_8yeqw")]([SubResource("Resource_blv5r"), SubResource("Resource_q8qad")])
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([])
+card_numbers = Array[ExtResource("3_00kbk")]([])
+has_boss = false
+boss = Array[ExtResource("1_xu31j")]([])

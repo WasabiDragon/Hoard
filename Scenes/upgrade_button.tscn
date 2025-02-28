@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc8qm4krbm8k6"]
+
+[ext_resource type="Theme" uid="uid://bm1im51gfx7nj" path="res://Themes/upgrade_button_theme.tres" id="1_ymg7c"]
+[ext_resource type="Script" uid="uid://deqjyhr6xn8r5" path="res://Scripts/UI/upgrade_box.gd" id="2_hk0eq"]
+[ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="3_pocew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f5x8"]
+atlas = ExtResource("3_pocew")
+region = Rect2(0, 0, 96, 96)
+
+[node name="new_role" type="Button" node_paths=PackedStringArray("text_box", "image_box")]
+size_flags_horizontal = 3
+theme = ExtResource("1_ymg7c")
+script = ExtResource("2_hk0eq")
+text_box = NodePath("MarginContainer/VBoxContainer/Container/Label")
+image_box = NodePath("MarginContainer/VBoxContainer/TextureRect")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(196, 196)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_8f5x8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Container" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Container"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]test text
+this is if i type[\\n]more too
+hello hello hello
+it should expand both ways
+that's magical
+i love it"
+fit_content = true

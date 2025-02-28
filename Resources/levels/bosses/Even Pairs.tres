@@ -1,53 +1,221 @@
-[gd_resource type="Resource" script_class="boss_round" load_steps=12 format=3 uid="uid://drgy8paatayjo"]
+[gd_resource type="Resource" script_class="boss_round" load_steps=45 format=3 uid="uid://drgy8paatayjo"]
 
-[ext_resource type="Script" path="res://Scripts/boss_wave.gd" id="1_uewi4"]
-[ext_resource type="Script" path="res://Scripts/boss_round.gd" id="1_veler"]
-[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="2_g78u0"]
+[ext_resource type="Script" uid="uid://dh8usy4n8v8sf" path="res://Scripts/resources/boss_wave.gd" id="1_uewi4"]
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_veler"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="2_g78u0"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="4_jg1ig"]
 
-[sub_resource type="Resource" id="Resource_sh4gv"]
+[sub_resource type="Resource" id="Resource_jg1ig"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 2
+
+[sub_resource type="Resource" id="Resource_pkoc7"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_34b1k"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_6b57v"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_skytv"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_t0ivc"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_ydaxk"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_6x763"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 2
+
+[sub_resource type="Resource" id="Resource_w1cuf"]
 script = ExtResource("2_g78u0")
-wave = Array[int]([2, 0, 0, 0, 0, 0, 0, 2])
+wave = Array[ExtResource("4_jg1ig")]([SubResource("Resource_jg1ig"), SubResource("Resource_pkoc7"), SubResource("Resource_34b1k"), SubResource("Resource_6b57v"), SubResource("Resource_skytv"), SubResource("Resource_t0ivc"), SubResource("Resource_ydaxk"), SubResource("Resource_6x763")])
+metadata/_custom_type_script = ExtResource("2_g78u0")
 
 [sub_resource type="Resource" id="Resource_3uisj"]
 script = ExtResource("1_uewi4")
 pregenerated = true
-pregen_wave = SubResource("Resource_sh4gv")
+pregen_wave = SubResource("Resource_w1cuf")
 challenge_rating = 0
 
-[sub_resource type="Resource" id="Resource_r7qkx"]
+[sub_resource type="Resource" id="Resource_sybta"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_ilv66"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 4
+
+[sub_resource type="Resource" id="Resource_qao3s"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_21dth"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_n38lh"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_tamh1"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_ec57u"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 4
+
+[sub_resource type="Resource" id="Resource_ajysj"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_7lcdv"]
 script = ExtResource("2_g78u0")
-wave = Array[int]([0, 4, 0, 0, 0, 0, 4, 0])
+wave = Array[ExtResource("4_jg1ig")]([SubResource("Resource_sybta"), SubResource("Resource_ilv66"), SubResource("Resource_qao3s"), SubResource("Resource_21dth"), SubResource("Resource_n38lh"), SubResource("Resource_tamh1"), SubResource("Resource_ec57u"), SubResource("Resource_ajysj")])
+metadata/_custom_type_script = ExtResource("2_g78u0")
 
 [sub_resource type="Resource" id="Resource_13uf6"]
 script = ExtResource("1_uewi4")
 pregenerated = true
-pregen_wave = SubResource("Resource_r7qkx")
+pregen_wave = SubResource("Resource_7lcdv")
 challenge_rating = 0
 
-[sub_resource type="Resource" id="Resource_2cxtj"]
+[sub_resource type="Resource" id="Resource_meidr"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_dd78t"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_aujjn"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 6
+
+[sub_resource type="Resource" id="Resource_kvmhv"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_pr1i7"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_o8frl"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 6
+
+[sub_resource type="Resource" id="Resource_gp8t4"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_2yy8e"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_tn2dw"]
 script = ExtResource("2_g78u0")
-wave = Array[int]([0, 0, 6, 0, 0, 6, 0, 0])
+wave = Array[ExtResource("4_jg1ig")]([SubResource("Resource_meidr"), SubResource("Resource_dd78t"), SubResource("Resource_aujjn"), SubResource("Resource_kvmhv"), SubResource("Resource_pr1i7"), SubResource("Resource_o8frl"), SubResource("Resource_gp8t4"), SubResource("Resource_2yy8e")])
+metadata/_custom_type_script = ExtResource("2_g78u0")
 
 [sub_resource type="Resource" id="Resource_dixc6"]
 script = ExtResource("1_uewi4")
 pregenerated = true
-pregen_wave = SubResource("Resource_2cxtj")
+pregen_wave = SubResource("Resource_tn2dw")
 challenge_rating = 0
 
-[sub_resource type="Resource" id="Resource_84w6j"]
+[sub_resource type="Resource" id="Resource_3jr6b"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_wf5q4"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_ro62n"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_osdvj"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 8
+
+[sub_resource type="Resource" id="Resource_tfcmb"]
+script = ExtResource("4_jg1ig")
+type = 1
+identifier = 8
+
+[sub_resource type="Resource" id="Resource_dhnje"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_rgnqo"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_om152"]
+script = ExtResource("4_jg1ig")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_6o0mh"]
 script = ExtResource("2_g78u0")
-wave = Array[int]([0, 0, 0, 8, 8, 0, 0, 0])
+wave = Array[ExtResource("4_jg1ig")]([SubResource("Resource_3jr6b"), SubResource("Resource_wf5q4"), SubResource("Resource_ro62n"), SubResource("Resource_osdvj"), SubResource("Resource_tfcmb"), SubResource("Resource_dhnje"), SubResource("Resource_rgnqo"), SubResource("Resource_om152")])
+metadata/_custom_type_script = ExtResource("2_g78u0")
 
 [sub_resource type="Resource" id="Resource_blv5r"]
 script = ExtResource("1_uewi4")
 pregenerated = true
-pregen_wave = SubResource("Resource_84w6j")
+pregen_wave = SubResource("Resource_6o0mh")
 challenge_rating = 0
 
 [resource]
 script = ExtResource("1_veler")
 boss_round_name = "Even pairS"
 boss_round_info = Array[ExtResource("1_uewi4")]([SubResource("Resource_3uisj"), SubResource("Resource_13uf6"), SubResource("Resource_dixc6"), SubResource("Resource_blv5r")])
+has_rewards = false
+round_type = 0
 challenge_rating = Array[int]([])
 card_numbers = Array[ExtResource("2_g78u0")]([])
 has_boss = false
+boss = Array[ExtResource("1_veler")]([])

@@ -1,28 +1,31 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://dkcw7lvk1ukvr"]
 
 [ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="1_5xo0d"]
-[ext_resource type="StyleBox" uid="uid://bugma2n5i1l4c" path="res://Themes/button_background_start_hover.tres" id="2_hbhjj"]
-[ext_resource type="StyleBox" uid="uid://idulwsa6rams" path="res://Themes/button_background_start.tres" id="3_a481b"]
-[ext_resource type="StyleBox" uid="uid://vu5ehn6dillu" path="res://Themes/button_background_start_pressed.tres" id="4_hjf0o"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_atxl6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0whwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2klf8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f40ue"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jia5k"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [resource]
 default_font = ExtResource("1_5xo0d")
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_disabled_color = Color(0, 0, 0, 1)
+Button/colors/font_color = Color(0.969318, 0.965221, 0.948732, 1)
+Button/colors/font_disabled_color = Color(0.193637, 0.180553, 0.130495, 0.733333)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.868096, 0.851182, 0.784472, 1)
+Button/colors/font_hover_pressed_color = Color(0.847059, 0.796078, 0.643137, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/colors/font_pressed_color = Color(0.847059, 0.796078, 0.643137, 1)
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_5xo0d")
 Button/styles/focus = SubResource("StyleBoxEmpty_atxl6")
-Button/styles/hover = ExtResource("2_hbhjj")
-Button/styles/normal = ExtResource("3_a481b")
-Button/styles/pressed = ExtResource("4_hjf0o")
+Button/styles/hover = SubResource("StyleBoxEmpty_0whwl")
+Button/styles/normal = SubResource("StyleBoxEmpty_2klf8")
+Button/styles/pressed = SubResource("StyleBoxEmpty_f40ue")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_jia5k")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="round_info" load_steps=4 format=3 uid="uid://wsykti15ffya"]
+
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_jstcs"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="4_bmexq"]
+[ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="5_vaeb4"]
+
+[resource]
+script = ExtResource("5_vaeb4")
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([4, 6, 0, 6, 5, 4, 6])
+card_numbers = Array[ExtResource("4_bmexq")]([])
+has_boss = false
+boss = Array[ExtResource("1_jstcs")]([])

@@ -1,17 +1,15 @@
-[gd_resource type="Resource" script_class="dice_images" load_steps=108 format=3 uid="uid://xdyvlbpxew2t"]
+[gd_resource type="Resource" script_class="dice_images" load_steps=107 format=3 uid="uid://xdyvlbpxew2t"]
 
-[ext_resource type="Script" path="res://Scripts/dice_type_res.gd" id="1_1au6q"]
-[ext_resource type="Texture2D" uid="uid://ckqkftv5535vm" path="res://Assets/Dice/DeadeyeSet.png" id="2_1f0it"]
-[ext_resource type="Script" path="res://Scripts/dice_image_dict.gd" id="2_imceo"]
-[ext_resource type="Texture2D" uid="uid://dv2cbdui4jxk0" path="res://Assets/Dice/WizardSet.png" id="3_yfjwa"]
+[ext_resource type="Script" uid="uid://b718gdx8uxwyx" path="res://Scripts/resources/dice_type_res.gd" id="1_1au6q"]
+[ext_resource type="Script" uid="uid://mrce768i8roq" path="res://Scripts/resources/dice_image_dict.gd" id="2_imceo"]
+[ext_resource type="Texture2D" uid="uid://ck1sro0k4h3kv" path="res://Assets/Dice/WizardSet.png" id="3_yfjwa"]
 [ext_resource type="Texture2D" uid="uid://d07qctp1c0mig" path="res://Assets/Dice/DiceSet.png" id="4_g8y1j"]
-[ext_resource type="Texture2D" uid="uid://bipgp77lle8x8" path="res://Assets/Dice/DeputySet.png" id="5_i7lh2"]
-[ext_resource type="Texture2D" uid="uid://bn86v80avvegk" path="res://Assets/Dice/BartendSet.png" id="6_bujps"]
-[ext_resource type="Texture2D" uid="uid://bmmws5fjqnqn" path="res://Assets/Dice/HealerSet.png" id="7_w8u8m"]
+[ext_resource type="Texture2D" uid="uid://bipgp77lle8x8" path="res://Assets/Dice/WarriorSet.png" id="5_i7lh2"]
+[ext_resource type="Texture2D" uid="uid://bn86v80avvegk" path="res://Assets/Dice/AlchemistSet.png" id="6_bujps"]
+[ext_resource type="Texture2D" uid="uid://d3m7u6ct0415g" path="res://Assets/Dice/HealerSet.png" id="7_w8u8m"]
 [ext_resource type="Texture2D" uid="uid://ctbwdrdpqm8uo" path="res://Assets/Dice/PriestSet.png" id="8_yaf3h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6scuq"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="Resource" id="Resource_ssgec"]
@@ -21,7 +19,6 @@ role = 0
 default_image = SubResource("AtlasTexture_6scuq")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jmhm4"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 96, 96, 96)
 
 [sub_resource type="Resource" id="Resource_cw5xd"]
@@ -31,7 +28,6 @@ role = 0
 default_image = SubResource("AtlasTexture_jmhm4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oo5yk"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 192, 96, 96)
 
 [sub_resource type="Resource" id="Resource_fqaui"]
@@ -41,7 +37,6 @@ role = 0
 default_image = SubResource("AtlasTexture_oo5yk")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4t8l3"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 288, 96, 96)
 
 [sub_resource type="Resource" id="Resource_wyq6j"]
@@ -51,7 +46,6 @@ role = 0
 default_image = SubResource("AtlasTexture_4t8l3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igk7g"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 384, 96, 96)
 
 [sub_resource type="Resource" id="Resource_evh6s"]
@@ -61,7 +55,6 @@ role = 0
 default_image = SubResource("AtlasTexture_igk7g")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0exmw"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 480, 96, 96)
 
 [sub_resource type="Resource" id="Resource_ef1ck"]
@@ -71,7 +64,6 @@ role = 0
 default_image = SubResource("AtlasTexture_0exmw")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxnve"]
-atlas = ExtResource("2_1f0it")
 region = Rect2(0, 576, 96, 96)
 
 [sub_resource type="Resource" id="Resource_ywst2"]

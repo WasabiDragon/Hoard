@@ -1,0 +1,307 @@
+[gd_scene load_steps=20 format=3 uid="uid://becy40tc4wqyg"]
+
+[ext_resource type="Script" uid="uid://dh2pval7oagjn" path="res://Scripts/Enemies/enemy_wagon.gd" id="1_mqwpx"]
+[ext_resource type="Script" uid="uid://c3y2t30sj6e1d" path="res://Scripts/destroy_on_exit.gd" id="2_yo1k0"]
+[ext_resource type="Script" uid="uid://g064jpqwx08j" path="res://Scripts/target_point.gd" id="3_h448r"]
+[ext_resource type="Texture2D" uid="uid://bfrqld2mytlgo" path="res://Assets/cards/new_cards/carddeck.png" id="4_fa7og"]
+[ext_resource type="PackedScene" uid="uid://ciqrav2gctdsi" path="res://Scenes/custom_tooltip.tscn" id="5_7b2mw"]
+[ext_resource type="Script" uid="uid://dq2n04a20hxxp" path="res://Scripts/tooltip_enemy.gd" id="6_hc2k2"]
+[ext_resource type="LabelSettings" uid="uid://cfqmr1ksjdm0b" path="res://Themes/tooltip_label_gen.tres" id="7_d74ac"]
+[ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="8_jmc5v"]
+[ext_resource type="SpriteFrames" uid="uid://t4udq5nu3jbk" path="res://Assets/card_animations.tres" id="9_75onp"]
+[ext_resource type="Texture2D" uid="uid://bvns1akdbu446" path="res://Assets/FX/fire_img.png" id="10_yo1k0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7texp"]
+atlas = ExtResource("4_fa7og")
+region = Rect2(64, 320, 48, 64)
+
+[sub_resource type="Animation" id="Animation_a8vxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.741176, 0.121569, 0.145098, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uxavs"]
+resource_name = "danger"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.262745, 0.235294, 1, 0), Color(0.886275, 0.0705882, 0, 0.729412), Color(0.262745, 0.235294, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wq8lo"]
+resource_name = "idle"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 3.31), Vector2(0, 7.09), Vector2(0, 3.08), Vector2(0, 0.51), Vector2(0, -0.15), Vector2(0, -0.15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 8),
+"transitions": PackedFloat32Array(1, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, -0.69), Vector2(0, 2.09), Vector2(0, -0.92), Vector2(0, -3.49), Vector2(0, -4.15), Vector2(0, -4.15)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:frame")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_doqbx"]
+_data = {
+&"RESET": SubResource("Animation_a8vxu"),
+&"danger": SubResource("Animation_uxavs"),
+&"idle": SubResource("Animation_wq8lo")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x2kl"]
+bg_color = Color(0.482353, 0.482353, 0.482353, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgsfv"]
+bg_color = Color(0.419608, 0, 0.0941176, 0.698039)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay6e1"]
+bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0.8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fj6v"]
+font = ExtResource("8_jmc5v")
+font_size = 4
+
+[node name="wagon" type="Node2D" node_paths=PackedStringArray("healthBar", "sprite", "animatedSprite", "animPlayer", "dangerAnimator", "burn_anim")]
+script = ExtResource("1_mqwpx")
+wagon_hp = 1
+royal_wagon_hp = 60
+healthBar = NodePath("Sprite2D/HealthBar/ProgressBar")
+sprite = NodePath("Sprite2D")
+animatedSprite = NodePath("AnimatedSprite2D")
+animPlayer = NodePath("AnimationPlayer")
+dangerAnimator = NodePath("Sprite2D/colorAnim")
+burn_anim = NodePath("burn_icon")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(3.2, 4.8)
+rect = Rect2(-10, -9, 20, 18)
+script = ExtResource("2_yo1k0")
+
+[node name="Marker2D" type="Marker2D" parent="." node_paths=PackedStringArray("color_rect") groups=["targets"]]
+script = ExtResource("3_h448r")
+color_rect = NodePath("../Sprite2D/ColorRect")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+clip_children = 2
+texture_filter = 1
+scale = Vector2(1.375, 1.375)
+texture = SubResource("AtlasTexture_7texp")
+
+[node name="colorAnim" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_doqbx")
+}
+
+[node name="HealthBar" type="Control" parent="Sprite2D"]
+custom_minimum_size = Vector2(48, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -32.0
+offset_right = -24.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite2D/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02, 1.02)
+pivot_offset = Vector2(24, 32)
+theme_override_styles/background = SubResource("StyleBoxFlat_0x2kl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rgsfv")
+value = 51.93
+fill_mode = 3
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -33.0
+offset_right = -23.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.741176, 0.121569, 0.145098, 0)
+
+[node name="custom_tooltip" parent="Sprite2D" instance=ExtResource("5_7b2mw")]
+offset_left = -31.0
+offset_top = -42.0
+offset_right = -16.0
+offset_bottom = -23.0
+
+[node name="tooltip_enemy" type="Panel" parent="Sprite2D/custom_tooltip" node_paths=PackedStringArray("current_hp_label", "max_hp_label")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay6e1")
+script = ExtResource("6_hc2k2")
+current_hp_label = NodePath("VBoxContainer/current_HP")
+max_hp_label = NodePath("VBoxContainer/max_hp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/custom_tooltip/tooltip_enemy"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -3
+alignment = 1
+
+[node name="current_HP" type="Label" parent="Sprite2D/custom_tooltip/tooltip_enemy/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "22"
+label_settings = ExtResource("7_d74ac")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="divider" type="Label" parent="Sprite2D/custom_tooltip/tooltip_enemy/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "--------------------------"
+label_settings = SubResource("LabelSettings_3fj6v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="max_hp" type="Label" parent="Sprite2D/custom_tooltip/tooltip_enemy/VBoxContainer"]
+layout_mode = 2
+text = "22"
+label_settings = ExtResource("7_d74ac")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("9_75onp")
+animation = &"basic_idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_doqbx")
+}
+
+[node name="burn_icon" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-68, -205)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_yo1k0")
+
+[node name="Label" type="Label" parent="burn_icon"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -60.0
+offset_right = -28.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_jmc5v")
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

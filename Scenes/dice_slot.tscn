@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b82j2ccf76fha"]
+[gd_scene load_steps=3 format=3 uid="uid://b82j2ccf76fha"]
 
 [ext_resource type="PackedScene" uid="uid://ddssefox1vfwx" path="res://Scenes/drop_area.tscn" id="1_hu1oa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyek6"]
+region = Rect2(0, 0, 96, 96)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,3 +13,7 @@ size_flags_vertical = 4
 mouse_filter = 1
 
 [node name="drop_area" parent="." groups=["rolling_slot"] instance=ExtResource("1_hu1oa")]
+
+[node name="class_image" type="Sprite2D" parent="drop_area"]
+texture = SubResource("AtlasTexture_fyek6")
+offset = Vector2(0, -96.59)

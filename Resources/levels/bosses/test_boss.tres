@@ -1,23 +1,68 @@
-[gd_resource type="Resource" script_class="boss_round" load_steps=6 format=3 uid="uid://bdgi2tw1aa6om"]
+[gd_resource type="Resource" script_class="boss_round" load_steps=15 format=3 uid="uid://bdgi2tw1aa6om"]
 
-[ext_resource type="Script" path="res://Scripts/boss_wave.gd" id="1_oclds"]
-[ext_resource type="Script" path="res://Scripts/wave_pregen.gd" id="2_dhymi"]
-[ext_resource type="Script" path="res://Scripts/boss_round.gd" id="3_o7qbp"]
+[ext_resource type="Script" uid="uid://dh8usy4n8v8sf" path="res://Scripts/resources/boss_wave.gd" id="1_oclds"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="2_dhymi"]
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="3_o7qbp"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="4_so2sl"]
 
-[sub_resource type="Resource" id="Resource_fr85v"]
+[sub_resource type="Resource" id="Resource_uqaxq"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_suhhu"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_ecchk"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_u7chh"]
+script = ExtResource("4_so2sl")
+type = 1
+identifier = 1
+
+[sub_resource type="Resource" id="Resource_7ioyk"]
+script = ExtResource("4_so2sl")
+type = 1
+identifier = 1
+
+[sub_resource type="Resource" id="Resource_lqa51"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_yfjfl"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_0ek8q"]
+script = ExtResource("4_so2sl")
+type = 0
+identifier = 0
+
+[sub_resource type="Resource" id="Resource_uo1ju"]
 script = ExtResource("2_dhymi")
-wave = Array[int]([0, 0, 0, 0, 0, 0, 0, 1])
+wave = Array[ExtResource("4_so2sl")]([SubResource("Resource_uqaxq"), SubResource("Resource_suhhu"), SubResource("Resource_ecchk"), SubResource("Resource_u7chh"), SubResource("Resource_7ioyk"), SubResource("Resource_lqa51"), SubResource("Resource_yfjfl"), SubResource("Resource_0ek8q")])
+metadata/_custom_type_script = ExtResource("2_dhymi")
 
 [sub_resource type="Resource" id="Resource_c8srs"]
 script = ExtResource("1_oclds")
 pregenerated = true
-pregen_wave = SubResource("Resource_fr85v")
+pregen_wave = SubResource("Resource_uo1ju")
 challenge_rating = 0
 
 [resource]
 script = ExtResource("3_o7qbp")
-boss_round_name = "Test bosS"
+boss_round_name = "Long ass name for bosS"
 boss_round_info = Array[ExtResource("1_oclds")]([SubResource("Resource_c8srs")])
+has_rewards = false
+round_type = 0
 challenge_rating = Array[int]([])
 card_numbers = Array[ExtResource("2_dhymi")]([])
 has_boss = false
+boss = Array[ExtResource("3_o7qbp")]([])
