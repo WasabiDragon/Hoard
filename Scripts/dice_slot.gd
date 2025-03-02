@@ -14,12 +14,14 @@ var available: bool:
 	get:
 		return currentNode == null
 
-func select():
+func select(color: Color):
 	for child in get_tree().get_nodes_in_group("zones"):
 		if child.available:
 			child.deselect()
 	colorRect.get_parent().show()
-	colorRect.color = selected
+	var new_col = color
+	new_col.a = 0.4
+	colorRect.color = new_col
 	
 func deselect():
 	colorRect.get_parent().hide()

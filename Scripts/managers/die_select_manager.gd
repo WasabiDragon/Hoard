@@ -62,7 +62,7 @@ func _select(dieNum):
 	selected_die_num = dieNum
 	selected_die = to_select
 	selected_die.selected = true
-	tray.slots[dieNum-1].select()
+	tray.slots[dieNum-1].select(selected_die._role_mgr.get_role_color(selected_die.dice.role))
 	stats.dice_selected = true
 
 func _next_die():

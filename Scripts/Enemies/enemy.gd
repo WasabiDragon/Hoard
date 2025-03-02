@@ -72,7 +72,7 @@ func enable_burn_anim(turns_to_burn):
 	burn_anim.show()
 	burn_anim.get_child(0).text = str(turns_to_burn)
 
-func reduce_burn_anim(turns_to_burn):
+func reduce_burn_counter(turns_to_burn):
 	burn_anim.get_child(0).text = str(turns_to_burn)
 
 func disable_burn_anim():
