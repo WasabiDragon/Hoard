@@ -22,7 +22,8 @@ func connect_signals():
 	signals.game_over.connect(_disable_movement)
 
 func update_enemies():
-	_move_enemies()
+	if !stats.consumable_freeze_toggle:
+		_move_enemies()
 
 func spawn_enemies(currentWave: int, roundData: round_info):
 	var wave_to_spawn = roundData.get_wave(currentWave)

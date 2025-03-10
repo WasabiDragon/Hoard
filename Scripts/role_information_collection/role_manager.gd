@@ -46,6 +46,8 @@ func get_upgrade_text(info: dice_stats.diceRole) -> String:
 
 func upgrade_role(info: dice_stats.diceRole):
 	select_die(info).role_level += 1
+	if info == dice_stats.diceRole.Quickshot:
+		signals.emit_quickshot()
 
 func get_role_color(info: dice_stats.diceRole) -> Color:
 	return select_die(info).role_color

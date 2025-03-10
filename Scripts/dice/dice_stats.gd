@@ -80,7 +80,33 @@ func upgrade():
 		_:
 			return false
 
+func downgrade():
+	match type:
+		diceType.D4: 
+			type = diceType.D4
+			return true
+		diceType.D6: 
+			type = diceType.D4
+			return true
+		diceType.D8: 
+			type = diceType.D6
+			return true
+		diceType.D10: 
+			type = diceType.D8
+			return true
+		diceType.D12: 
+			type = diceType.D10
+			return true
+		diceType.D20: 
+			type = diceType.D12
+			return true
+		diceType.D100: 
+			type = diceType.D20
+			return false
+		_:
+			return false
+
 func rollDice():
 	var dice_result = (randi() % DiceNumber) +1
-	current_roll = dice_result
+	current_roll = DiceNumber if stats.consumable_max_rolls_enabled else dice_result
 	return dice_result

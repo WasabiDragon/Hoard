@@ -48,7 +48,7 @@ func spawn_enemies(row_info: pregenerated_wave) -> void:
 func spawn_card(enemyID: enemy_identifier) -> Object:
 	var instance = enemy_walker_scene.instantiate()
 	spawn_parent.add_child(instance)
-	instance.spawn(_card_list.specific_card(enemyID.identifier))
+	instance.spawn(_card_list.specific_card(enemyID.identifier, enemyID.suit_override if enemyID.enable_suit_override else -1))
 	_set_variables(instance)
 	return instance
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wpytq45ur3b3"]
+[gd_scene load_steps=12 format=3 uid="uid://wpytq45ur3b3"]
 
 [ext_resource type="Script" uid="uid://bq3egnii2e6ys" path="res://Scripts/droppable_upgrade.gd" id="1_lg7ql"]
 [ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="2_34ut0"]
@@ -9,13 +9,12 @@
 atlas = ExtResource("2_34ut0")
 region = Rect2(0, 768, 96, 96)
 
-[sub_resource type="Gradient" id="Gradient_0v4b2"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7l8sp"]
-gradient = SubResource("Gradient_0v4b2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpxg5"]
+atlas = ExtResource("2_34ut0")
+region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jaxt"]
-size = Vector2(64, 64)
+size = Vector2(96, 96)
 
 [sub_resource type="Animation" id="Animation_scr23"]
 length = 0.001
@@ -94,7 +93,7 @@ texture = SubResource("AtlasTexture_2scmt")
 
 [node name="sprite" type="Sprite2D" parent="."]
 clip_children = 2
-texture = SubResource("GradientTexture2D_7l8sp")
+texture = SubResource("AtlasTexture_hpxg5")
 
 [node name="Area2D" type="Area2D" parent="sprite"]
 
@@ -105,12 +104,14 @@ shape = SubResource("RectangleShape2D_1jaxt")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -32.0
-offset_right = -32.0
-offset_bottom = -32.0
+offset_left = -48.0
+offset_top = -48.0
+offset_right = -48.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 mouse_filter = 2
 color = Color(0.796078, 0.752941, 0.345098, 0.415686)
 

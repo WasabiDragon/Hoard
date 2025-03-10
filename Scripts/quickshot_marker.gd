@@ -5,7 +5,7 @@ extends ColorRect
 func _ready():
 	signals.quickshot.connect(line_visibility)
 	signals.restarting.connect(hide)
-	get_tree().root.size_changed.connect(set_position)
+	get_tree().root.size_changed.connect(line_visibility)
 
 func line_visibility():
 	var has_quickshot: bool = false

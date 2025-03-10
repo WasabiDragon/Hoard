@@ -39,7 +39,6 @@ func set_upgrades(current: int, required: int):
 	for n in upgrade_icon_textures.size():
 		if n < current:
 			upgrade_icon_textures[n].show()
-			upgrade_icon_textures[n].texture = upgrade_icon
 			upgrade_icon_textures[n].get_child(0).hide()
 		elif n < required:
 			upgrade_icon_textures[n].show()

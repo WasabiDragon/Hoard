@@ -44,3 +44,11 @@ var dice_selected: bool:
 		return dice_selected
 	set(value):
 		dice_selected = value
+
+var max_levels: int = 11
+
+var consumable_knockback_enabled: bool = false
+var consumable_freeze_enabled: bool = false
+var consumable_freeze_toggle: bool = false
+var consumable_max_rolls_enabled: bool = false
+var consumable_tier_up_enabled:bool = false

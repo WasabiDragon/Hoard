@@ -21,6 +21,8 @@ signal title_complete
 signal audio_setup_complete
 signal select_next_dice
 signal quickshot
+signal map_option_selected
+signal use_consumable
 
 func emit_refresh_all():
 	refresh_all.emit()
@@ -84,3 +86,9 @@ func emit_select_next_dice():
 
 func emit_quickshot():
 	quickshot.emit()
+
+func emit_map_option_selected(levelObj):
+	map_option_selected.emit(levelObj)
+
+func emit_use_consumable(object):
+	use_consumable.emit(object)

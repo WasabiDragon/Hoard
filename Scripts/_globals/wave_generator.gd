@@ -11,12 +11,12 @@ var _challenge_ratings: Dictionary = {
 	8:[8,9,10],
 	9:[9,10],
 	10:[10],
-	15:["wagon_easy", 3],
+	15:["wagon_easy", 0],
 	25:[11,12],
-	26:["wagon_medium", 10],
+	26:["wagon_medium", 1],
 	30:[13],
-	50:["wagon_hard", 25],
-	90:["wagon_royal", 75]
+	50:["wagon_hard", 2],
+	90:["wagon_royal", 3]
 }
 
 @onready var _pregeneratedWaveRes = preload("res://Scripts/resources/wave_pregen.gd")
@@ -81,7 +81,6 @@ func get_group_by_challenge(arraySize: int, challenge: int, walkersOnly: bool = 
 	var max_challenge: int
 	if !walkersOnly:
 		max_challenge = _challenge_ratings.keys().max()
-		print(_challenge_ratings.keys().max())
 	else:
 		var max_val = 0
 		for key in _challenge_ratings.keys():

@@ -29,3 +29,7 @@ Button/styles/hover = SubResource("StyleBoxEmpty_0whwl")
 Button/styles/normal = SubResource("StyleBoxEmpty_2klf8")
 Button/styles/pressed = SubResource("StyleBoxEmpty_f40ue")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_jia5k")
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/shadow_offset_x = -5
+RichTextLabel/constants/shadow_offset_y = 10
+RichTextLabel/constants/shadow_outline_size = 10

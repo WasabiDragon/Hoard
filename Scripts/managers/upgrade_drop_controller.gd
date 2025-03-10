@@ -26,7 +26,6 @@ func drop_dice_class(texture: Texture2D, role: dice_stats.diceRole):
 
 func drop_extra_dice():
 	%dice_spawner.spawn_die()
-	next_round_button.show()
 
 func upgrade(target: Node, type: droppable_upgrade.upgradeType, _role: dice_stats.diceRole) -> bool:
 	match type:
@@ -38,5 +37,5 @@ func upgrade(target: Node, type: droppable_upgrade.upgradeType, _role: dice_stat
 			return target.changeClass(_role)
 	return false
 
-func boss_upgrade():
+func boss_upgrade_complete():
 	next_round_button.show()

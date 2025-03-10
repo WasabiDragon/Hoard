@@ -3,6 +3,7 @@ class_name boss_round
 
 @export var boss_round_name: String = ""
 @export var boss_round_info: Array[boss_wave] = []
+@export var reward: reward_obj
 
 func is_wave_in_round(wave_index) -> bool:
 	if wave_index >= boss_round_info.size():

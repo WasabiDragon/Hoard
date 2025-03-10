@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="level" load_steps=19 format=3 uid="uid://b5ynp2jrui87y"]
+[gd_resource type="Resource" script_class="level" load_steps=37 format=3 uid="uid://b5ynp2jrui87y"]
 
 [ext_resource type="Script" uid="uid://d0klbo0wbciun" path="res://Scripts/resources/level.gd" id="1_rv0r5"]
 [ext_resource type="Script" uid="uid://8veibjtrs4md" path="res://Scripts/resources/round_info.gd" id="2_12p5a"]
@@ -12,45 +12,183 @@
 script = ExtResource("5_ohb8q")
 type = 1
 identifier = 1
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_mofkt"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_vcxtx"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_cjsv7"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_4y4c1"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_mrm8o"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_oje3a"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_grhbd"]
 script = ExtResource("5_ohb8q")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_h736b"]
 script = ExtResource("6_ohb8q")
 wave = Array[ExtResource("5_ohb8q")]([SubResource("Resource_bwxsh"), SubResource("Resource_mofkt"), SubResource("Resource_vcxtx"), SubResource("Resource_cjsv7"), SubResource("Resource_4y4c1"), SubResource("Resource_mrm8o"), SubResource("Resource_oje3a"), SubResource("Resource_grhbd")])
+metadata/_custom_type_script = ExtResource("6_ohb8q")
+
+[sub_resource type="Resource" id="Resource_u1gp0"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_ohb8q"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_q645k"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_uknks"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_45v42"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_ibwar"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_rga7s"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_vmtcn"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_vrgbi"]
+script = ExtResource("6_ohb8q")
+wave = Array[ExtResource("5_ohb8q")]([SubResource("Resource_u1gp0"), SubResource("Resource_ohb8q"), SubResource("Resource_q645k"), SubResource("Resource_uknks"), SubResource("Resource_45v42"), SubResource("Resource_ibwar"), SubResource("Resource_rga7s"), SubResource("Resource_vmtcn")])
+metadata/_custom_type_script = ExtResource("6_ohb8q")
+
+[sub_resource type="Resource" id="Resource_0tpeb"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_c76dv"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_qnt2d"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_7n2a8"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_6abl5"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_kpob1"]
+script = ExtResource("5_ohb8q")
+type = 1
+identifier = 2
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_cnvod"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_7xktk"]
+script = ExtResource("5_ohb8q")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_qgad2"]
+script = ExtResource("6_ohb8q")
+wave = Array[ExtResource("5_ohb8q")]([SubResource("Resource_0tpeb"), SubResource("Resource_c76dv"), SubResource("Resource_qnt2d"), SubResource("Resource_7n2a8"), SubResource("Resource_6abl5"), SubResource("Resource_kpob1"), SubResource("Resource_cnvod"), SubResource("Resource_7xktk")])
 metadata/_custom_type_script = ExtResource("6_ohb8q")
 
 [sub_resource type="Resource" id="Resource_qjch4"]
@@ -58,7 +196,7 @@ script = ExtResource("2_12p5a")
 has_rewards = false
 round_type = 1
 challenge_rating = Array[int]([])
-card_numbers = Array[ExtResource("6_ohb8q")]([SubResource("Resource_h736b")])
+card_numbers = Array[ExtResource("6_ohb8q")]([SubResource("Resource_h736b"), SubResource("Resource_vrgbi"), SubResource("Resource_qgad2")])
 has_boss = false
 boss = Array[ExtResource("4_mqjb5")]([])
 metadata/_custom_type_script = ExtResource("2_12p5a")

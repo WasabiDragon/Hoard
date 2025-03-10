@@ -24,9 +24,9 @@ func _start_game():
 	if game_con == null:
 		game_con = %game_controller
 	main_title.hide()
-	game_con.start_game()
 	startButton.get_parent().hide()
-	endTurnButton.get_parent().show()
+	game_con.start_game()
+	# endTurnButton.get_parent().show()
 
 func _next_round():
 	if game_con == null:
@@ -36,6 +36,8 @@ func _next_round():
 	nextRoundButton.get_parent().hide()
 
 func _end_turn():
+	if !stats.game_running:
+		return
 	if game_con == null:
 		game_con = %game_controller
 	signals.emit_turn_ended()
@@ -47,13 +49,13 @@ func enable_end_turn():
 	endTurnButton.disabled = false
 
 func boss_text_on(_null = null):
-	endTurnButton.hide()
+	endTurnButton.get_parent().hide()
 
 func boss_text_end(_null = null):
-	endTurnButton.show()
+	endTurnButton.get_parent().show()
 
 func title_on(_null = null, _null2 = null):
-	endTurnButton.hide()
+	endTurnButton.get_parent().hide()
 
 func title_end():
-	endTurnButton.show()
+	endTurnButton.get_parent().show()

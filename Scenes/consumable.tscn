@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc41bfcvxw6xo"]
+
+[ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="1_qhgtv"]
+[ext_resource type="Script" uid="uid://bho8scoayompe" path="res://Scripts/consumable_obj.gd" id="2_uyunr"]
+
+[node name="Consumable" type="PanelContainer" node_paths=PackedStringArray("consumableImage", "consumableHighlightImage")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qhgtv")
+script = ExtResource("2_uyunr")
+consumableImage = NodePath("Image")
+consumableHighlightImage = NodePath("HighlightedImage")
+
+[node name="Image" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="HighlightedImage" type="TextureRect" parent="."]
+layout_mode = 2

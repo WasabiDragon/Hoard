@@ -27,6 +27,7 @@ var locked_out: bool:
 		return lockout_mgr.locked_out
 
 var held_upgrades = 0
+var temporarily_upgraded:= false
 
 func _ready():
 	connect_signals()
@@ -35,9 +36,13 @@ func connect_signals():
 	signals.turn_ended.connect(roll_dice_check)
 	signals.roll_dice.connect(roll_dice_check)
 	signals.refresh_all.connect(refresh_lockout)
+	signals.use_consumable.connect(temp_upgrade)
 
 func roll_dice_check():
+	if temporarily_upgraded && !stats.consumable_tier_up_enabled:
+		downgrade()
 	if _remainingRolls < _role_mgr.get_multi_roll(dice) && !lockout_mgr.locked_out:
+		print("Locking dice "+name)
 		_lockout(_role_mgr.get_lockout_time(dice))
 	if lockout_mgr.attempt_roll():
 		roll_dice()
@@ -157,6 +162,23 @@ func upgrade() -> bool:
 	else:
 		print("Cannot upgrade further")
 		return false
+
+func temp_upgrade(obj: consumable):
+	if obj.type != consumable_manager.consumableType.TIER_UP:
+		return
+	if dice.upgradeable:
+		temporarily_upgraded = true
+		dice.upgrade()
+		visual_mgr.set_dice(_role_mgr.get_dice_image(dice))
+		update_tooltip()
+		update_face()
+
+func downgrade():
+	temporarily_upgraded = false
+	dice.downgrade()
+	visual_mgr.set_dice(_role_mgr.get_dice_image(dice))
+	update_tooltip()
+	update_face()
 
 func changeClass(diceRole: dice_stats.diceRole) -> bool:
 	if dice.role == diceRole:

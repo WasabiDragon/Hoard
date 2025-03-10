@@ -24,7 +24,6 @@ func attempt_roll() -> bool:
 
 func lockout(_lockoutLength):
 	_used = true
-	# overlay.color = Color(0,0,0,0.2)
 	_lockoutTime = _lockoutLength
 	_lockoutBarMax = _lockoutLength
 	lockoutBar.max_value = _lockoutBarMax*100

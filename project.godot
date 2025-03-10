@@ -21,6 +21,9 @@ config/icon="res://icon.svg"
 stats="*res://Scripts/_globals/stats.gd"
 signals="*res://Scripts/_globals/signal_bus.gd"
 wave_gen="*res://Scripts/_globals/wave_generator.gd"
+round_gen="*res://Scripts/_globals/round_generator.gd"
+level_gen="*res://Scripts/_globals/level_generator.gd"
+rewards="*res://Scripts/reward_generator.gd"
 
 [display]
 
@@ -46,6 +49,7 @@ zones="all drop areas for the dice"
 rolling_slot=""
 targets=""
 dice=""
+enemy=""
 
 [gui]
 

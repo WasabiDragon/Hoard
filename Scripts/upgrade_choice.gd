@@ -9,8 +9,11 @@ class_name upgrades_panel
 @export var drops: upgrade_drop
 @export var endTurnButton: Control
 @export var role_mgr: role_manager
-var _current_roles: Array
+@export var boss_upgrade_panel: boss_upgrade_screen
 @export var _audio: audio_bank
+@export var general_upgrade_panel: Control
+
+var _current_roles: Array
 var _boss_upgrade_choice: Array
 var bossChoice = false
 
@@ -19,42 +22,41 @@ func _ready():
 	panels[1].pressed.connect(_click_panel_1)
 	panels[2].pressed.connect(_click_panel_2)
 
-func set_choices():
+func set_choices(rewardSet: Array[reward_obj]):
+	var panelNumber = 0
 	bossChoice = false
-	endTurnButton.hide()
 	_current_roles = []
-	set_role_panels()
-	set_upgrade_panel(panels[2])
-	_audio.play_from_list()
-
-func set_boss_choices():
-	bossChoice = true
+	for reward in rewardSet:
+		match reward.type:
+			reward_obj.reward.ROLE:
+				_set_role_panel(panels[panelNumber], reward.role)
+				_current_roles.append(reward.role)
+			reward_obj.reward.TIER_UP:
+				set_upgrade_panel(panels[panelNumber])
+				_current_roles.append(null)
+		panels[panelNumber].show()
+		panelNumber +=1
+	general_upgrade_panel.show()
 	endTurnButton.hide()
 	_audio.play_from_list()
-	_boss_upgrade_choice = []
-	set_dice_panel(panels[0])
-	set_boss_upgrade_panels([panels[1],panels[2]])
-		
-func set_boss_upgrade_panels(targetPanels: Array) -> void:
-	var roles_to_upgrade = []
-	roles_to_upgrade = _select_available_boss_upgrade_roles()
-	for panel in targetPanels:
-		panel.hide()
-	if !roles_to_upgrade.is_empty():
-		targetPanels[0].show()
-		var choice = roles_to_upgrade.pop_at(randi() % roles_to_upgrade.size())
-		_display_boss_upgrade(targetPanels[0],choice)
-		targetPanels[0].boss_upgrade_num = 0		
-		if roles_to_upgrade.size() > 1:
-			targetPanels[1].show()
-			var second_choice = roles_to_upgrade.pop_at(randi()%roles_to_upgrade.size())
-			_display_boss_upgrade(targetPanels[1],second_choice)
-			targetPanels[1].boss_upgrade_num = 1
 
-func _display_boss_upgrade(panel: Button, role: dice_stats.diceRole):
-	panel.text_box.text = "[center]Upgrade [color=#%s]%s[/color]" %[role_mgr.get_role_color(role).to_html(false), dice_stats.diceRole.keys()[role]] +"\n"+ role_mgr.get_upgrade_text(role)
-	panel.image_box.texture = role_mgr.get_role_image(role)
-	_boss_upgrade_choice.append(role)
+func boss_upgrade(reward: reward_obj):
+	print("setting boss upgrades")
+	endTurnButton.hide()
+	_audio.play_from_list()
+	var display_text: String
+	var display_img: Texture2D
+	if reward.type == reward_obj.reward.DIE:
+		display_img = extra_die_image
+		display_text = "[center]You have gained an extra die."
+		drops.drop_extra_dice()
+	elif reward.type == reward_obj.reward.ROLE:
+		display_img = role_mgr.get_role_image(reward.role)
+		display_text = "[center]Upgrade [color=#%s]%s[/color]" %[role_mgr.get_role_color(reward.role).to_html(false), dice_stats.diceRole.keys()[reward.role]] +"\n"+ role_mgr.get_upgrade_text(reward.role)
+		role_mgr.upgrade_role(reward.role)
+	boss_upgrade_panel.display_boss_upgrade(display_img,display_text)
+	await boss_upgrade_panel.boss_upgrade_display_complete
+	drops.boss_upgrade_complete()
 
 func _select_available_boss_upgrade_roles() -> Array:
 	var roles_to_upgrade = []
@@ -62,14 +64,7 @@ func _select_available_boss_upgrade_roles() -> Array:
 		if die.dice.role != dice_stats.diceRole.Cowboy:
 			roles_to_upgrade.append(die.dice.role)
 	return roles_to_upgrade
-	
-func set_role_panels():
-	var roles = dice_stats.diceRole.keys()
-	roles.erase(dice_stats.diceRole.keys()[dice_stats.diceRole.Cowboy])
-	_current_roles.append(roles.pop_at(randi() % roles.size()))
-	_current_roles.append(roles.pop_at(randi() % roles.size()))
-	_set_role_panel(panels[0], dice_stats.diceRole[_current_roles[0]])
-	_set_role_panel(panels[1], dice_stats.diceRole[_current_roles[1]])
+
 
 func _set_role_panel(panel: Button, role: dice_stats.diceRole):
 	var roles = dice_stats.diceRole.values()
@@ -94,7 +89,7 @@ func set_upgrade_panel(panel: Button):
 	panel.button_type = upgrade_box.button_job.upgrade
 
 func select_role(panel: Button):
-	drops.drop_dice_class(panel.image_box.texture, dice_stats.diceRole[_current_roles[panels.find(panel)]])
+	drops.drop_dice_class(panel.image_box.texture, _current_roles[panels.find(panel)])
 	close_panel()	
 
 func select_upgrade(panel: Button):
@@ -106,7 +101,8 @@ func select_extra_dice():
 	close_panel()
 
 func close_panel():
-	hide()
+	general_upgrade_panel.hide()
+	boss_upgrade_panel.hide()
 
 func _click_panel_0():
 	select_panel(0)
@@ -127,3 +123,5 @@ func select_panel(panelNumber):
 		select_extra_dice()
 	if button_type == upgrade_box.button_job.boss:
 		role_mgr.upgrade_role(_boss_upgrade_choice[panels[panelNumber].boss_upgrade_num])
+		drops.boss_upgrade_complete()
+		close_panel()
