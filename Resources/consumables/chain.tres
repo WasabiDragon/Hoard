@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="consumable" load_steps=5 format=3 uid="uid://c6khldu7lp7wc"]
+
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="1_c5fwi"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="1_dl7tn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yptn"]
+atlas = ExtResource("1_c5fwi")
+region = Rect2(192, 0, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnxib"]
+atlas = ExtResource("1_c5fwi")
+region = Rect2(0, 0, 192, 96)
+
+[resource]
+script = ExtResource("1_dl7tn")
+type = 2
+image = SubResource("AtlasTexture_jnxib")
+highlight_image = SubResource("AtlasTexture_1yptn")
+description = "[b]Chain[/b]
+One use. Lasts 5 rounds. allows you to freeze the wave at your will for 3 rounds."
+uses = 5
+metadata/_custom_type_script = "uid://b0bfc7cq16qwn"

@@ -194,6 +194,7 @@ grow_vertical = 2
 pivot_offset = Vector2(20, 28)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="ProgressBar" type="ProgressBar" parent="Sprite2D/HealthBar"]
 layout_mode = 1
@@ -204,6 +205,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.02, 1.02)
 pivot_offset = Vector2(24, 32)
+mouse_filter = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_0x2kl")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rgsfv")
 value = 69.54
@@ -215,7 +217,7 @@ offset_left = -19.0
 offset_top = -95.0
 offset_right = -19.0
 offset_bottom = -95.0
-scale = Vector2(1.02, 1.02)
+scale = Vector2(1.1, 1.1)
 pivot_offset = Vector2(19, 27)
 
 [node name="tooltip_enemy" type="Panel" parent="Sprite2D/custom_tooltip" node_paths=PackedStringArray("current_hp_label", "max_hp_label")]
@@ -225,7 +227,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_ay6e1")
 script = ExtResource("6_6im75")
 current_hp_label = NodePath("VBoxContainer/current_HP")
@@ -276,14 +278,14 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.13, 1.13)
 pivot_offset = Vector2(19, 27)
-mouse_filter = 1
+mouse_filter = 2
 color = Color(0.741176, 0.121569, 0.145098, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.7, 1.7)
 sprite_frames = ExtResource("5_5yqdx")
-animation = &"basic_diamonds"
+animation = &"basic_hearts"
 offset = Vector2(0, -80)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

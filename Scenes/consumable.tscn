@@ -1,9 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc41bfcvxw6xo"]
+[gd_scene load_steps=13 format=3 uid="uid://bc41bfcvxw6xo"]
 
 [ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="1_qhgtv"]
 [ext_resource type="Script" uid="uid://bho8scoayompe" path="res://Scripts/consumable_obj.gd" id="2_uyunr"]
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="3_uyunr"]
+[ext_resource type="Texture2D" uid="uid://bvns1akdbu446" path="res://Assets/FX/fire_img.png" id="4_lv5yi"]
+[ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="5_fi58d"]
+[ext_resource type="PackedScene" uid="uid://ciqrav2gctdsi" path="res://Scenes/custom_tooltip.tscn" id="6_f7i0n"]
+[ext_resource type="Script" uid="uid://cnj78cdf1gihj" path="res://Scripts/UI/map_option_tooltip.gd" id="7_qjrjb"]
+[ext_resource type="FontFile" uid="uid://c1bas67f2ai0v" path="res://Assets/Fonts/Jackwrite/Jackwrite.ttf" id="8_y5d0q"]
+[ext_resource type="FontFile" uid="uid://6hy7h3eljqju" path="res://Assets/Fonts/Jackwrite/JackwriteBold.ttf" id="9_couew"]
 
-[node name="Consumable" type="PanelContainer" node_paths=PackedStringArray("consumableImage", "consumableHighlightImage")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m2vl"]
+atlas = ExtResource("3_uyunr")
+region = Rect2(0, 0, 192, 96)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6331g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q4yj"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.639216)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Consumable" type="PanelContainer" node_paths=PackedStringArray("consumableImage", "consumableHighlightImage", "timer", "timerText")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,9 +41,105 @@ theme = ExtResource("1_qhgtv")
 script = ExtResource("2_uyunr")
 consumableImage = NodePath("Image")
 consumableHighlightImage = NodePath("HighlightedImage")
+timer = NodePath("Image/Control")
+timerText = NodePath("Image/Control/TextureRect/Label")
 
 [node name="Image" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 2
+texture = SubResource("AtlasTexture_3m2vl")
+stretch_mode = 5
+
+[node name="Control" type="Panel" parent="Image"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_bottom = 96.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(96, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6331g")
+
+[node name="TextureRect" type="TextureRect" parent="Image/Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_lv5yi")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Image/Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_fi58d")
+theme_override_font_sizes/font_size = 40
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HighlightedImage" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 2
+stretch_mode = 5
+
+[node name="custom_tooltip" parent="." instance=ExtResource("6_f7i0n")]
+layout_mode = 2
+
+[node name="map_option_tooltip" type="PanelContainer" parent="custom_tooltip" node_paths=PackedStringArray("text_section")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -99.5
+offset_right = 600.0
+offset_bottom = 99.5
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2q4yj")
+script = ExtResource("7_qjrjb")
+text_section = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="custom_tooltip/map_option_tooltip"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("8_y5d0q")
+theme_override_fonts/bold_font = ExtResource("9_couew")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "
+hi
+hihihi
+hihi
+hihi
+hihi
+This is some demonstration text something something darkside y'know what i mean"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_enter"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exit"]

@@ -17,6 +17,7 @@ func _input(event):
 			mouse_inside_time = 0
 
 func update_tooltip(value):
+	tooltip_box = get_child(0)
 	if typeof(tooltip_box.get_script()) != typeof(tooltip_template):
 		print("Tooltip not implemented")
 	else:

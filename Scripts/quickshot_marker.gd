@@ -1,4 +1,4 @@
-extends ColorRect
+extends Panel
 
 @export var role_mgr: role_manager
 
@@ -20,8 +20,12 @@ func line_visibility():
 
 func find_target_position():
 	var parent_height = get_parent().size.y
-	var lanes = stats.lanes
+	var lanes = globals.lanes
 	var rows_from_front = role_mgr.quickshot_distance()
 	var lane_height = parent_height / lanes
 	var target_height = get_parent().global_position.y + (lane_height * (lanes - rows_from_front))
 	global_position = Vector2(global_position.x, target_height)
+	var newSize: Vector2
+	newSize.x = get_parent().size.x
+	newSize.y = lane_height * rows_from_front
+	size = newSize

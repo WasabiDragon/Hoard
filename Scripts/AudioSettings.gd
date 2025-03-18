@@ -23,20 +23,20 @@ func end_change(_val):
 
 func _process(_delta):
 	if changing:
-		set_stats()
+		set_globals()
 
-func set_stats():
+func set_globals():
 	if type == audio_type.SFX:
-		stats.sfx_volume = slider.value
+		globals.sfx_volume = slider.value
 	if type == audio_type.Music:
-		stats.music_volume = slider.value
+		globals.music_volume = slider.value
 	percent.text = str(roundi(slider.value)) + "%"
 
 func _on_draw():
 	print("updating")
 	if type == audio_type.SFX:
-		slider.value = stats.sfx_volume * 100
+		slider.value = globals.sfx_volume * 100
 	if type == audio_type.Music:
-		slider.value = stats.music_volume * 100
+		slider.value = globals.music_volume * 100
 	percent.text = str(roundi(slider.value)) + "%"
 

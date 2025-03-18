@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="boss_template" load_steps=6 format=3 uid="uid://cyyx57l68wtmu"]
+
+[ext_resource type="Script" uid="uid://b8t7ntqgh1sue" path="res://Scripts/boss_template.gd" id="1_uajjo"]
+[ext_resource type="Script" uid="uid://cvwvvmbc220jl" path="res://Scripts/boss_template_wave.gd" id="2_7xfjb"]
+
+[sub_resource type="Resource" id="Resource_4loyq"]
+script = ExtResource("2_7xfjb")
+wave = Array[int]([0, 0, 2, 2, 2, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_8dhrf"]
+script = ExtResource("2_7xfjb")
+wave = Array[int]([0, 0, 0, 0, 3, 3, 3, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_wqxty"]
+script = ExtResource("2_7xfjb")
+wave = Array[int]([1, 1, 1, 0, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[resource]
+script = ExtResource("1_uajjo")
+boss_name = "Three of a kinD"
+waves = Array[ExtResource("2_7xfjb")]([SubResource("Resource_4loyq"), SubResource("Resource_8dhrf"), SubResource("Resource_wqxty")])
+metadata/_custom_type_script = "uid://b8t7ntqgh1sue"

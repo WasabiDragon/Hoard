@@ -67,6 +67,7 @@ func _on_font_resource_changed() -> void:
 func _on_label_rect_resized() -> void:
 	if !_editor_defaults_set:
 		return
+	text = text
 	call_deferred(_check_line_count.get_method())
 
 
@@ -165,6 +166,8 @@ func _enlarge_font():
 func _apply_font_size(new_size: int) -> void:
 	_size_just_modified_by_autosizer = true
 	set("theme_override_font_sizes/normal_font_size", new_size)
+	_size_just_modified_by_autosizer = true
+	set("theme_override_font_sizes/bold_font_size", new_size)
 	_current_font_size = new_size
 #endregion
 

@@ -1,5 +1,5 @@
 extends Resource
-class_name level_gen_stats
+class_name level_gen_globals
 
 @export var waves: int
 @export var wave_variance: int = 1

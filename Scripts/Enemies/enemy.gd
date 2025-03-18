@@ -27,6 +27,7 @@ var gridPosition: Vector2
 var grow_on_approach:= false
 var growthPerStep:= 1.1
 var c_tooltip: custom_tooltip
+var identifier: enemy_identifier
 @onready var spawn_mgr: spawner = $/root/Main/game_controller/enemy_spawner
 
 func _ready():
@@ -86,7 +87,7 @@ func damage(amount: int):
 	current_damage += amount
 	healthBar.value = current_damage
 	update_tooltip()
-	if stats.consumable_knockback_enabled:
+	if globals.consumable_knockback_enabled:
 		knockback()
 	if current_damage >= max_hp:
 		_death()
@@ -129,10 +130,10 @@ func knockback():
 		print('moving to empty spot behind target')
 		move(spawn_mgr.grid_to_global(target_pos))
 		gridPosition = target_pos
-		danger_check(stats.ranks)
+		danger_check(globals.ranks)
 		return
 	var space_left = target_pos.x >0
-	var space_right = target_pos.x < stats.lanes
+	var space_right = target_pos.x < globals.lanes
 	for target in enemies:
 		if space_left && target.gridPosition.x == target_pos.x - 0.5:
 			space_left = false
@@ -152,5 +153,5 @@ func knockback():
 			return
 	gridPosition = target_pos
 	move(spawn_mgr.grid_to_global(target_pos))
-	danger_check(stats.ranks)
+	danger_check(globals.ranks)
 			

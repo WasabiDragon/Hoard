@@ -11,6 +11,7 @@ enum type {Challenge_Rating,Pregenerated}
 @export_group("Boss Info")
 @export var has_boss: bool = false
 @export var boss: boss_round
+var round_challenge_rating
 
 func is_wave_in_round(wave_index) -> bool:
 	var biggest_array = challenge_rating.size() if round_type == type.Challenge_Rating else card_numbers.size()

@@ -22,6 +22,6 @@ func play_from_list():
 
 func change_volume():
 	if type == audio_type.SFX:
-		volume_linear = stats.sfx_volume
+		volume_linear = globals.sfx_volume
 	if type == audio_type.Music:
-		volume_linear = stats.music_volume * stats.max_music_volume
+		volume_linear = globals.music_volume * globals.max_music_volume

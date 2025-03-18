@@ -24,7 +24,7 @@ func _process(_delta):
 		_initialize()
 
 func _initialize():
-	for n in stats.starting_dice:
+	for n in globals.starting_dice:
 		spawn_die()
 	_initialized = true
 
@@ -48,7 +48,8 @@ func restart():
 		dice.queue_free()
 	for zone in get_tree().get_nodes_in_group("zones"):
 		zone.get_parent().queue_free()
-	_initialize()
+	_started = false
+	_initialized = false
 
 func refresh_dice():
 	for dice in get_tree().get_nodes_in_group("dice"):

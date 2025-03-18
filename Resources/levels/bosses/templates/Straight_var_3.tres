@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="boss_template" load_steps=13 format=3 uid="uid://t0tnoddpfli3"]
+
+[ext_resource type="Script" uid="uid://b8t7ntqgh1sue" path="res://Scripts/boss_template.gd" id="1_o4w1j"]
+[ext_resource type="Script" uid="uid://cvwvvmbc220jl" path="res://Scripts/boss_template_wave.gd" id="2_yylph"]
+
+[sub_resource type="Resource" id="Resource_0h7xy"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 1, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_luxw6"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 2, 0, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_otkkn"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 3, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_g2tmg"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 0, 4, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_bmc2h"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 0, 0, 5, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_vcw83"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 0, 6, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_5s256"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 7, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_eu0ep"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 8, 0, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_jiurv"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 9, 0, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_6cbj7"]
+script = ExtResource("2_yylph")
+wave = Array[int]([0, 0, 0, 0, 10, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[resource]
+script = ExtResource("1_o4w1j")
+boss_name = "StraighT"
+waves = Array[ExtResource("2_yylph")]([SubResource("Resource_0h7xy"), SubResource("Resource_luxw6"), SubResource("Resource_otkkn"), SubResource("Resource_g2tmg"), SubResource("Resource_bmc2h"), SubResource("Resource_vcw83"), SubResource("Resource_5s256"), SubResource("Resource_eu0ep"), SubResource("Resource_jiurv"), SubResource("Resource_6cbj7")])
+metadata/_custom_type_script = "uid://b8t7ntqgh1sue"

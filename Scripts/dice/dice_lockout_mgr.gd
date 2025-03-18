@@ -37,7 +37,7 @@ func _process(_delta):
 			_reducingClock = false
 
 func reduce_lockout():
-	_lockoutTime -= 100
+	_lockoutTime -= 1
 	_reducingClock = true
 	if _lockoutTime == 0:
 		_lockoutTime = 0

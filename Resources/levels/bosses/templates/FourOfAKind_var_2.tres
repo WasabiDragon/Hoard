@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="boss_template" load_steps=9 format=3 uid="uid://cefinvsa1hhtg"]
+
+[ext_resource type="Script" uid="uid://b8t7ntqgh1sue" path="res://Scripts/boss_template.gd" id="1_buo5j"]
+[ext_resource type="Script" uid="uid://cvwvvmbc220jl" path="res://Scripts/boss_template_wave.gd" id="2_x3mm6"]
+
+[sub_resource type="Resource" id="Resource_qtalg"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([1, 0, 0, 0, 0, 2, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_xdsg7"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([1, 3, 0, 0, 2, 0, 0, 0])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_f44ix"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([1, 3, 0, 0, 2, 0, 0, 4])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_ckfwm"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([1, 3, 0, 0, 2, 0, 0, 4])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_buo5j"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([0, 3, 0, 0, 0, 0, 0, 4])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_x3mm6"]
+script = ExtResource("2_x3mm6")
+wave = Array[int]([0, 0, 0, 0, 0, 0, 0, 4])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[resource]
+script = ExtResource("1_buo5j")
+boss_name = "Four of a kinD"
+waves = Array[ExtResource("2_x3mm6")]([SubResource("Resource_qtalg"), SubResource("Resource_xdsg7"), SubResource("Resource_f44ix"), SubResource("Resource_ckfwm"), SubResource("Resource_buo5j"), SubResource("Resource_x3mm6")])
+metadata/_custom_type_script = "uid://b8t7ntqgh1sue"

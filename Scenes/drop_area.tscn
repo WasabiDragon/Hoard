@@ -9,7 +9,7 @@
 atlas = ExtResource("4_4bq7d")
 region = Rect2(0, 96, 96, 96)
 
-[node name="drop_area" type="Marker2D" node_paths=PackedStringArray("upgrade_icon_textures", "colorRect", "slotLabel") groups=["zones"]]
+[node name="dice_zone_area" type="Marker2D" node_paths=PackedStringArray("upgrade_icon_textures", "colorRect", "slotLabel") groups=["zones"]]
 gizmo_extents = 32.0
 script = ExtResource("1_lwuv6")
 upgrade_icon = SubResource("AtlasTexture_2l2oj")

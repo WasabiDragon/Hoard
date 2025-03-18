@@ -108,5 +108,5 @@ func downgrade():
 
 func rollDice():
 	var dice_result = (randi() % DiceNumber) +1
-	current_roll = DiceNumber if stats.consumable_max_rolls_enabled else dice_result
+	current_roll = DiceNumber if globals.consumable_max_rolls_enabled else dice_result
 	return dice_result

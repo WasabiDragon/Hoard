@@ -24,9 +24,9 @@ func _ready():
 
 func connect_signals():
 	finished.connect(play_next)
+	signals.restarting.connect(play_menu_music)
 	signals.game_over.connect(play_game_over)
 	signals.game_start.connect(play_game_music)
-	signals.music_menus.connect(play_menu_music)
 	signals.boss_fight.connect(play_boss_music)
 	signals.boss_complete.connect(play_game_music)
 	signals.music_volume_changed.connect(change_volume)
@@ -58,7 +58,7 @@ func random_song_from_playlist(playlist: Array[AudioStream], repeats: bool = fal
 		await fade_complete
 	stream = _nextSong
 	play()
-	_fade(stats.music_volume * stats.max_music_volume)
+	_fade(globals.music_volume * globals.max_music_volume)
 	_lastPlayed = _nextSong
 
 func play_game_music():
@@ -109,4 +109,4 @@ func play_next():
 		play_boss_music(null)
 
 func change_volume():
-	volume_linear = stats.music_volume * stats.max_music_volume
+	volume_linear = globals.music_volume * globals.max_music_volume

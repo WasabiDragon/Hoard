@@ -18,7 +18,7 @@ var role_description:
 @export var upgrade_modifier: int
 var upgrade_description:
 	get:
-		return upgrade_text.replace("LVL", str(role_level+upgrade_modifier))
+		return upgrade_text.replace("LVL", str(role_level+1+upgrade_modifier))
 var role_level = 1
 
 @export var role_image: Texture2D

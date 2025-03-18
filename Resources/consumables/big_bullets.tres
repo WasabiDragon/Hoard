@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="consumable" load_steps=5 format=3 uid="uid://2sox5hp1ja22"]
+
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="1_ptydv"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="1_s17dk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dip8l"]
+atlas = ExtResource("1_ptydv")
+region = Rect2(192, 192, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye1rx"]
+atlas = ExtResource("1_ptydv")
+region = Rect2(0, 192, 192, 96)
+
+[resource]
+script = ExtResource("1_s17dk")
+type = 0
+image = SubResource("AtlasTexture_ye1rx")
+highlight_image = SubResource("AtlasTexture_dip8l")
+description = "[b]Big Bullets[/b]
+One use. Lasts 8 rounds. Gives every attack you make a knockback effect."
+uses = 8
+metadata/_custom_type_script = "uid://b0bfc7cq16qwn"

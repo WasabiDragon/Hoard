@@ -2,11 +2,12 @@ extends Resource
 class_name reward_obj
 
 enum reward_tier{NONE, STANDARD, BOSS}
-enum reward{EMPTY,DIE,ROLE,TIER_UP}
+enum reward{EMPTY,DIE,ROLE,TIER_UP,CONSUMABLE}
 
 var tier: reward_tier = reward_tier.NONE
 var type: reward = reward.EMPTY
 var role: dice_stats.diceRole
+var consumable_reward: consumable
 
 func set_random_role(ownedRoles: Array[dice_stats.diceRole] = []):
 	var roleList = []

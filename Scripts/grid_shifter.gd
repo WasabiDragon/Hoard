@@ -12,7 +12,7 @@ func init():
 func resize():
 	var newPos: Vector2 = targetZone.global_position
 	var newSize: Vector2 = targetZone.size
-	newSize.y -= (targetZone.size.y / stats.ranks)
+	newSize.y -= (targetZone.size.y / globals.ranks)
 	size = newSize
-	# newPos.y += (size.y / stats.ranks) * 2
+	# newPos.y += (size.y / globals.ranks) * 2
 	global_position = newPos

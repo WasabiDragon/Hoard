@@ -17,7 +17,7 @@ func spawn(type: card_type):
 			card_type.suit.Diamond:
 				animatedSprite.animation = "basic_diamonds"
 			card_type.suit.Heart:
-				animatedSprite.animation = "basic_clubs"
+				animatedSprite.animation = "basic_hearts"
 	current_damage = 0
 	sprite.texture = current_card_type.card_texture
 	animPlayer.play("idle")

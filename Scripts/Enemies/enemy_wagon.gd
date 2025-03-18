@@ -44,6 +44,9 @@ func _death():
 	for n in wagon_contents.wave.size():
 		if wagon_contents.wave[n].identifier == 0:
 			continue
+		if identifier.enable_suit_override == true:
+			wagon_contents.wave[n].enable_suit_override = true
+			wagon_contents.wave[n].suit_override = identifier.suit_override
 		var object = spwn.spawn_card(wagon_contents.wave[n])
 		object.gridPosition = gridPosition + spawn_diffs[n]
 		object.global_position = global_position

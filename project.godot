@@ -12,23 +12,31 @@ config_version=5
 
 config/name="Texas Roll 'Em"
 config/description="Transform your dice to hold out against the unstoppable deck of cards!"
+config/version="0.0.4"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.192157, 0.192157, 0.192157, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://biw2qlt86m4me"
+config/icon="uid://birfmfcyk7lmk"
 
 [autoload]
 
-stats="*res://Scripts/_globals/stats.gd"
+globals="*res://Scripts/_globals/globals.gd"
 signals="*res://Scripts/_globals/signal_bus.gd"
 wave_gen="*res://Scripts/_globals/wave_generator.gd"
 round_gen="*res://Scripts/_globals/round_generator.gd"
 level_gen="*res://Scripts/_globals/level_generator.gd"
 rewards="*res://Scripts/reward_generator.gd"
+boss_gen="*res://Scripts/boss_generator.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="uid://d2gun1mulfufd"
 
 [editor_plugins]
 
@@ -40,7 +48,8 @@ folder_colors={
 "res://Assets/": "yellow",
 "res://Audio/": "purple",
 "res://Scenes/": "red",
-"res://Scripts/": "blue"
+"res://Scripts/": "blue",
+"res://shortcuts/": "teal"
 }
 
 [global_group]

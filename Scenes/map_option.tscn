@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp8frtkd76jbn"]
+[gd_scene load_steps=16 format=3 uid="uid://dp8frtkd76jbn"]
 
 [ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="1_d2157"]
 [ext_resource type="Script" uid="uid://dt3cfryvoho3f" path="res://Scripts/UI/map_option.gd" id="2_l1l0r"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://3wa22xc0726s" path="res://Assets/UI/map_select_bcgkrd.png" id="3_te2lh"]
 [ext_resource type="Texture2D" uid="uid://bvns1akdbu446" path="res://Assets/FX/fire_img.png" id="4_te2lh"]
 [ext_resource type="Theme" uid="uid://c8rjkk8skduwe" path="res://Themes/map_select_option.tres" id="4_vffa3"]
+[ext_resource type="PackedScene" uid="uid://ciqrav2gctdsi" path="res://Scenes/custom_tooltip.tscn" id="8_ki6jb"]
+[ext_resource type="Script" uid="uid://cnj78cdf1gihj" path="res://Scripts/UI/map_option_tooltip.gd" id="9_ah67f"]
+[ext_resource type="FontFile" uid="uid://c1bas67f2ai0v" path="res://Assets/Fonts/Jackwrite/Jackwrite.ttf" id="10_7sabm"]
+[ext_resource type="FontFile" uid="uid://6hy7h3eljqju" path="res://Assets/Fonts/Jackwrite/JackwriteBold.ttf" id="11_43aog"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vffa3"]
 
@@ -18,7 +22,22 @@ region = Rect2(0, 960, 96, 96)
 atlas = ExtResource("3_l1l0r")
 region = Rect2(0, 864, 96, 96)
 
-[node name="MapOption" type="PanelContainer" node_paths=PackedStringArray("select_overlay", "boss_label", "waves_label", "reward_texture")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki6jb"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.639216)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="MapOption" type="PanelContainer" node_paths=PackedStringArray("select_overlay", "boss_label", "waves_label", "reward_texture", "c_tooltip")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,6 +51,7 @@ select_overlay = NodePath("TextureRect/overlay")
 boss_label = NodePath("MarginContainer/VBoxContainer/Panel/BossName")
 waves_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/WavesInRound/WaveNum")
 reward_texture = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Reward")
+c_tooltip = NodePath("custom_tooltip")
 
 [node name="TextureRect" type="NinePatchRect" parent="."]
 clip_children = 2
@@ -85,6 +105,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("4_vffa3")
 theme_override_font_sizes/normal_font_size = 420
+theme_override_font_sizes/bold_font_size = 420
 text = "TEST"
 scroll_active = false
 horizontal_alignment = 1
@@ -94,7 +115,7 @@ step = 10
 _max_size = 500
 _current_font_size = 420
 _editor_defaults_set = true
-metadata/_custom_type_script = ExtResource("3_jfis1")
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -125,6 +146,7 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("4_vffa3")
 theme_override_font_sizes/normal_font_size = 77
+theme_override_font_sizes/bold_font_size = 77
 text = "99"
 scroll_active = false
 horizontal_alignment = 1
@@ -134,7 +156,7 @@ step = 10
 _max_size = 500
 _current_font_size = 77
 _editor_defaults_set = true
-metadata/_custom_type_script = ExtResource("3_jfis1")
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
 
 [node name="Reward" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
@@ -160,6 +182,50 @@ pivot_offset = Vector2(96, 96)
 localize_numeral_system = false
 texture = SubResource("AtlasTexture_l1l0r")
 stretch_mode = 5
+
+[node name="custom_tooltip" parent="." instance=ExtResource("8_ki6jb")]
+layout_mode = 2
+
+[node name="map_option_tooltip" type="PanelContainer" parent="custom_tooltip" node_paths=PackedStringArray("text_section")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_right = 80.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ki6jb")
+script = ExtResource("9_ah67f")
+text_section = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="custom_tooltip/map_option_tooltip"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/normal_font = ExtResource("10_7sabm")
+theme_override_fonts/bold_font = ExtResource("11_43aog")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "
+hi
+hihihi
+hihi
+hihi
+hihi
+This is some demonstration text something something darkside y'know what i mean"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="mouse_entered" from="." to="." method="enable_overlay"]
 [connection signal="mouse_exited" from="." to="." method="disable_overlay"]
