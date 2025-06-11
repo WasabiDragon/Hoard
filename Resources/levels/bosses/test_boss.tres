@@ -9,41 +9,57 @@
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_suhhu"]
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_ecchk"]
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_u7chh"]
 script = ExtResource("4_so2sl")
 type = 1
 identifier = 1
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_7ioyk"]
 script = ExtResource("4_so2sl")
 type = 1
 identifier = 1
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_lqa51"]
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_yfjfl"]
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_0ek8q"]
 script = ExtResource("4_so2sl")
 type = 0
 identifier = 0
+enable_suit_override = false
+suit_override = 0
 
 [sub_resource type="Resource" id="Resource_uo1ju"]
 script = ExtResource("2_dhymi")

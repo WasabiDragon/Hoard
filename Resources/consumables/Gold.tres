@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="consumable" load_steps=5 format=3 uid="uid://kdioc1o1u3jf"]
+
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="1_af8xj"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="2_e74sy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7jd7"]
+atlas = ExtResource("1_af8xj")
+region = Rect2(192, 384, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bln1y"]
+atlas = ExtResource("1_af8xj")
+region = Rect2(0, 384, 192, 96)
+
+[resource]
+script = ExtResource("2_e74sy")
+type = 4
+image = SubResource("AtlasTexture_bln1y")
+highlight_image = SubResource("AtlasTexture_e7jd7")
+description = "[b]Gold[/b]
+One use. Lasts 5 rounds. Your dice temporarily level up by 1 tier."
+uses = 5
+metadata/_custom_type_script = "uid://b0bfc7cq16qwn"

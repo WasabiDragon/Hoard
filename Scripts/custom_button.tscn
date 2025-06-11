@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfj38rqs4xf63"]
+
+[ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="1_jqjwb"]
+[ext_resource type="Script" uid="uid://b7muiivx27xib" path="res://Scripts/custom_ui/custom_button.gd" id="2_o1qhy"]
+[ext_resource type="Script" uid="uid://dh7j0myk55kg4" path="res://addons/label_font_auto_sizer/rich_label_auto_sizer.gd" id="3_jqjwb"]
+
+[node name="custom_button" type="Button" node_paths=PackedStringArray("text_object")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jqjwb")
+script = ExtResource("2_o1qhy")
+text_object = NodePath("AutoSizeRichTextlabel")
+buttonText = "this is a test"
+
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_jqjwb")
+theme_override_font_sizes/normal_font_size = 464
+theme_override_font_sizes/bold_font_size = 464
+text = "this is a test"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_jqjwb")
+step = 10
+_max_size = 500
+_current_font_size = 464
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
+
+[connection signal="button_down" from="." to="." method="_on_pressed"]
+[connection signal="button_up" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

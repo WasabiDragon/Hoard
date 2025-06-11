@@ -3,16 +3,6 @@ extends PanelContainer
 @export var role_mgr: role_manager
 @export var display_lines: Array[class_info_line]
 
-func _ready():
-	get_parent().pressed.connect(display_help)
-
-func display_help():
-	if visible:
-		hide()
-	else:
-		set_display_lines()
-		show()
-
 func set_display_lines():
 	var roles = dice_stats.diceRole.keys()
 	var line_num = 0

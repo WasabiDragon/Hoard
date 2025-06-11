@@ -9,7 +9,7 @@
 atlas = ExtResource("4_4bq7d")
 region = Rect2(0, 96, 96, 96)
 
-[node name="drop_area" type="Marker2D" node_paths=PackedStringArray("upgrade_icon_textures", "colorRect", "slotLabel") groups=["zones"]]
+[node name="dice_zone_area" type="Marker2D" node_paths=PackedStringArray("upgrade_icon_textures", "colorRect", "slotLabel") groups=["zones"]]
 gizmo_extents = 32.0
 script = ExtResource("1_lwuv6")
 upgrade_icon = SubResource("AtlasTexture_2l2oj")
@@ -79,8 +79,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="UpgradeIcon1" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer2"]
-visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")
@@ -98,7 +97,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="UpgradeIcon2" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer2"]
 visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")
@@ -116,7 +115,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="UpgradeIcon3" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer2"]
 visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")
@@ -139,7 +138,7 @@ theme_override_constants/separation = 0
 
 [node name="UpgradeIcon4" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer"]
 visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")
@@ -157,7 +156,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="UpgradeIcon5" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer"]
 visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")
@@ -175,7 +174,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="UpgradeIcon6" type="TextureRect" parent="Sprite2D/HBoxContainer/VBoxContainer"]
 visible = false
-clip_children = 1
+clip_children = 2
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = SubResource("AtlasTexture_2l2oj")

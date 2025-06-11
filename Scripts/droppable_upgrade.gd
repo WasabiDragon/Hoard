@@ -15,7 +15,8 @@ enum upgradeType
 {
 	upgrade,
 	diceClass,
-	extraDie
+	extraDie,
+	bossUpgrade
 }
 
 func spawn():

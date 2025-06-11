@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="boss_template" load_steps=5 format=3 uid="uid://fpaqx1j81jyw"]
+
+[ext_resource type="Script" uid="uid://b8t7ntqgh1sue" path="res://Scripts/boss_template.gd" id="1_kp8p8"]
+[ext_resource type="Script" uid="uid://cvwvvmbc220jl" path="res://Scripts/boss_template_wave.gd" id="2_rrnyc"]
+
+[sub_resource type="Resource" id="Resource_oo0ey"]
+script = ExtResource("2_rrnyc")
+wave = Array[int]([1, 0, 0, 1, 1, 0, 0, 1])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[sub_resource type="Resource" id="Resource_e8b5e"]
+script = ExtResource("2_rrnyc")
+wave = Array[int]([2, 2, 2, 2, 2, 2, 2, 2])
+metadata/_custom_type_script = "uid://cvwvvmbc220jl"
+
+[resource]
+script = ExtResource("1_kp8p8")
+boss_name = "Full housE"
+waves = Array[ExtResource("2_rrnyc")]([SubResource("Resource_oo0ey"), SubResource("Resource_e8b5e")])
+metadata/_custom_type_script = "uid://b8t7ntqgh1sue"

@@ -58,6 +58,7 @@ slot_check_range = 150
 lockout_mgr = NodePath("lockout_mgr")
 visual_mgr = NodePath("visual_mgr")
 audio_mgr = NodePath("audio_mgr")
+click_speed = 0.15
 
 [node name="audio_mgr" type="Node" parent="."]
 script = ExtResource("2_2xvvb")

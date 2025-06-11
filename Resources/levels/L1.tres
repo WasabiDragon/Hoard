@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="level_gen_stats" load_steps=2 format=3 uid="uid://b6rct10ywjgoa"]
+
+[ext_resource type="Script" uid="uid://3pb1j2dlj7mv" path="res://Scripts/resources/level_info.gd" id="1_d8nwl"]
+
+[resource]
+script = ExtResource("1_d8nwl")
+waves = 0
+minTier = 0
+maxTier = 0
+bossTier = 0
+metadata/_custom_type_script = ExtResource("1_d8nwl")

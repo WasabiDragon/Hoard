@@ -46,9 +46,9 @@ func random_boss():
 			output = x.duplicate()
 	return output
 
-func specific_card(cardNum: int, targetSuit: int = 0) -> card_type:
+func specific_card(cardNum: int, targetSuit: int = -1) -> card_type:
 	var num = cardNum
-	var suit = card_type.suit.values()[randi()%card_type.suit.size()] if targetSuit == 0 else card_type.suit.values()[targetSuit]
+	var suit = card_type.suit.values()[randi()%card_type.suit.size()] if targetSuit == -1 else card_type.suit.values()[targetSuit]
 	var output: card_type
 	for x in deck:
 		if x.card_number == num && x.card_suit == suit:

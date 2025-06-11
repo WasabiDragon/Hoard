@@ -27,6 +27,8 @@ var gridPosition: Vector2
 var grow_on_approach:= false
 var growthPerStep:= 1.1
 var c_tooltip: custom_tooltip
+var identifier: enemy_identifier
+@onready var spawn_mgr: spawner = $/root/Main/game_controller/enemy_spawner
 
 func _ready():
 	current_card_type = card_type.new()
@@ -64,6 +66,9 @@ func spawn(_type):
 	print("enemy spawn not implemented")
 	pass
 
+func kill():
+	_death()
+
 func _death():
 	print("enemy death not implemented")
 	pass
@@ -82,6 +87,8 @@ func damage(amount: int):
 	current_damage += amount
 	healthBar.value = current_damage
 	update_tooltip()
+	if globals.consumable_knockback_enabled:
+		knockback()
 	if current_damage >= max_hp:
 		_death()
 
@@ -100,6 +107,51 @@ func move(destination: Vector2):
 func danger_check(maxRanks):
 	if gridPosition.y >= maxRanks-1:
 		dangerAnimator.play("danger")
+	else:
+		dangerAnimator.stop()
 
 func game_over_check(maxRanks):
 	return gridPosition.y >= maxRanks
+
+func knockback():
+	if gridPosition.y == 0:
+		return
+	var enemies = get_tree().get_nodes_in_group("enemy")
+	var target_pos = gridPosition
+	target_pos.y -=1
+	var empty_spot = true
+	var directly_behind: enemy
+	for target in enemies:
+		if target.gridPosition == target_pos:
+			empty_spot = false
+			directly_behind = target
+			break
+	if empty_spot:
+		print('moving to empty spot behind target')
+		move(spawn_mgr.grid_to_global(target_pos))
+		gridPosition = target_pos
+		danger_check(globals.ranks)
+		return
+	var space_left = target_pos.x >0
+	var space_right = target_pos.x < globals.lanes
+	for target in enemies:
+		if space_left && target.gridPosition.x == target_pos.x - 0.5:
+			space_left = false
+		if space_right && target.gridPosition.x == target_pos.x + 0.5:
+			space_right = false
+	var options = []
+	if space_left:
+		options.append(target_pos.x - 0.5)
+	if space_right:
+		options.append(target_pos.x + 0.5)
+	if options.size() > 0:
+		target_pos.x = options[randi() % options.size()]
+	else:
+		if gridPosition.y -1 >= 0:
+			directly_behind.knockback()
+		else:
+			return
+	gridPosition = target_pos
+	move(spawn_mgr.grid_to_global(target_pos))
+	danger_check(globals.ranks)
+			

@@ -1,0 +1,220 @@
+[gd_resource type="Resource" script_class="boss_round" load_steps=35 format=3 uid="uid://dg4sfin3yr2jt"]
+
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="1_uu1ae"]
+[ext_resource type="Script" uid="uid://dh8usy4n8v8sf" path="res://Scripts/resources/boss_wave.gd" id="2_tuxaa"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="3_7vb8r"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="4_4qjhn"]
+
+[sub_resource type="Resource" id="Resource_uu1ae"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 5
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_tuxaa"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 5
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_7vb8r"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 5
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_4qjhn"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_1y0l5"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_nke2f"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_6wm0m"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_chvd4"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_31wyv"]
+script = ExtResource("3_7vb8r")
+wave = Array[ExtResource("4_4qjhn")]([SubResource("Resource_uu1ae"), SubResource("Resource_tuxaa"), SubResource("Resource_7vb8r"), SubResource("Resource_4qjhn"), SubResource("Resource_1y0l5"), SubResource("Resource_nke2f"), SubResource("Resource_6wm0m"), SubResource("Resource_chvd4")])
+metadata/_custom_type_script = ExtResource("3_7vb8r")
+
+[sub_resource type="Resource" id="Resource_bomkh"]
+script = ExtResource("2_tuxaa")
+pregenerated = true
+pregen_wave = SubResource("Resource_31wyv")
+challenge_rating = 0
+metadata/_custom_type_script = ExtResource("2_tuxaa")
+
+[sub_resource type="Resource" id="Resource_caycn"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_wh2x5"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_d1o8x"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_05a2v"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_d43t6"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_40qln"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 7
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_0srlf"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 7
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_u6f0g"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 7
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_k12aw"]
+script = ExtResource("3_7vb8r")
+wave = Array[ExtResource("4_4qjhn")]([SubResource("Resource_caycn"), SubResource("Resource_wh2x5"), SubResource("Resource_d1o8x"), SubResource("Resource_05a2v"), SubResource("Resource_d43t6"), SubResource("Resource_40qln"), SubResource("Resource_0srlf"), SubResource("Resource_u6f0g")])
+metadata/_custom_type_script = ExtResource("3_7vb8r")
+
+[sub_resource type="Resource" id="Resource_puydh"]
+script = ExtResource("2_tuxaa")
+pregenerated = true
+pregen_wave = SubResource("Resource_k12aw")
+challenge_rating = 0
+metadata/_custom_type_script = ExtResource("2_tuxaa")
+
+[sub_resource type="Resource" id="Resource_iqmf4"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_j15mi"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_pitcl"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 9
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_pvmon"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 9
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_y8unt"]
+script = ExtResource("4_4qjhn")
+type = 1
+identifier = 9
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_7s1ik"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_i64wd"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_6fjw8"]
+script = ExtResource("4_4qjhn")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_nbtex"]
+script = ExtResource("3_7vb8r")
+wave = Array[ExtResource("4_4qjhn")]([SubResource("Resource_iqmf4"), SubResource("Resource_j15mi"), SubResource("Resource_pitcl"), SubResource("Resource_pvmon"), SubResource("Resource_y8unt"), SubResource("Resource_7s1ik"), SubResource("Resource_i64wd"), SubResource("Resource_6fjw8")])
+metadata/_custom_type_script = ExtResource("3_7vb8r")
+
+[sub_resource type="Resource" id="Resource_c88fd"]
+script = ExtResource("2_tuxaa")
+pregenerated = true
+pregen_wave = SubResource("Resource_nbtex")
+challenge_rating = 0
+metadata/_custom_type_script = ExtResource("2_tuxaa")
+
+[resource]
+script = ExtResource("1_uu1ae")
+boss_round_name = "Threes of a kinD"
+boss_round_info = Array[ExtResource("2_tuxaa")]([SubResource("Resource_bomkh"), SubResource("Resource_puydh"), SubResource("Resource_c88fd")])
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([])
+card_numbers = Array[ExtResource("3_7vb8r")]([])
+has_boss = false

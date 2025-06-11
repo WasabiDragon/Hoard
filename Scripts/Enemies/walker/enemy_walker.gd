@@ -9,7 +9,15 @@ func spawn(type: card_type):
 		animatedSprite.animation = "boss_idle"
 	else:
 		max_hp = current_card_type.card_number
-		animatedSprite.animation = "basic_idle"
+		match type.card_suit:
+			card_type.suit.Spade:
+				animatedSprite.animation = "basic_spades"
+			card_type.suit.Club:
+				animatedSprite.animation = "basic_clubs"
+			card_type.suit.Diamond:
+				animatedSprite.animation = "basic_diamonds"
+			card_type.suit.Heart:
+				animatedSprite.animation = "basic_hearts"
 	current_damage = 0
 	sprite.texture = current_card_type.card_texture
 	animPlayer.play("idle")

@@ -3,6 +3,7 @@ class_name boss_round
 
 @export var boss_round_name: String = ""
 @export var boss_round_info: Array[boss_wave] = []
+@export var boss_reward: reward_obj
 
 func is_wave_in_round(wave_index) -> bool:
 	if wave_index >= boss_round_info.size():
@@ -15,3 +16,6 @@ func get_wave(wave_number) -> pregenerated_wave:
 	var info:= boss_round_info[wave_number]
 	wave_to_submit = info.pregen_wave if info.pregenerated else wave_gen.get_wave(info.challenge_rating)
 	return wave_to_submit
+
+func get_wave_count() -> int:
+	return boss_round_info.size()

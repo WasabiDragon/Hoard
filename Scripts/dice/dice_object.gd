@@ -7,26 +7,29 @@ class_name dice_object
 @export var lockout_mgr: dice_lockout_mgr
 @export var visual_mgr: dice_visual_mgr
 @export var audio_mgr: dice_audio_mgr
+@export var click_speed: float = 0.25
 
 
 @onready var _custom_tooltip = $custom_tooltip
 @onready var _role_mgr: role_manager = get_parent().role_mgr
 @onready var _dam_calc: damage_calc = get_node("/root/Main/game_controller/damage_calculator")
+@onready var _die_select: die_selector = get_node("/root/Main/game_controller/die_select")
 
 var _grabbed = false
 var selected = false
 var _rest_point: Node
-# var _previous_slot
 var _closest_target
-# var _rest_nodes = []
 var _target_nodes = []
 var _remainingRolls: int = 1
 var initialized: bool = false
 var locked_out: bool:
 	get:
 		return lockout_mgr.locked_out
-
 var held_upgrades = 0
+var temporarily_upgraded:= false
+
+var click_timer: float = 0
+var click_timer_enabled: bool = false
 
 func _ready():
 	connect_signals()
@@ -35,9 +38,13 @@ func connect_signals():
 	signals.turn_ended.connect(roll_dice_check)
 	signals.roll_dice.connect(roll_dice_check)
 	signals.refresh_all.connect(refresh_lockout)
+	signals.use_consumable.connect(temp_upgrade)
 
 func roll_dice_check():
+	if temporarily_upgraded && !globals.consumable_tier_up_enabled:
+		downgrade()
 	if _remainingRolls < _role_mgr.get_multi_roll(dice) && !lockout_mgr.locked_out:
+		print("Locking dice "+name)
 		_lockout(_role_mgr.get_lockout_time(dice))
 	if lockout_mgr.attempt_roll():
 		roll_dice()
@@ -68,6 +75,11 @@ func _lockout(_lockoutLength):
 	lockout_mgr.lockout(_lockoutLength)
 
 func _process(_delta):
+	if click_timer_enabled:
+		click_timer += _delta
+		if click_timer >= click_speed && !_die_select.override:
+			_grabbed = true
+			print("grabbed")
 	if _rest_point != null:
 		if _rest_point && _rest_point.global_position == Vector2.ZERO:
 			print("rest point not given")
@@ -77,9 +89,7 @@ func _process(_delta):
 		_closest_target = _check_for_target_near_pos(get_global_mouse_position())
 
 func _initialize():
-	print("Initializing die")
 	global_position = _rest_point.global_position
-	# _check_closest().place(self)
 	update_tooltip()
 	visual_mgr.set_font_color(_role_mgr.get_font_color(dice.role))
 	visual_mgr.set_dice(_role_mgr.get_dice_image(dice))
@@ -91,8 +101,8 @@ func _initialize():
 func _on_area_2d_input_event(_viewport, _event, _shape_idx):
 	#implement pickup behaviour
 	if Input.is_action_just_pressed("click") && !lockout_mgr.locked_out:
-		# _check_closest(false).currentNode = null
-		_grabbed = true
+		click_timer = 0
+		click_timer_enabled = true
 	elif Input.is_action_just_pressed("click") && lockout_mgr.locked_out:
 		audio_mgr.lockedSound()
 
@@ -101,14 +111,28 @@ func _input(event):
 	if _dam_calc == null:
 		_dam_calc = get_node("/root/Main/game_controller/damage_calculator")
 	if event.is_action("click"):
-		if not event.pressed and not locked_out:
+		if event.pressed:
+			return
+		if selected && locked_out:
+			audio_mgr.lockedSound()
+			click_timer_enabled = false
+		elif selected && !click_timer_enabled && !locked_out && !_die_select.grabbing_other_die():
+			use_die()
+		elif not click_timer_enabled:
+			return
+		if click_timer_enabled && click_timer < click_speed:
+			_die_select.select_from_die(self)
+			click_timer_enabled = false
+		elif not locked_out and _grabbed:
 			use_die()
 			_grabbed = false
-		elif not event.pressed and selected and locked_out:
-			audio_mgr.lockedSound()
+			click_timer_enabled = false
+		else:
+			_grabbed = false
+			click_timer_enabled = false
+
 
 func reset_position() -> void:
-	# _check_closest(true)
 	global_position = _rest_point.global_position
 
 func _physics_process(delta):
@@ -134,7 +158,7 @@ func _check_for_target_near_pos(position_to_target: Vector2):
 		for child in _target_nodes:
 			child.deselect()
 	else:
-		if dice.role == dice_stats.diceRole.Quickshot && closest_target_check.get_parent().gridPosition.y < stats.ranks-1-_role_mgr.quickshot_distance():
+		if dice.role == dice_stats.diceRole.Quickshot && closest_target_check.get_parent().gridPosition.y < globals.ranks-1-_role_mgr.quickshot_distance():
 			closest_target_check = null
 		else:
 			closest_target_check.select()
@@ -157,6 +181,23 @@ func upgrade() -> bool:
 	else:
 		print("Cannot upgrade further")
 		return false
+
+func temp_upgrade(obj: consumable):
+	if obj.type != consumable_manager.consumableType.TIER_UP:
+		return
+	if dice.upgradeable:
+		temporarily_upgraded = true
+		dice.upgrade()
+		visual_mgr.set_dice(_role_mgr.get_dice_image(dice))
+		update_tooltip()
+		update_face()
+
+func downgrade():
+	temporarily_upgraded = false
+	dice.downgrade()
+	visual_mgr.set_dice(_role_mgr.get_dice_image(dice))
+	update_tooltip()
+	update_face()
 
 func changeClass(diceRole: dice_stats.diceRole) -> bool:
 	if dice.role == diceRole:

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="consumable" load_steps=5 format=3 uid="uid://cbiq3d6wgb61c"]
+
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="1_lgqlc"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="2_em4lx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e4l1"]
+atlas = ExtResource("1_lgqlc")
+region = Rect2(192, 288, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbs45"]
+atlas = ExtResource("1_lgqlc")
+region = Rect2(0, 288, 192, 96)
+
+[resource]
+script = ExtResource("2_em4lx")
+type = 1
+image = SubResource("AtlasTexture_cbs45")
+highlight_image = SubResource("AtlasTexture_4e4l1")
+description = "[b]Bomb[/b]
+Three uses. Kills every enemy on screen."
+uses = 3
+metadata/_custom_type_script = "uid://b0bfc7cq16qwn"

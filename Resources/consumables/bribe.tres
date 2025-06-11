@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="consumable" load_steps=5 format=3 uid="uid://doiwoyfqixr6n"]
+
+[ext_resource type="Texture2D" uid="uid://qmwotjhv2bgk" path="res://Assets/UI/consumables/Consumables.png" id="1_2s4wa"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="1_aaslm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhkbs"]
+atlas = ExtResource("1_2s4wa")
+region = Rect2(192, 96, 192, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwdh"]
+atlas = ExtResource("1_2s4wa")
+region = Rect2(0, 96, 192, 96)
+
+[resource]
+script = ExtResource("1_aaslm")
+type = 3
+image = SubResource("AtlasTexture_fbwdh")
+highlight_image = SubResource("AtlasTexture_nhkbs")
+description = "[b]Bribe[/b]
+One use. Lasts 5 rounds. Rigs your dice to always roll maximum value."
+uses = 5
+metadata/_custom_type_script = "uid://b0bfc7cq16qwn"

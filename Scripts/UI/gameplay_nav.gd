@@ -13,7 +13,7 @@ func _ready():
 	endTurnButton.pressed.connect(_end_turn)
 
 	signals.game_over.connect(disable_end_turn)
-	signals.restarting.connect(enable_end_turn)
+	signals.restarting.connect(reset)
 	signals.boss_fight.connect(boss_text_on)
 	signals.boss_text_complete.connect(boss_text_end)
 	signals.show_title.connect(title_on)
@@ -24,18 +24,19 @@ func _start_game():
 	if game_con == null:
 		game_con = %game_controller
 	main_title.hide()
-	game_con.start_game()
 	startButton.get_parent().hide()
-	endTurnButton.get_parent().show()
+	game_con.start_game()
+	# endTurnButton.get_parent().show()
 
 func _next_round():
 	if game_con == null:
 		game_con = %game_controller
 	signals.emit_next_round()
-	endTurnButton.get_parent().show()
 	nextRoundButton.get_parent().hide()
 
 func _end_turn():
+	if !globals.game_running:
+		return
 	if game_con == null:
 		game_con = %game_controller
 	signals.emit_turn_ended()
@@ -47,13 +48,18 @@ func enable_end_turn():
 	endTurnButton.disabled = false
 
 func boss_text_on(_null = null):
-	endTurnButton.hide()
+	endTurnButton.get_parent().hide()
 
 func boss_text_end(_null = null):
-	endTurnButton.show()
+	endTurnButton.get_parent().show()
 
 func title_on(_null = null, _null2 = null):
-	endTurnButton.hide()
+	endTurnButton.get_parent().hide()
 
 func title_end():
-	endTurnButton.show()
+	endTurnButton.get_parent().show()
+
+func reset():
+	main_title.show()
+	startButton.get_parent().show()
+	enable_end_turn()

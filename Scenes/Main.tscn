@@ -1,70 +1,220 @@
-[gd_scene load_steps=87 format=3 uid="uid://htrdr826wqmu"]
+[gd_scene load_steps=155 format=3 uid="uid://htrdr826wqmu"]
 
-[ext_resource type="Script" uid="uid://bxuqwftmf3t3t" path="res://Scripts/managers/enemy_spawner.gd" id="1_cbngh"]
+[ext_resource type="Script" uid="uid://bxuqwftmf3t3t" path="res://Scripts/controllers/enemy_spawner.gd" id="1_cbngh"]
+[ext_resource type="Script" uid="uid://bjj7jftudlpi0" path="res://Scripts/Debug/debug_options.gd" id="1_he124"]
 [ext_resource type="Texture2D" uid="uid://ks013go2ghyq" path="res://Assets/background.png" id="1_p3t1x"]
 [ext_resource type="Script" uid="uid://dgk66fxwkw1ey" path="res://Scripts/dice/dice_tray.gd" id="2_ktqp2"]
 [ext_resource type="Script" uid="uid://caxa0popcx8in" path="res://Scripts/quickshot_marker.gd" id="3_j7e3e"]
-[ext_resource type="Script" uid="uid://g38k2s8lghrc" path="res://Scripts/managers/game_controller.gd" id="3_uk270"]
+[ext_resource type="Script" uid="uid://g38k2s8lghrc" path="res://Scripts/controllers/game_controller.gd" id="3_uk270"]
 [ext_resource type="Texture2D" uid="uid://7p8u3hj4ip27" path="res://Assets/UI/Grid_display.png" id="5_rgw24"]
 [ext_resource type="Script" uid="uid://qyja8jwcjt2s" path="res://Scripts/grid_shifter.gd" id="6_5gwyn"]
 [ext_resource type="Script" uid="uid://cag1gxedcjdbs" path="res://Scripts/dice/dice_spawner.gd" id="6_ab52g"]
 [ext_resource type="Script" uid="uid://ojciis30nb3x" path="res://Scripts/upgrade_choice.gd" id="6_bfvkc"]
-[ext_resource type="Script" uid="uid://ymfvpl5nfnlp" path="res://Scripts/managers/game_flow.gd" id="6_muis8"]
+[ext_resource type="Script" uid="uid://ymfvpl5nfnlp" path="res://Scripts/controllers/game_flow.gd" id="6_muis8"]
 [ext_resource type="Script" uid="uid://feg8wn6awg1m" path="res://Scenes/level_list.gd" id="7_l1oo3"]
 [ext_resource type="Script" uid="uid://dw0xfddjq8l83" path="res://Scripts/UI/game_over_panel.gd" id="7_mm0j3"]
-[ext_resource type="Script" uid="uid://dv655cpuw25yn" path="res://Scripts/managers/enemy_manager.gd" id="7_wg8mf"]
-[ext_resource type="Script" uid="uid://51hpn6vka7jp" path="res://Scripts/managers/upgrade_drop_controller.gd" id="8_0qttn"]
-[ext_resource type="Script" uid="uid://d0klbo0wbciun" path="res://Scripts/resources/level.gd" id="8_3io8c"]
-[ext_resource type="Script" uid="uid://cneu6t7hatk0f" path="res://Scripts/managers/die_select_manager.gd" id="8_eywpa"]
+[ext_resource type="Script" uid="uid://dv655cpuw25yn" path="res://Scripts/controllers/enemy_manager.gd" id="7_wg8mf"]
+[ext_resource type="Script" uid="uid://dcby8hhmffcaj" path="res://Scripts/ConsumablesContainer.gd" id="8_8kgcr"]
+[ext_resource type="Script" uid="uid://cneu6t7hatk0f" path="res://Scripts/controllers/die_select_manager.gd" id="8_eywpa"]
 [ext_resource type="Script" uid="uid://k5rtu57f5sm6" path="res://Scripts/UI/gameplay_nav.gd" id="9_1kml8"]
 [ext_resource type="Texture2D" uid="uid://c6nyaby3ddf6n" path="res://Assets/UI/upgrade_icons.png" id="9_s1n0l"]
 [ext_resource type="Texture2D" uid="uid://cfkb64uapvuve" path="res://Assets/cards/snoblin deck/full_cards.png" id="10_lac6x"]
-[ext_resource type="Script" uid="uid://g285lil6e1sh" path="res://Scripts/managers/damage_calculator.gd" id="13_p3s4g"]
-[ext_resource type="Script" uid="uid://cxamt84kwfhkk" path="res://Scripts/managers/floating_text_controller.gd" id="14_fdjyy"]
+[ext_resource type="Script" uid="uid://g285lil6e1sh" path="res://Scripts/controllers/damage_calculator.gd" id="13_p3s4g"]
+[ext_resource type="Script" uid="uid://cxamt84kwfhkk" path="res://Scripts/controllers/floating_text_controller.gd" id="14_fdjyy"]
 [ext_resource type="AudioStream" uid="uid://byooed3ee0njm" path="res://Audio/music/Western/game/acoustic-western-rock-background-252337.mp3" id="15_ep8v8"]
 [ext_resource type="AudioStream" uid="uid://ck82vqwmjqd6p" path="res://Audio/music/Western/game/cowboy-western-background-247644.mp3" id="16_3133c"]
-[ext_resource type="Resource" uid="uid://b2ornlsl2ffn7" path="res://Resources/levels/level_1/level_1_full.tres" id="17_j7e3e"]
+[ext_resource type="Script" uid="uid://3pb1j2dlj7mv" path="res://Scripts/resources/level_info.gd" id="16_yn2g2"]
 [ext_resource type="AudioStream" uid="uid://beb2om72esgun" path="res://Audio/music/Western/game/orchestral-western-loop-duel-adventure-294750.mp3" id="17_js5gh"]
 [ext_resource type="Script" uid="uid://b4spnu3gjp87l" path="res://Scripts/audio_bank_player.gd" id="17_u2ga6"]
 [ext_resource type="AudioStream" uid="uid://dirll1f8fef7s" path="res://Audio/sfx/arcade_game_level_up 01.mp3" id="18_cfut3"]
+[ext_resource type="Script" uid="uid://b8t7ntqgh1sue" path="res://Scripts/boss_template.gd" id="18_e2umn"]
 [ext_resource type="AudioStream" uid="uid://b5ow80w5lbd74" path="res://Audio/music/Western/game/western-journey-167030.mp3" id="18_vvjo1"]
-[ext_resource type="Resource" uid="uid://bfbhptqn4bf88" path="res://Resources/levels/level_2/level_2_full.tres" id="18_y2ulj"]
+[ext_resource type="Resource" uid="uid://4mhnr7yvxsse" path="res://Resources/levels/bosses/templates/FullHouse_var_1.tres" id="19_478hk"]
+[ext_resource type="Resource" uid="uid://duue5mwqfpsy7" path="res://Resources/levels/bosses/templates/Flush_var_1.tres" id="19_cbpwj"]
 [ext_resource type="AudioStream" uid="uid://dt53ynm6x7kpy" path="res://Audio/music/Western/game/western-loop-epic-cinematic-country-267839.mp3" id="19_yisvs"]
+[ext_resource type="Resource" uid="uid://0ii0kfbwvtkv" path="res://Resources/levels/bosses/templates/Flush_var_2.tres" id="20_jw3lw"]
+[ext_resource type="Resource" uid="uid://bvxsvqh0momgi" path="res://Resources/levels/bosses/templates/FullHouse_var_2.tres" id="20_othpo"]
 [ext_resource type="AudioStream" uid="uid://clflo5dx1t1ea" path="res://Audio/music/Western/menu/western-theme-162884.mp3" id="20_rgw24"]
 [ext_resource type="AudioStream" uid="uid://cejjsf2r85nf6" path="res://Audio/music/Western/gameover/western-duel-165284.mp3" id="21_5gwyn"]
 [ext_resource type="Script" uid="uid://euuvo6bq6aha" path="res://Scripts/music_player.gd" id="21_a87av"]
+[ext_resource type="Resource" uid="uid://bwjj5px0iri86" path="res://Resources/levels/bosses/templates/Flush_var_3.tres" id="21_h7ft5"]
+[ext_resource type="Resource" uid="uid://fpaqx1j81jyw" path="res://Resources/levels/bosses/templates/FullHouse_var_3.tres" id="21_s0riu"]
+[ext_resource type="Resource" uid="uid://uv6yju3h3a7i" path="res://Resources/levels/bosses/templates/FourOfAKind_var_1.tres" id="22_cchgx"]
+[ext_resource type="Resource" uid="uid://ib7gw52rg2y3" path="res://Resources/levels/bosses/templates/NoPair_var_1.tres" id="22_hjjnx"]
+[ext_resource type="Resource" uid="uid://cefinvsa1hhtg" path="res://Resources/levels/bosses/templates/FourOfAKind_var_2.tres" id="23_6jw1o"]
+[ext_resource type="Resource" uid="uid://2fnq2iw4bgxf" path="res://Resources/levels/bosses/templates/Straight_var_1.tres" id="23_ok4ge"]
 [ext_resource type="AudioStream" uid="uid://bayroytxmrqjo" path="res://Audio/music/Western/boss/cinematic-western-duel-adventure-292157.mp3" id="23_yisvs"]
 [ext_resource type="Theme" uid="uid://dkcw7lvk1ukvr" path="res://Themes/UI.tres" id="24_amopx"]
+[ext_resource type="Resource" uid="uid://dj8k28q2pqrrg" path="res://Resources/levels/bosses/templates/Straight_var_2.tres" id="24_e2umn"]
+[ext_resource type="Resource" uid="uid://bjrah4v5g070h" path="res://Resources/levels/bosses/templates/FourOfAKind_var_3.tres" id="24_mhc43"]
 [ext_resource type="AudioStream" uid="uid://d0mb85fbbymju" path="res://Audio/music/Western/boss/duel-270515.mp3" id="24_rgw24"]
+[ext_resource type="Resource" uid="uid://t0tnoddpfli3" path="res://Resources/levels/bosses/templates/Straight_var_3.tres" id="25_k6daw"]
 [ext_resource type="FontFile" uid="uid://btpp66cyqoiy6" path="res://Assets/Fonts/Vanilla Whale.otf" id="25_o4qd2"]
 [ext_resource type="Script" uid="uid://dwvs3rmwy4uci" path="res://Scripts/role_information_collection/role_manager.gd" id="28_gxivi"]
 [ext_resource type="Script" uid="uid://dd6tlbq0ukrxt" path="res://Scripts/role_information_collection/roles/cowboy.gd" id="29_4eewf"]
 [ext_resource type="Script" uid="uid://cf736av5ys4ko" path="res://Scripts/role_information_collection/roles/bartend.gd" id="29_c0j8d"]
+[ext_resource type="Resource" uid="uid://dprgdm3xt84va" path="res://Resources/levels/bosses/templates/NoPair_var_2.tres" id="29_qpal1"]
+[ext_resource type="Resource" uid="uid://dowj2wwcdpnc" path="res://Resources/levels/bosses/templates/NoPair_var_3.tres" id="30_har0a"]
 [ext_resource type="Texture2D" uid="uid://bn86v80avvegk" path="res://Assets/Dice/AlchemistSet.png" id="31_h6pw0"]
+[ext_resource type="Resource" uid="uid://d042nqewqn5ky" path="res://Resources/levels/bosses/templates/NoPair_var_4.tres" id="31_r8bee"]
+[ext_resource type="Resource" uid="uid://ctwufvle044o2" path="res://Resources/levels/bosses/templates/Pairs_var_1.tres" id="32_rwa6c"]
 [ext_resource type="Script" uid="uid://cioggwhxxuafc" path="res://Scripts/role_information_collection/roles/Madam.gd" id="33_btrct"]
 [ext_resource type="Texture2D" uid="uid://d07qctp1c0mig" path="res://Assets/Dice/DiceSet.png" id="33_fg2al"]
+[ext_resource type="Resource" uid="uid://c5jnwjoo7ni12" path="res://Resources/levels/bosses/templates/Pairs_var_2.tres" id="33_yhlxv"]
 [ext_resource type="Script" uid="uid://crgq7y3a6d33r" path="res://Scripts/role_information_collection/roles/deputy.gd" id="34_8vbgj"]
+[ext_resource type="Resource" uid="uid://crtorsfxvp7gh" path="res://Resources/levels/bosses/templates/Pairs_var_3.tres" id="34_ry2vk"]
 [ext_resource type="Texture2D" uid="uid://g5n0jnaocydm" path="res://Assets/Dice/RogueSet.png" id="35_2hbly"]
 [ext_resource type="Script" uid="uid://c4s3ljv3mnfcv" path="res://Scripts/role_information_collection/roles/gunslinger.gd" id="35_pqrr1"]
 [ext_resource type="Script" uid="uid://bagmq2t67parj" path="res://Scripts/role_information_collection/roles/deadeye.gd" id="36_kosyg"]
 [ext_resource type="Script" uid="uid://clktgyr13vdag" path="res://Scripts/role_information_collection/roles/demolisher.gd" id="37_hdulm"]
 [ext_resource type="Texture2D" uid="uid://ck1sro0k4h3kv" path="res://Assets/Dice/WizardSet.png" id="37_rewp0"]
+[ext_resource type="Resource" uid="uid://cyyx57l68wtmu" path="res://Resources/levels/bosses/templates/ThreeOfAKind_var_1.tres" id="38_3d2lr"]
 [ext_resource type="Script" uid="uid://81jtpblogfiy" path="res://Scripts/audio_manager.gd" id="38_3133c"]
 [ext_resource type="Texture2D" uid="uid://bipgp77lle8x8" path="res://Assets/Dice/WarriorSet.png" id="39_8yo0w"]
 [ext_resource type="PackedScene" uid="uid://bc8qm4krbm8k6" path="res://Scenes/upgrade_button.tscn" id="39_m4llh"]
+[ext_resource type="Resource" uid="uid://bma5vbqs7o2k4" path="res://Resources/levels/bosses/templates/ThreeOfAKind_var_2.tres" id="39_onym5"]
+[ext_resource type="Resource" uid="uid://coxwsdn64iskv" path="res://Resources/levels/bosses/templates/ThreeOfAKind_var_3.tres" id="40_3pqs5"]
+[ext_resource type="Resource" uid="uid://ci1svcm7d25k8" path="res://Resources/levels/bosses/templates/ThreeOfAKind_var_4.tres" id="41_lxea5"]
 [ext_resource type="Texture2D" uid="uid://cxr7y6cnujdbr" path="res://Assets/Dice/HealerSet.png" id="41_m3ar2"]
-[ext_resource type="Script" uid="uid://strrnloc4uiu" path="res://Scripts/_globals/stats.gd" id="41_x47is"]
 [ext_resource type="Texture2D" uid="uid://ctbwdrdpqm8uo" path="res://Assets/Dice/PriestSet.png" id="43_f4r71"]
-[ext_resource type="Script" uid="uid://d0vb326i6lmk0" path="res://Scripts/managers/input_manager.gd" id="44_81ldr"]
+[ext_resource type="Script" uid="uid://d0vb326i6lmk0" path="res://Scripts/controllers/input_manager.gd" id="44_81ldr"]
 [ext_resource type="Script" uid="uid://b38nr5a7bjgwf" path="res://Scripts/UI/title_card.gd" id="44_wi0dd"]
 [ext_resource type="Texture2D" uid="uid://c0c3dcyt7d5pj" path="res://Assets/UI/AudioIcon.png" id="45_lfh1j"]
+[ext_resource type="Script" uid="uid://byu2poyyukj41" path="res://Scripts/controllers/map_manager.gd" id="45_yic5e"]
+[ext_resource type="Script" uid="uid://bu5ueq570c8s6" path="res://Scripts/wave_display.gd" id="46_1bbis"]
 [ext_resource type="Texture2D" uid="uid://28i4tvs2mw3r" path="res://Assets/UI/next_round.png" id="46_5gwyn"]
 [ext_resource type="Script" uid="uid://phx1x8v0mcg6" path="res://Scripts/audio_settings_button.gd" id="46_7sj7i"]
+[ext_resource type="Texture2D" uid="uid://dodork756ynqo" path="res://Assets/UI/waves_remaining.png" id="46_t3x2a"]
 [ext_resource type="Script" uid="uid://ii55fwwjd38p" path="res://Scripts/AudioSettings.gd" id="47_semxg"]
+[ext_resource type="Texture2D" uid="uid://dfpj1e06frhv8" path="res://Assets/new_background.png" id="47_t3x2a"]
 [ext_resource type="FontFile" uid="uid://c1bas67f2ai0v" path="res://Assets/Fonts/Jackwrite/Jackwrite.ttf" id="48_ep8v8"]
 [ext_resource type="Script" uid="uid://dh7j0myk55kg4" path="res://addons/label_font_auto_sizer/rich_label_auto_sizer.gd" id="54_81ldr"]
+[ext_resource type="Script" uid="uid://dmg645oxm64ob" path="res://Scripts/boss_upgrade_display.gd" id="58_ex7s8"]
+[ext_resource type="Script" uid="uid://bl3kf0uf8u66y" path="res://Scripts/controllers/consumables_manager.gd" id="58_fsd2l"]
+[ext_resource type="Texture2D" uid="uid://bvns1akdbu446" path="res://Assets/FX/fire_img.png" id="59_4clwk"]
+[ext_resource type="Script" uid="uid://b0bfc7cq16qwn" path="res://Scripts/resources/consumable_res.gd" id="61_3k6d1"]
+[ext_resource type="Resource" uid="uid://doiwoyfqixr6n" path="res://Resources/consumables/bribe.tres" id="62_3k6d1"]
+[ext_resource type="Resource" uid="uid://c6khldu7lp7wc" path="res://Resources/consumables/chain.tres" id="62_fq6d3"]
 [ext_resource type="PackedScene" uid="uid://bmpoey2ux3x21" path="res://Scenes/controls_panel.tscn" id="62_y2ulj"]
 [ext_resource type="PackedScene" uid="uid://cp416xjlvg78k" path="res://Scenes/classes_panel.tscn" id="63_1bbis"]
+[ext_resource type="Script" uid="uid://qfs6yi6axwit" path="res://Scripts/Debug/kill_all_enemies.gd" id="64_1bbis"]
+[ext_resource type="Script" uid="uid://btgsl1muiujtn" path="res://Scripts/freeze_toggle.gd" id="64_52a0j"]
+[ext_resource type="Resource" uid="uid://cbiq3d6wgb61c" path="res://Resources/consumables/Big Bomba.tres" id="64_hjjnx"]
+[ext_resource type="Resource" uid="uid://2sox5hp1ja22" path="res://Resources/consumables/big_bullets.tres" id="65_ok4ge"]
+[ext_resource type="Resource" uid="uid://kdioc1o1u3jf" path="res://Resources/consumables/Gold.tres" id="66_e2umn"]
+[ext_resource type="Shortcut" uid="uid://bv6oay57eirjq" path="res://shortcuts/UI_Accept_Shortcut.tres" id="67_478hk"]
+[ext_resource type="PackedScene" uid="uid://dp8frtkd76jbn" path="res://Scenes/map_option.tscn" id="69_h2tpa"]
+[ext_resource type="Script" uid="uid://dwmfjwv0j0cfn" path="res://Scripts/quit_handler.gd" id="79_6jw1o"]
+[ext_resource type="FontFile" uid="uid://6hy7h3eljqju" path="res://Assets/Fonts/Jackwrite/JackwriteBold.ttf" id="80_fq6d3"]
+[ext_resource type="PackedScene" uid="uid://bfj38rqs4xf63" path="res://Scripts/custom_button.tscn" id="82_mhc43"]
+[ext_resource type="Script" uid="uid://culm2gx685sne" path="res://Scripts/dice_upgrade_display.gd" id="86_ok4ge"]
+[ext_resource type="Script" uid="uid://vnww8akv8bay" path="res://Scripts/help_panel.gd" id="104_h7ft5"]
+[ext_resource type="Theme" uid="uid://bbsr1ex65hgta" path="res://Themes/UI_Simple.tres" id="105_cchgx"]
+[ext_resource type="Script" uid="uid://c5yjs2s3dtctb" path="res://Scripts/quit_button.gd" id="106_mhc43"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjjnx"]
+bg_color = Color(0.898039, 0.745098, 0.129412, 0.0666667)
+border_width_top = 2
+border_color = Color(0.898039, 0.745098, 0.129412, 1)
+
+[sub_resource type="Resource" id="Resource_yic5e"]
+script = ExtResource("16_yn2g2")
+waves = 5
+wave_variance = 1
+minTier = 0
+maxTier = 1
+bossTier = 0
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_ex7s8"]
+script = ExtResource("16_yn2g2")
+waves = 5
+wave_variance = 1
+minTier = 0
+maxTier = 2
+bossTier = 1
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_4clwk"]
+script = ExtResource("16_yn2g2")
+waves = 7
+wave_variance = 1
+minTier = 1
+maxTier = 3
+bossTier = 2
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_h2tpa"]
+script = ExtResource("16_yn2g2")
+waves = 8
+wave_variance = 1
+minTier = 2
+maxTier = 3
+bossTier = 3
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_nkjwg"]
+script = ExtResource("16_yn2g2")
+waves = 9
+wave_variance = 1
+minTier = 2
+maxTier = 5
+bossTier = 4
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_8n4h5"]
+script = ExtResource("16_yn2g2")
+waves = 10
+wave_variance = 1
+minTier = 3
+maxTier = 6
+bossTier = 5
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_as1io"]
+script = ExtResource("16_yn2g2")
+waves = 12
+wave_variance = 1
+minTier = 4
+maxTier = 7
+bossTier = 6
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_xd5mi"]
+script = ExtResource("16_yn2g2")
+waves = 13
+wave_variance = 1
+minTier = 5
+maxTier = 7
+bossTier = 7
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_tt1x2"]
+script = ExtResource("16_yn2g2")
+waves = 14
+wave_variance = 1
+minTier = 6
+maxTier = 9
+bossTier = 8
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_2wrh7"]
+script = ExtResource("16_yn2g2")
+waves = 15
+wave_variance = 1
+minTier = 7
+maxTier = 9
+bossTier = 9
+metadata/_custom_type_script = ExtResource("16_yn2g2")
+
+[sub_resource type="Resource" id="Resource_atu2d"]
+script = ExtResource("16_yn2g2")
+waves = 17
+wave_variance = 1
+minTier = 9
+maxTier = 10
+bossTier = 10
+metadata/_custom_type_script = ExtResource("16_yn2g2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8wn5"]
 atlas = ExtResource("9_s1n0l")
@@ -90,14 +240,9 @@ region = Rect2(0, 576, 96, 96)
 atlas = ExtResource("9_s1n0l")
 region = Rect2(0, 672, 96, 96)
 
-[sub_resource type="InputEventAction" id="InputEventAction_eywpa"]
-action = &"ui_accept"
-
-[sub_resource type="Shortcut" id="Shortcut_j7e3e"]
-events = [SubResource("InputEventAction_eywpa")]
-
-[sub_resource type="Shortcut" id="Shortcut_1bbis"]
-events = [SubResource("InputEventAction_eywpa")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2tpa"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 0, 96, 96)
 
 [sub_resource type="InputEventAction" id="InputEventAction_y2ulj"]
 action = &"ui_accept"
@@ -105,22 +250,25 @@ action = &"ui_accept"
 [sub_resource type="Shortcut" id="Shortcut_t3x2a"]
 events = [SubResource("InputEventAction_y2ulj")]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_li617"]
-atlas = ExtResource("9_s1n0l")
-region = Rect2(0, 96, 96, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_he124"]
+atlas = ExtResource("46_5gwyn")
+region = Rect2(0, 0, 196, 150)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1iia"]
-atlas = ExtResource("9_s1n0l")
-region = Rect2(0, 0, 96, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_478hk"]
+atlas = ExtResource("46_5gwyn")
+region = Rect2(196, 0, 196, 150)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bs5s"]
-bg_color = Color(0.0361009, 0.0361009, 0.0361009, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_othpo"]
+atlas = ExtResource("46_5gwyn")
+region = Rect2(392, 0, 196, 150)
 
-[sub_resource type="LabelSettings" id="LabelSettings_m5ubk"]
-font_size = 200
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0riu"]
+atlas = ExtResource("46_5gwyn")
+region = Rect2(588, 0, 196, 150)
 
-[sub_resource type="Shortcut" id="Shortcut_yn2g2"]
-events = [SubResource("InputEventAction_eywpa")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjjnx"]
+atlas = ExtResource("46_5gwyn")
+region = Rect2(196, 0, 196, 150)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3133c"]
 bg_color = Color(1, 1, 1, 0.278431)
@@ -154,6 +302,68 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_li617"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1iia"]
+atlas = ExtResource("9_s1n0l")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7bs5s"]
+bg_color = Color(0.0361009, 0.0361009, 0.0361009, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5ubk"]
+font_size = 200
+
+[sub_resource type="InputEventAction" id="InputEventAction_eywpa"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_yn2g2"]
+events = [SubResource("InputEventAction_eywpa")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jw1o"]
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhc43"]
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpal1"]
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_har0a"]
+bg_color = Color(0.138638, 0.138637, 0.138637, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8bee"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwa6c"]
+bg_color = Color(0, 0, 0, 0.870588)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tngty"]
 bg_color = Color(0, 0, 0, 0.870588)
 corner_radius_top_left = 20
@@ -161,13 +371,19 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" node_paths=PackedStringArray("build_number_label", "kill_button")]
+script = ExtResource("1_he124")
+build_number = "texas_roll_em_build_0.0.4"
+build_number_label = NodePath("UI/Debug/debug_lvl_num")
+kill_button = NodePath("UI/Debug/Button")
 
 [node name="Table" type="Node" parent="."]
 
 [node name="Props" type="Node" parent="Table"]
 
-[node name="enemyGrid" type="NinePatchRect" parent="Table" node_paths=PackedStringArray("targetZone")]
+[node name="Background" type="Node" parent="Table"]
+
+[node name="enemyGrid" type="NinePatchRect" parent="Table/Background" node_paths=PackedStringArray("targetZone")]
 offset_left = 300.0
 offset_top = 200.0
 offset_right = 1840.0
@@ -176,9 +392,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_rgw24")
 script = ExtResource("6_5gwyn")
-targetZone = NodePath("../spawn_markers/flat_zones/both_zone_container_flat/enemy_zone")
+targetZone = NodePath("../../spawn_markers/flat_zones/both_zone_container_flat/enemy_zone")
 
-[node name="QuickshotMarker" type="ColorRect" parent="Table/enemyGrid" node_paths=PackedStringArray("role_mgr")]
+[node name="QuickshotMarker" type="Panel" parent="Table/Background/enemyGrid" node_paths=PackedStringArray("role_mgr")]
 visible = false
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 1
@@ -186,11 +402,28 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
+offset_top = -2.5
+offset_bottom = 2.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.784314, 0.588235, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_hjjnx")
 script = ExtResource("3_j7e3e")
-role_mgr = NodePath("../../../game_controller/role_manager")
+role_mgr = NodePath("../../../../game_controller/role_manager")
+
+[node name="backdrop" type="NinePatchRect" parent="Table/Background"]
+z_index = -150
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+texture = ExtResource("1_p3t1x")
+region_rect = Rect2(0, 1, 768, 767)
+patch_margin_left = 200
+patch_margin_top = 50
+patch_margin_right = 200
+patch_margin_bottom = 50
 
 [node name="spawn_markers" type="Control" parent="Table"]
 layout_mode = 3
@@ -275,21 +508,6 @@ mouse_filter = 2
 
 [node name="spawn_parent" type="Node" parent="Table"]
 
-[node name="backdrop" type="NinePatchRect" parent="Table"]
-z_index = -150
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-texture = ExtResource("1_p3t1x")
-region_rect = Rect2(0, 1, 768, 767)
-patch_margin_left = 200
-patch_margin_top = 50
-patch_margin_right = 200
-patch_margin_bottom = 50
-
 [node name="dice_tray" type="HBoxContainer" parent="Table"]
 custom_minimum_size = Vector2(0, 192.01)
 anchors_preset = 12
@@ -308,37 +526,26 @@ script = ExtResource("6_ab52g")
 tray = NodePath("../dice_tray")
 role_mgr = NodePath("../../game_controller/role_manager")
 
-[node name="upgrade_drop_controller" type="Node" parent="Table" node_paths=PackedStringArray("spawn_pos", "next_round_button")]
-script = ExtResource("8_0qttn")
-spawn_pos = NodePath("Control/Control/Marker2D")
-next_round_button = NodePath("../../UI/Buttons/next_round_container")
+[node name="Consumables" type="Node" parent="Table"]
 
-[node name="Control" type="Control" parent="Table/upgrade_drop_controller"]
+[node name="ConsumableContainer" type="Control" parent="Table/Consumables" node_paths=PackedStringArray("targetZone", "endTurnButton")]
 layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("8_8kgcr")
+targetZone = NodePath("../../spawn_markers/flat_zones/both_zone_container_flat/enemy_zone")
+endTurnButton = NodePath("../../../UI/Menus/Buttons/end_turn_container/end_turn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Table/Consumables/ConsumableContainer"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-
-[node name="Control" type="Control" parent="Table/upgrade_drop_controller/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -869.0
-offset_top = 7.0
-offset_right = -869.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Marker2D" type="Marker2D" parent="Table/upgrade_drop_controller/Control/Control"]
-position = Vector2(884, 271)
+alignment = 2
 
 [node name="game_controller" type="Node" parent="." node_paths=PackedStringArray("flow")]
 unique_name_in_owner = true
@@ -354,18 +561,19 @@ dice_parent = NodePath("../../Table/dice_spawner")
 unique_name_in_owner = true
 script = ExtResource("13_p3s4g")
 crit_chance = 30.0
-float_text = NodePath("../../floating_text")
+float_text = NodePath("../floating_text")
 timings = NodePath("..")
 role_mgr = NodePath("../role_manager")
 
-[node name="game_flow" type="Node" parent="game_controller" node_paths=PackedStringArray("upgrades", "game_over_screen", "musicPlayer", "enemy_mgr", "next_round_button", "debug_lvl_num")]
+[node name="game_flow" type="Node" parent="game_controller" node_paths=PackedStringArray("upgrades", "game_over_screen", "musicPlayer", "enemy_mgr", "next_round_button", "end_turn_button", "debug_lvl_num")]
 script = ExtResource("6_muis8")
-upgrades = NodePath("../../UI/upgrade_choice")
-game_over_screen = NodePath("../../UI/game_over_panel")
+upgrades = NodePath("../../UI/Menus/upgrade_choice")
+game_over_screen = NodePath("../../UI/Titles/game_over_panel")
 musicPlayer = NodePath("../musicPlayer")
 enemy_mgr = NodePath("../enemy_manager")
-next_round_button = NodePath("../../UI/Buttons/next_round_container/NextRound")
-debug_lvl_num = NodePath("../../UI/debug_lvl_num")
+next_round_button = NodePath("../../UI/Menus/Buttons/next_round_container/NextRound")
+end_turn_button = NodePath("../../UI/Menus/Buttons/end_turn_container/end_turn")
+debug_lvl_num = NodePath("../../UI/Debug/debug_lvl_num")
 
 [node name="enemy_manager" type="Node" parent="game_controller" node_paths=PackedStringArray("_spawner")]
 script = ExtResource("7_wg8mf")
@@ -384,7 +592,8 @@ default_scale = 1.5
 [node name="level_list" type="Node" parent="game_controller"]
 unique_name_in_owner = true
 script = ExtResource("7_l1oo3")
-levels = Array[ExtResource("8_3io8c")]([ExtResource("17_j7e3e"), ExtResource("18_y2ulj")])
+levelInfoList = Array[ExtResource("16_yn2g2")]([SubResource("Resource_yic5e"), SubResource("Resource_ex7s8"), SubResource("Resource_4clwk"), SubResource("Resource_h2tpa"), SubResource("Resource_nkjwg"), SubResource("Resource_8n4h5"), SubResource("Resource_as1io"), SubResource("Resource_xd5mi"), SubResource("Resource_tt1x2"), SubResource("Resource_2wrh7"), SubResource("Resource_atu2d")])
+boss_templates = Array[ExtResource("18_e2umn")]([ExtResource("19_cbpwj"), ExtResource("20_jw3lw"), ExtResource("21_h7ft5"), ExtResource("22_cchgx"), ExtResource("23_6jw1o"), ExtResource("24_mhc43"), ExtResource("19_478hk"), ExtResource("20_othpo"), ExtResource("21_s0riu"), ExtResource("22_hjjnx"), ExtResource("29_qpal1"), ExtResource("30_har0a"), ExtResource("31_r8bee"), ExtResource("32_rwa6c"), ExtResource("33_yhlxv"), ExtResource("34_ry2vk"), ExtResource("23_ok4ge"), ExtResource("24_e2umn"), ExtResource("25_k6daw"), ExtResource("38_3d2lr"), ExtResource("39_onym5"), ExtResource("40_3pqs5"), ExtResource("41_lxea5")])
 
 [node name="musicPlayer" type="AudioStreamPlayer" parent="game_controller"]
 script = ExtResource("21_a87av")
@@ -400,7 +609,7 @@ damageCalculator = NodePath("../damage_calculator")
 [node name="Bartend" type="Node" parent="game_controller/role_manager"]
 script = ExtResource("29_c0j8d")
 _defaultBurnDuration = 2
-role_text = "ROLE: Burns the target for 2 turns, repeating your current damage."
+role_text = "ROLE: Burns the target for LVL turns, repeating your current damage."
 upgrade_text = "Burn duration increased to LVL."
 role_color = Color(0.87451, 0.443137, 0.14902, 1)
 dice_font_color = Color(1, 1, 1, 0.666667)
@@ -422,11 +631,11 @@ sprite_size = 96
 script = ExtResource("36_kosyg")
 role = 2
 damage_mult = 2.0
-role_text = "ROLE: Deals double damage, but you are unable to see the die's value."
+role_text = "ROLE: Deals LVLx damage, but you are unable to see the die's value."
 upgrade_text = "Increase damage multiplier to LVLx."
 role_color = Color(0.148616, 0.767256, 0.855001, 1)
 dice_font_color = Color(0, 0, 0, 0.666667)
-upgrade_modifier = 2
+upgrade_modifier = 1
 role_image = SubResource("AtlasTexture_0rsrb")
 dice_sprites = ExtResource("35_2hbly")
 sprite_size = 96
@@ -436,7 +645,7 @@ script = ExtResource("37_hdulm")
 enemy_spawner = NodePath("../../enemy_spawner")
 role = 3
 dice_cooldown = 3
-role_text = "ROLE: Deals damage to all adjacent enemies in addition to your target."
+role_text = "ROLE: Deals damage to all enemies within LVL tile of your target."
 upgrade_text = "Range is increased to LVL."
 role_color = Color(0.815686, 0.227451, 0.14902, 1)
 dice_font_color = Color(0, 0, 0, 0.666667)
@@ -448,7 +657,7 @@ sprite_size = 96
 script = ExtResource("34_8vbgj")
 role = 4
 dice_cooldown = 3
-role_text = "ROLE: Fires multiple times on the same turn before being locked out."
+role_text = "ROLE: Fires LVL times on the same turn before being locked out."
 upgrade_text = "You can now hit LVL times before the die resets."
 role_color = Color(0.21741, 0.448619, 0.895249, 1)
 dice_font_color = Color(1, 1, 1, 0.666667)
@@ -461,7 +670,7 @@ sprite_size = 96
 script = ExtResource("33_btrct")
 _dice_spawner = NodePath("../../../Table/dice_spawner")
 role = 5
-role_text = "ROLE: Reduces the lockout period for another die."
+role_text = "ROLE: Reduces the lockout period for LVL other die."
 upgrade_text = "Reduces LVL other lockout(s) per use."
 role_color = Color(0.62539, 0.0013544, 0.776832, 1)
 dice_font_color = Color(1, 1, 1, 0.666667)
@@ -473,8 +682,8 @@ sprite_size = 96
 script = ExtResource("35_pqrr1")
 role = 6
 dice_cooldown = 1
-role_text = "ROLE: Can be fired every turn, but only works at a close range."
-upgrade_text = "Max distance is LVL from the front."
+role_text = "ROLE: Can be fired every turn, but only works in the front LVL rows."
+upgrade_text = "Max distance increased to the LVL front rows."
 role_color = Color(0.89987, 0.74655, 0.1307, 1)
 dice_font_color = Color(0, 0, 0, 0.666667)
 upgrade_modifier = 2
@@ -491,6 +700,28 @@ default_sfx_val = 80.0
 [node name="input_manager" type="Node" parent="game_controller"]
 script = ExtResource("44_81ldr")
 
+[node name="map_manager" type="Node" parent="game_controller" node_paths=PackedStringArray("level_list", "map_options", "map_option_display", "level_label", "role_mgr")]
+unique_name_in_owner = true
+script = ExtResource("45_yic5e")
+level_list = NodePath("../level_list")
+map_options = [NodePath("../../UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer/MapOption1"), NodePath("../../UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer2/MapOption2"), NodePath("../../UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer3/MapOption3")]
+map_option_display = NodePath("../../UI/Menus/Map_Choices")
+level_label = NodePath("../../UI/Menus/Map_Choices/VBoxContainer/VBoxContainer/RichLabelAutoSizer2")
+dice_upgrade_image = SubResource("AtlasTexture_h2tpa")
+role_mgr = NodePath("../role_manager")
+
+[node name="floating_text" type="Node" parent="game_controller"]
+script = ExtResource("14_fdjyy")
+
+[node name="consumables_manager" type="Node" parent="game_controller" node_paths=PackedStringArray("consumable_parent", "freeze_button")]
+script = ExtResource("58_fsd2l")
+consumable_parent = NodePath("../../Table/Consumables/ConsumableContainer/VBoxContainer")
+freeze_button = NodePath("../../UI/Menus/Buttons/freeze_toggle")
+consumable_list = Array[ExtResource("61_3k6d1")]([ExtResource("62_fq6d3"), ExtResource("62_3k6d1"), ExtResource("64_hjjnx"), ExtResource("65_ok4ge"), ExtResource("66_e2umn")])
+
+[node name="exit_handler" type="Node" parent="game_controller"]
+script = ExtResource("79_6jw1o")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -504,22 +735,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="debug_lvl_num" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -485.0
-offset_top = 15.0
-offset_right = -30.0
-offset_bottom = 70.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.498039)
-theme_override_font_sizes/font_size = 25
-text = "texas_roll_em_build_0.0.1a"
-horizontal_alignment = 2
-
-[node name="Main_TItle" type="MarginContainer" parent="UI"]
+[node name="Menus" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -527,30 +743,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 350
 
-[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="UI/Main_TItle"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("25_o4qd2")
-theme_override_font_sizes/normal_font_size = 371
-bbcode_enabled = true
-text = "[color=#f0eee6]Texas roll 'eM"
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("54_81ldr")
-step = 5
-_max_size = 1000
-_current_font_size = 371
-_editor_defaults_set = true
-metadata/_custom_type_script = ExtResource("54_81ldr")
-
-[node name="Buttons" type="Control" parent="UI" node_paths=PackedStringArray("startButton", "nextRoundButton", "endTurnButton", "main_title")]
+[node name="Buttons" type="Control" parent="UI/Menus" node_paths=PackedStringArray("startButton", "nextRoundButton", "endTurnButton", "main_title")]
 clip_children = 2
 texture_filter = 1
 layout_mode = 1
@@ -561,12 +755,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("9_1kml8")
-startButton = NodePath("start_game_container/StartGame")
+startButton = NodePath("start_game_container/custom_button")
 nextRoundButton = NodePath("next_round_container/NextRound")
 endTurnButton = NodePath("end_turn_container/end_turn")
-main_title = NodePath("../Main_TItle")
+main_title = NodePath("../../Titles/SplashTitle")
 
-[node name="ColorRect" type="ColorRect" parent="UI/Buttons"]
+[node name="ColorRect" type="ColorRect" parent="UI/Menus/Buttons"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -577,7 +771,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.294118)
 
-[node name="start_game_container" type="PanelContainer" parent="UI/Buttons"]
+[node name="start_game_container" type="PanelContainer" parent="UI/Menus/Buttons"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -593,18 +787,11 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("24_amopx")
 
-[node name="StartGame" type="Button" parent="UI/Buttons/start_game_container"]
+[node name="custom_button" parent="UI/Menus/Buttons/start_game_container" instance=ExtResource("82_mhc43")]
 layout_mode = 2
-focus_mode = 0
-theme = ExtResource("24_amopx")
-theme_override_constants/h_separation = 370
-theme_override_fonts/font = ExtResource("25_o4qd2")
-theme_override_font_sizes/font_size = 190
-shortcut = SubResource("Shortcut_j7e3e")
-shortcut_in_tooltip = false
-text = "Start gamE"
+buttonText = "Start gamE"
 
-[node name="next_round_container" type="PanelContainer" parent="UI/Buttons"]
+[node name="next_round_container" type="PanelContainer" parent="UI/Menus/Buttons"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -621,45 +808,45 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("24_amopx")
 
-[node name="NextRound" type="Button" parent="UI/Buttons/next_round_container"]
+[node name="NextRound" type="Button" parent="UI/Menus/Buttons/next_round_container"]
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("24_amopx")
 theme_override_constants/h_separation = 370
 theme_override_fonts/font = ExtResource("25_o4qd2")
 theme_override_font_sizes/font_size = 200
-shortcut = SubResource("Shortcut_1bbis")
+shortcut = ExtResource("67_478hk")
 shortcut_in_tooltip = false
 text = "Next rounD"
 
-[node name="end_turn_container" type="PanelContainer" parent="UI/Buttons"]
+[node name="end_turn_container" type="PanelContainer" parent="UI/Menus/Buttons"]
 visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 45.0
-offset_top = -468.0
+offset_top = -333.9
 offset_right = 290.11
-offset_bottom = -262.96
+offset_bottom = -128.86
 grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("24_amopx")
 
-[node name="end_turn" type="TextureButton" parent="UI/Buttons/end_turn_container"]
+[node name="end_turn" type="TextureButton" parent="UI/Menus/Buttons/end_turn_container"]
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("24_amopx")
 shortcut = SubResource("Shortcut_t3x2a")
 shortcut_in_tooltip = false
-texture_normal = ExtResource("46_5gwyn")
-texture_pressed = ExtResource("46_5gwyn")
-texture_hover = ExtResource("46_5gwyn")
-texture_disabled = ExtResource("46_5gwyn")
-texture_focused = ExtResource("46_5gwyn")
+texture_normal = SubResource("AtlasTexture_he124")
+texture_pressed = SubResource("AtlasTexture_478hk")
+texture_hover = SubResource("AtlasTexture_othpo")
+texture_disabled = SubResource("AtlasTexture_s0riu")
+texture_focused = SubResource("AtlasTexture_hjjnx")
 stretch_mode = 0
 
-[node name="end_turnTxt" type="Label" parent="UI/Buttons/end_turn_container/end_turn"]
+[node name="end_turnTxt" type="Label" parent="UI/Menus/Buttons/end_turn_container/end_turn"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -673,57 +860,392 @@ TurN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="upgrade_choice" type="MarginContainer" parent="UI" node_paths=PackedStringArray("panels", "drops", "endTurnButton", "role_mgr", "_audio")]
+[node name="freeze_toggle" type="Button" parent="UI/Menus/Buttons"]
+visible = false
+layout_mode = 0
+offset_left = 310.0
+offset_top = 873.0
+offset_right = 367.0
+offset_bottom = 904.0
+focus_mode = 0
+toggle_mode = true
+text = "freeze"
+script = ExtResource("64_52a0j")
+
+[node name="AudioIcon" type="PanelContainer" parent="UI/Menus"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 88.0
+offset_bottom = 88.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3133c")
+
+[node name="audioSettings" type="TextureButton" parent="UI/Menus/AudioIcon"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("45_lfh1j")
+texture_pressed = ExtResource("45_lfh1j")
+texture_hover = ExtResource("45_lfh1j")
+texture_disabled = ExtResource("45_lfh1j")
+texture_focused = ExtResource("45_lfh1j")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("46_7sj7i")
+
+[node name="Panel" type="PanelContainer" parent="UI/Menus/AudioIcon/audioSettings"]
+visible = false
+layout_mode = 0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_js5gh")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Menus/AudioIcon/audioSettings/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MusicSlider" type="HBoxContainer" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("slider", "percent")]
+layout_mode = 2
+alignment = 1
+script = ExtResource("47_semxg")
+slider = NodePath("HSlider")
+percent = NodePath("percent")
+type = 1
+
+[node name="music" type="Label" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("48_ep8v8")
+theme_override_font_sizes/font_size = 31
+text = "Music"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_vvjo1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yisvs")
+scrollable = false
+
+[node name="percent" type="Label" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("48_ep8v8")
+theme_override_font_sizes/font_size = 31
+text = "num %"
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HBoxContainer" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("slider", "percent")]
+layout_mode = 2
+alignment = 1
+script = ExtResource("47_semxg")
+slider = NodePath("HSlider")
+percent = NodePath("percent")
+
+[node name="music" type="Label" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("48_ep8v8")
+theme_override_font_sizes/font_size = 31
+text = "SFX"
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_vvjo1")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yisvs")
+scrollable = false
+
+[node name="percent" type="Label" parent="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("48_ep8v8")
+theme_override_font_sizes/font_size = 31
+text = "num %"
+vertical_alignment = 1
+
+[node name="Map_Choices" type="MarginContainer" parent="UI/Menus"]
 visible = false
 custom_minimum_size = Vector2(0, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/Map_Choices"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/Map_Choices/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="RichLabelAutoSizer2" type="RichTextLabel" parent="UI/Menus/Map_Choices/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("24_amopx")
+theme_override_fonts/normal_font = ExtResource("25_o4qd2")
+theme_override_font_sizes/normal_font_size = 246
+theme_override_font_sizes/bold_font_size = 246
+text = "Howdy there"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 2
+script = ExtResource("54_81ldr")
+step = 10
+_max_size = 250
+_current_font_size = 246
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Menus/Map_Choices/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MapOption1" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer" instance=ExtResource("69_h2tpa")]
+layout_mode = 2
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MapOption2" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer2" instance=ExtResource("69_h2tpa")]
+layout_mode = 2
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MapOption3" parent="UI/Menus/Map_Choices/VBoxContainer/HBoxContainer/AspectRatioContainer3" instance=ExtResource("69_h2tpa")]
+layout_mode = 2
+
+[node name="upgrade_choice" type="MarginContainer" parent="UI/Menus" node_paths=PackedStringArray("panels", "dice_upgrade_display", "endTurnButton", "role_mgr", "boss_upgrade_panel", "_audio", "general_upgrade_panel", "acceptButton")]
+custom_minimum_size = Vector2(0, 800)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -84.0
-offset_bottom = 84.0
+offset_top = -300.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 80
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 80
 script = ExtResource("6_bfvkc")
-panels = [NodePath("HBoxContainer/upgrade_button_0"), NodePath("HBoxContainer/upgrade_button_1"), NodePath("HBoxContainer/upgrade_button_2")]
+panels = [NodePath("VBoxContainer/HBoxContainer/upgrade_button_0"), NodePath("VBoxContainer/HBoxContainer/upgrade_button_1"), NodePath("VBoxContainer/HBoxContainer/upgrade_button_2")]
 dice_upgrade_image = SubResource("AtlasTexture_li617")
 extra_die_image = SubResource("AtlasTexture_p1iia")
-drops = NodePath("../../Table/upgrade_drop_controller")
+dice_upgrade_display = NodePath("dice_upgrade_display")
 endTurnButton = NodePath("../Buttons/end_turn_container")
-role_mgr = NodePath("../../game_controller/role_manager")
+role_mgr = NodePath("../../../game_controller/role_manager")
+boss_upgrade_panel = NodePath("boss_upgrade_display")
 _audio = NodePath("upgradeSound")
+general_upgrade_panel = NodePath("VBoxContainer")
+acceptButton = NodePath("VBoxContainer/AcceptButton")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/upgrade_choice"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/upgrade_choice"]
+visible = false
 layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Menus/upgrade_choice/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 2
 theme_override_constants/separation = 20
 
-[node name="upgrade_button_0" parent="UI/upgrade_choice/HBoxContainer" instance=ExtResource("39_m4llh")]
+[node name="upgrade_button_0" parent="UI/Menus/upgrade_choice/VBoxContainer/HBoxContainer" instance=ExtResource("39_m4llh")]
 layout_mode = 2
-focus_mode = 0
 shortcut_in_tooltip = false
 
-[node name="upgrade_button_1" parent="UI/upgrade_choice/HBoxContainer" instance=ExtResource("39_m4llh")]
+[node name="upgrade_button_1" parent="UI/Menus/upgrade_choice/VBoxContainer/HBoxContainer" instance=ExtResource("39_m4llh")]
 layout_mode = 2
-focus_mode = 0
 shortcut_in_tooltip = false
 
-[node name="upgrade_button_2" parent="UI/upgrade_choice/HBoxContainer" instance=ExtResource("39_m4llh")]
+[node name="upgrade_button_2" parent="UI/Menus/upgrade_choice/VBoxContainer/HBoxContainer" instance=ExtResource("39_m4llh")]
 layout_mode = 2
-focus_mode = 0
 shortcut_in_tooltip = false
 
-[node name="upgradeSound" type="AudioStreamPlayer" parent="UI/upgrade_choice"]
+[node name="AcceptButton" type="Button" parent="UI/Menus/upgrade_choice/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme = ExtResource("24_amopx")
+theme_override_font_sizes/font_size = 80
+shortcut = ExtResource("67_478hk")
+shortcut_in_tooltip = false
+text = "AccepT"
+
+[node name="upgradeSound" type="AudioStreamPlayer" parent="UI/Menus/upgrade_choice"]
 script = ExtResource("17_u2ga6")
 sounds = Array[AudioStream]([ExtResource("18_cfut3")])
 
-[node name="game_over_panel" type="Control" parent="UI" node_paths=PackedStringArray("timing_panel", "restartButton", "bigWriting")]
+[node name="boss_upgrade_display" type="Control" parent="UI/Menus/upgrade_choice" node_paths=PackedStringArray("icon", "text", "button")]
+visible = false
+layout_mode = 2
+script = ExtResource("58_ex7s8")
+icon = NodePath("VBoxContainer/TextureRect")
+text = NodePath("VBoxContainer/RichLabelAutoSizer")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="UI/Menus/upgrade_choice/boss_upgrade_display"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_amopx")
+theme_override_font_sizes/font_size = 80
+text = "AccepT"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/upgrade_choice/boss_upgrade_display"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Menus/upgrade_choice/boss_upgrade_display/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("59_4clwk")
+stretch_mode = 5
+
+[node name="RichLabelAutoSizer" type="RichTextLabel" parent="UI/Menus/upgrade_choice/boss_upgrade_display/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("48_ep8v8")
+theme_override_fonts/bold_font = ExtResource("80_fq6d3")
+theme_override_font_sizes/normal_font_size = 1
+theme_override_font_sizes/bold_font_size = 1
+bbcode_enabled = true
+text = "This is auto text"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("54_81ldr")
+step = 10
+_max_size = 250
+_current_font_size = 1
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
+
+[node name="dice_upgrade_display" type="Control" parent="UI/Menus/upgrade_choice" node_paths=PackedStringArray("texture_rect", "accept_button", "next_round_button", "text")]
+visible = false
+layout_mode = 2
+script = ExtResource("86_ok4ge")
+texture_rect = NodePath("VBoxContainer2/VBoxContainer/TextureRect")
+accept_button = NodePath("VBoxContainer2/Button")
+next_round_button = NodePath("../../Buttons/next_round_container")
+text = NodePath("VBoxContainer2/VBoxContainer/RichLabelAutoSizer")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Menus/upgrade_choice/dice_upgrade_display"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Menus/upgrade_choice/dice_upgrade_display/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/Menus/upgrade_choice/dice_upgrade_display/VBoxContainer2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("59_4clwk")
+stretch_mode = 5
+
+[node name="RichLabelAutoSizer" type="RichTextLabel" parent="UI/Menus/upgrade_choice/dice_upgrade_display/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("48_ep8v8")
+theme_override_fonts/bold_font = ExtResource("80_fq6d3")
+theme_override_font_sizes/normal_font_size = 1
+theme_override_font_sizes/bold_font_size = 1
+bbcode_enabled = true
+text = "Choose a die."
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("54_81ldr")
+step = 10
+_max_size = 250
+_current_font_size = 1
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
+
+[node name="Button" type="Button" parent="UI/Menus/upgrade_choice/dice_upgrade_display/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("24_amopx")
+theme_override_font_sizes/font_size = 80
+shortcut = ExtResource("67_478hk")
+shortcut_in_tooltip = false
+text = "AccepT"
+
+[node name="Titles" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SplashTitle" type="Control" parent="UI/Titles"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="main_title_art" type="TextureRect" parent="UI/Titles/SplashTitle"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -731,13 +1253,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("7_mm0j3")
-timing_panel = NodePath("../../game_controller")
-restartButton = NodePath("Panel/VBoxContainer/try again")
-bigWriting = NodePath("Panel/VBoxContainer/game over")
+texture = ExtResource("47_t3x2a")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Panel" type="Panel" parent="UI/game_over_panel"]
+[node name="Main_TItle" type="MarginContainer" parent="UI/Titles/SplashTitle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -745,35 +1265,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7bs5s")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 350
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/game_over_panel/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AutoSizeRichTextlabel" type="RichTextLabel" parent="UI/Titles/SplashTitle/Main_TItle"]
+layout_mode = 2
 mouse_filter = 2
-alignment = 1
+theme = ExtResource("24_amopx")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("25_o4qd2")
+theme_override_font_sizes/normal_font_size = 371
+theme_override_font_sizes/bold_font_size = 371
+bbcode_enabled = true
+text = "[color=#f0eee6]Texas roll 'eM"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("54_81ldr")
+step = 5
+_max_size = 1000
+_current_font_size = 371
+_editor_defaults_set = true
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
 
-[node name="game over" type="Label" parent="UI/game_over_panel/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_m5ubk")
-
-[node name="try again" type="Button" parent="UI/game_over_panel/Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-focus_mode = 0
-theme_override_font_sizes/font_size = 80
-shortcut = SubResource("Shortcut_yn2g2")
-shortcut_in_tooltip = false
-text = " play again? "
-
-[node name="TitleCard" type="Control" parent="UI" node_paths=PackedStringArray("text_spot", "click_block")]
+[node name="TitleCard" type="Control" parent="UI/Titles" node_paths=PackedStringArray("text_spot", "click_block")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -787,7 +1305,7 @@ title_card_time = 1.5
 title_card_time_boss = 2.5
 click_block = NodePath("MarginContainer/click_block")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/TitleCard"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/Titles/TitleCard"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -800,18 +1318,20 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="click_block" type="Control" parent="UI/TitleCard/MarginContainer"]
+[node name="click_block" type="Control" parent="UI/Titles/TitleCard/MarginContainer"]
 visible = false
 layout_mode = 2
 
-[node name="RichLabelAutoSizer" type="RichTextLabel" parent="UI/TitleCard/MarginContainer"]
+[node name="RichLabelAutoSizer" type="RichTextLabel" parent="UI/Titles/TitleCard/MarginContainer"]
 z_index = -1000
 z_as_relative = false
 clip_contents = false
 layout_mode = 2
 mouse_filter = 2
+theme = ExtResource("24_amopx")
 theme_override_fonts/normal_font = ExtResource("25_o4qd2")
 theme_override_font_sizes/normal_font_size = 333
+theme_override_font_sizes/bold_font_size = 333
 bbcode_enabled = true
 text = "Test Text is here"
 scroll_active = false
@@ -824,112 +1344,196 @@ _max_size = 2000
 _min_size = 10
 _current_font_size = 333
 _editor_defaults_set = true
-metadata/_custom_type_script = ExtResource("54_81ldr")
+metadata/_custom_type_script = "uid://dh7j0myk55kg4"
 
-[node name="AudioIcon" type="PanelContainer" parent="UI"]
-layout_mode = 1
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 88.0
-offset_bottom = 88.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_3133c")
-
-[node name="audioSettings" type="TextureButton" parent="UI/AudioIcon"]
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("45_lfh1j")
-texture_pressed = ExtResource("45_lfh1j")
-texture_hover = ExtResource("45_lfh1j")
-texture_disabled = ExtResource("45_lfh1j")
-texture_focused = ExtResource("45_lfh1j")
-ignore_texture_size = true
-stretch_mode = 0
-script = ExtResource("46_7sj7i")
-
-[node name="Panel" type="PanelContainer" parent="UI/AudioIcon/audioSettings"]
+[node name="game_over_panel" type="Control" parent="UI/Titles" node_paths=PackedStringArray("timing_panel", "restartButton", "bigWriting", "extra_text")]
 visible = false
-layout_mode = 0
-offset_top = 56.0
-offset_right = 408.0
-offset_bottom = 170.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_js5gh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_mm0j3")
+timing_panel = NodePath("../../../game_controller")
+restartButton = NodePath("Panel/VBoxContainer/try again")
+bigWriting = NodePath("Panel/VBoxContainer/game over")
+extra_text = NodePath("Panel/VBoxContainer/extra_text")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/AudioIcon/audioSettings/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+[node name="Panel" type="Panel" parent="UI/Titles/game_over_panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7bs5s")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="MusicSlider" type="HBoxContainer" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("slider", "percent")]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Titles/game_over_panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("47_semxg")
-slider = NodePath("HSlider")
-percent = NodePath("percent")
-type = 1
 
-[node name="music" type="Label" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
-custom_minimum_size = Vector2(80, 0)
+[node name="game over" type="Label" parent="UI/Titles/game_over_panel/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme = ExtResource("24_amopx")
+text = "Game oveR"
+label_settings = SubResource("LabelSettings_m5ubk")
+
+[node name="extra_text" type="Label" parent="UI/Titles/game_over_panel/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("24_amopx")
 theme_override_fonts/font = ExtResource("48_ep8v8")
-theme_override_font_sizes/font_size = 31
-text = "Music"
+theme_override_font_sizes/font_size = 60
+text = "You've reached the end of the current content for this game. Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="try again" type="Button" parent="UI/Titles/game_over_panel/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_fonts/font = ExtResource("48_ep8v8")
+theme_override_font_sizes/font_size = 100
+shortcut = SubResource("Shortcut_yn2g2")
+shortcut_in_tooltip = false
+text = " play again? "
+
+[node name="Informative" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RemainingInWaveDisplay" type="Control" parent="UI/Informative" node_paths=PackedStringArray("text", "flow")]
+visible = false
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 126.0
+grow_horizontal = 2
+mouse_filter = 2
+script = ExtResource("46_1bbis")
+text = NodePath("TextureRect/Label")
+flow = NodePath("../../../game_controller/game_flow")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Informative/RemainingInWaveDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(48, 48)
+mouse_filter = 2
+texture = ExtResource("46_t3x2a")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/Informative/RemainingInWaveDisplay/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -11.5
+offset_right = 17.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("24_amopx")
+theme_override_font_sizes/font_size = 65
+text = "-"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_vvjo1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yisvs")
-scrollable = false
+[node name="Help_Panel" type="MarginContainer" parent="UI/Informative"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+script = ExtResource("104_h7ft5")
 
-[node name="percent" type="Label" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider"]
-custom_minimum_size = Vector2(80, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Informative/Help_Panel"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("48_ep8v8")
-theme_override_font_sizes/font_size = 31
-text = "num %"
+mouse_filter = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Informative/Help_Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuitButton" type="Button" parent="UI/Informative/Help_Panel/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxFlat_6jw1o")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mhc43")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qpal1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_har0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8bee")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwa6c")
+script = ExtResource("106_mhc43")
+
+[node name="text" type="RichTextLabel" parent="UI/Informative/Help_Panel/HBoxContainer/VBoxContainer/QuitButton"]
+layout_mode = 2
+offset_right = 312.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("105_cchgx")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "QUIT GAME"
+scroll_active = false
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFXSlider" type="HBoxContainer" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer" node_paths=PackedStringArray("slider", "percent")]
+[node name="ClassesPanel" parent="UI/Informative/Help_Panel/HBoxContainer" node_paths=PackedStringArray("role_mgr") instance=ExtResource("63_1bbis")]
 layout_mode = 2
-alignment = 1
-script = ExtResource("47_semxg")
-slider = NodePath("HSlider")
-percent = NodePath("percent")
+role_mgr = NodePath("../../../../../game_controller/role_manager")
 
-[node name="music" type="Label" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
-custom_minimum_size = Vector2(80, 0)
+[node name="ControlsPanel" parent="UI/Informative/Help_Panel/HBoxContainer" instance=ExtResource("62_y2ulj")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("48_ep8v8")
-theme_override_font_sizes/font_size = 31
-text = "SFX"
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_tngty")
+script = null
 
-[node name="HSlider" type="HSlider" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_styles/slider = SubResource("StyleBoxFlat_vvjo1")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yisvs")
-scrollable = false
-
-[node name="percent" type="Label" parent="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider"]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("48_ep8v8")
-theme_override_font_sizes/font_size = 31
-text = "num %"
-vertical_alignment = 1
-
-[node name="HelpIcon" type="PanelContainer" parent="UI"]
+[node name="HelpIcon" type="PanelContainer" parent="UI/Informative"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -941,7 +1545,7 @@ offset_bottom = 88.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_3133c")
 
-[node name="Button" type="Button" parent="UI/HelpIcon"]
+[node name="Button" type="Button" parent="UI/Informative/HelpIcon"]
 layout_mode = 2
 focus_mode = 0
 theme = ExtResource("24_amopx")
@@ -949,37 +1553,52 @@ theme_override_font_sizes/font_size = 31
 text = "?"
 clip_text = true
 
-[node name="ClassesPanel" parent="UI/HelpIcon/Button" node_paths=PackedStringArray("role_mgr") instance=ExtResource("63_1bbis")]
-visible = false
+[node name="Debug" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="debug_lvl_num" type="Label" parent="UI/Debug"]
 layout_mode = 1
 anchors_preset = 1
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -1420.0
-offset_top = 70.0
-offset_right = -720.0
-offset_bottom = 942.0
-grow_vertical = 1
-role_mgr = NodePath("../../../../game_controller/role_manager")
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -485.0
+offset_top = 15.0
+offset_right = -30.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.498039)
+theme_override_font_sizes/font_size = 25
+text = "texas_roll_em_build_0.0.2"
+horizontal_alignment = 2
 
-[node name="ControlsPanel" parent="UI/HelpIcon/Button" instance=ExtResource("62_y2ulj")]
+[node name="Button" type="Button" parent="UI/Debug"]
 visible = false
 layout_mode = 1
-anchors_preset = 1
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -700.0
-offset_top = 70.0
-offset_bottom = 942.0
-grow_vertical = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_tngty")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Kill all"
+script = ExtResource("64_1bbis")
 
-[node name="floating_text" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("14_fdjyy")
-
-[node name="Stats" type="Node" parent="."]
-script = ExtResource("41_x47is")
-
-[connection signal="draw" from="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider" to="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider" method="_on_draw"]
-[connection signal="draw" from="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider" to="UI/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider" method="_on_draw"]
+[connection signal="draw" from="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider" to="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/MusicSlider" method="_on_draw"]
+[connection signal="draw" from="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider" to="UI/Menus/AudioIcon/audioSettings/Panel/MarginContainer/VBoxContainer/SFXSlider" method="_on_draw"]
+[connection signal="pressed" from="UI/Menus/upgrade_choice/VBoxContainer/AcceptButton" to="UI/Menus/upgrade_choice" method="find_focussed_panel"]
+[connection signal="pressed" from="UI/Menus/upgrade_choice/dice_upgrade_display/VBoxContainer2/Button" to="UI/Menus/upgrade_choice/dice_upgrade_display" method="accept"]
+[connection signal="visibility_changed" from="UI/Informative/Help_Panel" to="UI/Informative/Help_Panel/HBoxContainer/ClassesPanel" method="display_help"]
+[connection signal="visibility_changed" from="UI/Informative/Help_Panel" to="UI/Informative/Help_Panel/HBoxContainer/ClassesPanel" method="set_display_lines"]
+[connection signal="pressed" from="UI/Informative/Help_Panel/HBoxContainer/VBoxContainer/QuitButton" to="UI/Informative/Help_Panel/HBoxContainer/VBoxContainer/QuitButton" method="exit_game"]
+[connection signal="pressed" from="UI/Informative/HelpIcon/Button" to="UI/Informative/Help_Panel" method="toggle_display"]

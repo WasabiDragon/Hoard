@@ -1,0 +1,357 @@
+[gd_resource type="Resource" script_class="boss_round" load_steps=55 format=3 uid="uid://hywurf3rhjji"]
+
+[ext_resource type="Script" uid="uid://dh8usy4n8v8sf" path="res://Scripts/resources/boss_wave.gd" id="1_ldwsc"]
+[ext_resource type="Script" uid="uid://ddviui1uwl3q1" path="res://Scripts/resources/wave_pregen.gd" id="2_y0bjb"]
+[ext_resource type="Script" uid="uid://bxgk421ies24x" path="res://Scripts/resources/enemy_identifier.gd" id="3_1k726"]
+[ext_resource type="Script" uid="uid://cr4kpjca2mtwl" path="res://Scripts/resources/boss_round.gd" id="4_71oni"]
+
+[sub_resource type="Resource" id="Resource_vcvri"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 4
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_egkj8"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_qoy4u"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_ecamu"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_r61ck"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_l5n5j"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_mo71u"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_kkw2p"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_36xyr"]
+script = ExtResource("2_y0bjb")
+wave = Array[ExtResource("3_1k726")]([SubResource("Resource_vcvri"), SubResource("Resource_egkj8"), SubResource("Resource_qoy4u"), SubResource("Resource_ecamu"), SubResource("Resource_r61ck"), SubResource("Resource_l5n5j"), SubResource("Resource_mo71u"), SubResource("Resource_kkw2p")])
+metadata/_custom_type_script = "uid://ddviui1uwl3q1"
+
+[sub_resource type="Resource" id="Resource_kcwdm"]
+script = ExtResource("1_ldwsc")
+pregenerated = true
+pregen_wave = SubResource("Resource_36xyr")
+challenge_rating = 0
+metadata/_custom_type_script = "uid://dh8usy4n8v8sf"
+
+[sub_resource type="Resource" id="Resource_7uoo3"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 4
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_sp28l"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_hnsic"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_cpoxf"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 5
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_gk6nt"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_67pox"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_j0685"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_jvqjg"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 3
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_j4i8h"]
+script = ExtResource("2_y0bjb")
+wave = Array[ExtResource("3_1k726")]([SubResource("Resource_7uoo3"), SubResource("Resource_sp28l"), SubResource("Resource_hnsic"), SubResource("Resource_cpoxf"), SubResource("Resource_gk6nt"), SubResource("Resource_67pox"), SubResource("Resource_j0685"), SubResource("Resource_jvqjg")])
+metadata/_custom_type_script = "uid://ddviui1uwl3q1"
+
+[sub_resource type="Resource" id="Resource_uviog"]
+script = ExtResource("1_ldwsc")
+pregenerated = true
+pregen_wave = SubResource("Resource_j4i8h")
+challenge_rating = 0
+metadata/_custom_type_script = "uid://dh8usy4n8v8sf"
+
+[sub_resource type="Resource" id="Resource_gq137"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_pu33i"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 6
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_mwwg8"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_iis1d"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 5
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_lby1v"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 9
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_331g4"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_vee8i"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_lerjo"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 3
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_00pvt"]
+script = ExtResource("2_y0bjb")
+wave = Array[ExtResource("3_1k726")]([SubResource("Resource_gq137"), SubResource("Resource_pu33i"), SubResource("Resource_mwwg8"), SubResource("Resource_iis1d"), SubResource("Resource_lby1v"), SubResource("Resource_331g4"), SubResource("Resource_vee8i"), SubResource("Resource_lerjo")])
+metadata/_custom_type_script = "uid://ddviui1uwl3q1"
+
+[sub_resource type="Resource" id="Resource_83m1a"]
+script = ExtResource("1_ldwsc")
+pregenerated = true
+pregen_wave = SubResource("Resource_00pvt")
+challenge_rating = 0
+metadata/_custom_type_script = "uid://dh8usy4n8v8sf"
+
+[sub_resource type="Resource" id="Resource_7wqqy"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_jpyx6"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 6
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_jxcbv"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 2
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_yrwmu"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_8pyyc"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 9
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_2hqla"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_suygd"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 10
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_ublj2"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_vtcw3"]
+script = ExtResource("2_y0bjb")
+wave = Array[ExtResource("3_1k726")]([SubResource("Resource_7wqqy"), SubResource("Resource_jpyx6"), SubResource("Resource_jxcbv"), SubResource("Resource_yrwmu"), SubResource("Resource_8pyyc"), SubResource("Resource_2hqla"), SubResource("Resource_suygd"), SubResource("Resource_ublj2")])
+metadata/_custom_type_script = "uid://ddviui1uwl3q1"
+
+[sub_resource type="Resource" id="Resource_47jei"]
+script = ExtResource("1_ldwsc")
+pregenerated = true
+pregen_wave = SubResource("Resource_vtcw3")
+challenge_rating = 0
+metadata/_custom_type_script = "uid://dh8usy4n8v8sf"
+
+[sub_resource type="Resource" id="Resource_xjnjx"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_1of2m"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_2ruhp"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 2
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_ym818"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_anc50"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_s1tqd"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_gmlaj"]
+script = ExtResource("3_1k726")
+type = 1
+identifier = 10
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_r0hlm"]
+script = ExtResource("3_1k726")
+type = 0
+identifier = 0
+enable_suit_override = false
+suit_override = 0
+
+[sub_resource type="Resource" id="Resource_voino"]
+script = ExtResource("2_y0bjb")
+wave = Array[ExtResource("3_1k726")]([SubResource("Resource_xjnjx"), SubResource("Resource_1of2m"), SubResource("Resource_2ruhp"), SubResource("Resource_ym818"), SubResource("Resource_anc50"), SubResource("Resource_s1tqd"), SubResource("Resource_gmlaj"), SubResource("Resource_r0hlm")])
+metadata/_custom_type_script = "uid://ddviui1uwl3q1"
+
+[sub_resource type="Resource" id="Resource_2xh4k"]
+script = ExtResource("1_ldwsc")
+pregenerated = true
+pregen_wave = SubResource("Resource_voino")
+challenge_rating = 0
+metadata/_custom_type_script = "uid://dh8usy4n8v8sf"
+
+[resource]
+script = ExtResource("4_71oni")
+boss_round_name = "Doubled uP"
+boss_round_info = Array[ExtResource("1_ldwsc")]([SubResource("Resource_kcwdm"), SubResource("Resource_uviog"), SubResource("Resource_83m1a"), SubResource("Resource_47jei"), SubResource("Resource_2xh4k")])
+has_rewards = false
+round_type = 0
+challenge_rating = Array[int]([])
+card_numbers = Array[ExtResource("2_y0bjb")]([])
+has_boss = false
+metadata/_custom_type_script = "uid://cr4kpjca2mtwl"

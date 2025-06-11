@@ -7,7 +7,6 @@ signal all_enemies_spawned
 signal turn_ended
 signal restarting
 signal game_start
-signal music_menus
 signal check_round_end
 signal next_round
 signal game_over
@@ -21,6 +20,10 @@ signal title_complete
 signal audio_setup_complete
 signal select_next_dice
 signal quickshot
+signal map_option_selected
+signal use_consumable
+signal add_consumable
+signal die_select_changed
 
 func emit_refresh_all():
 	refresh_all.emit()
@@ -42,9 +45,6 @@ func emit_restarting():
 
 func emit_game_start():
 	game_start.emit()
-
-func emit_music_menus():
-	music_menus.emit()
 
 func emit_check_round_end():
 	check_round_end.emit()
@@ -84,3 +84,15 @@ func emit_select_next_dice():
 
 func emit_quickshot():
 	quickshot.emit()
+
+func emit_map_option_selected(levelObj):
+	map_option_selected.emit(levelObj)
+
+func emit_use_consumable(object):
+	use_consumable.emit(object)
+
+func emit_add_consumable(object):
+	add_consumable.emit(object)
+
+func emit_die_select_changed():
+	die_select_changed.emit()

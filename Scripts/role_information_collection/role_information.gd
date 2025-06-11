@@ -4,19 +4,21 @@ class_name role_information
 @export var role: dice_stats.diceRole
 @export var damage_mult: float = 1
 @export var dice_cooldown: int = 2
-@export var role_text: String
+@export_multiline var role_text: String
 var role_description:
 	get:
 		var replacement_text = "[color=#%s]%s[/color]"%[role_color.to_html(false), dice_stats.diceRole.keys()[role]]
 		var output_text = role_text.replace("ROLE", replacement_text)
+		replacement_text = "[color=#%s]%s[/color]"%[role_color.to_html(false), str(role_level+upgrade_modifier)]
+		output_text = output_text.replace("LVL", replacement_text)
 		return output_text
-@export var upgrade_text: String
+@export_multiline var upgrade_text: String
 @export_color_no_alpha var role_color: Color
 @export var dice_font_color: Color
 @export var upgrade_modifier: int
 var upgrade_description:
 	get:
-		return upgrade_text.replace("LVL", str(role_level+upgrade_modifier))
+		return upgrade_text.replace("LVL", str(role_level+1+upgrade_modifier))
 var role_level = 1
 
 @export var role_image: Texture2D
